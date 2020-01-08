@@ -51,14 +51,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-<!-- ## snsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null:false|
-|google|text|unique:true|
-|facebook|text|unique:true| -->
-
 ## productテーブル
 
 |Column|Type|Options|
