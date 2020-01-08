@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 
-## usersテーブル
+## userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -36,6 +36,9 @@ Things you may want to cover:
 ### Association
 - belongs_to :user_detail
 - has_many :product
+- has_many :sns
+- has_many :comment
+- has_many :like
 
 
 ## user_detailテーブル
@@ -51,31 +54,112 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
+## snsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false|
+|name|text|null:false|
+
+### Association
+- belongs_to :user
+
+## commentテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false|
+|product_id|references|null:false|
+|comment|text|null:false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
 ## productテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
 |name|text|null:false|
-|image|data|null:false|
 |price|integer|null:false|
 |content|text|null:false|
+|status|text|null:false|
+|derivery|text|null:false|
+|burden|text|null:false|
+|day|data|null:false|
 
 ### Association
 - belongs_to :user
-- belongs_to :product_detail
+- has_many :categorys
+- has_many :brands
+- has_many :areas
+- has_many :likes
+- has_many :comments
+- has_many :images
 
-## product_detailテーブル
+## imageテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null:false|
+|image|text|null:false|
+
+### Association
+- belongs_to :product
+
+## areaテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null:false|
+|name|text|null:false|
+
+### Association
+- belongs_to :product
+
+## categoryテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null:false|
+|brnads_id|references|null:false|
+|name|text|null:false|
+
+### Association
+- belongs_to :product
+- has_many :brands, through: brand_categorys
+
+## brandテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null:false|
+|categorys_id|references|null:false|
+|name|text|null:false|
+
+### Association
+- belongs_to :product
+- has_many :categorys,through: brand_categorys
+
+## brand_categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|brand_id|references|null:false|
+|categorys_id|references|null:false|
+
+### Association
+- belongs_to :brand
+- belongs_to :category
+
+## likeテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
 |product_id|references|null:false|
-|status|text|null:false|
-|derivery|text|null:false|
-|burden|text|null:false|
-|day|data|null:false|
-|area|text|null:false|
 
 ### Association
+- belongs_to :user
 - belongs_to :product
