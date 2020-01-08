@@ -35,11 +35,12 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user_detail
-- has_many :product
-- has_many :sns
-- has_many :comment
-- has_many :like
-
+- has_many :products
+- has_many :snss
+- has_many :comments
+- has_many :likes
+- has_many :product_buys
+- belongs_to :address
 
 ## user_detailテーブル
 
@@ -54,11 +55,38 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
+## addressテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false|
+|zip|string|null:false|
+|address|text|null:false|
+|city|text|null:false|
+|number|string|null:false|
+|bill|text||
+
+### Association
+- belongs_to :user
+
 ## snsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
+|name|text|null:false|
+
+### Association
+- belongs_to :user
+
+## cardテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false|
+|number|string|unique:true,null:false|
+|cord|string|unique:true,null:false|
+|limit|string|null:false|
 |name|text|null:false|
 
 ### Association
@@ -71,6 +99,17 @@ Things you may want to cover:
 |user_id|references|null:false|
 |product_id|references|null:false|
 |comment|text|null:false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
+## itemテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false|
+|product_id|references|null:false|
 
 ### Association
 - belongs_to :user
@@ -91,6 +130,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to :item
 - has_many :categorys
 - has_many :brands
 - has_many :areas
