@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -40,46 +40,44 @@ Things you may want to cover:
 - has_many :comments
 - has_many :likes
 - has_many :product_buys
-- belongs_to :address
+- has_one :address
 
-## user_detailテーブル
+## user_detailsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 |tell|integer|unique:true, null:false|
-|zip|integer|null:false|
-|address|text|null:false|
 
 ### Association
-- belongs_to :user
+- has_one :user
 
-## addressテーブル
+## addresssテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
 |zip|string|null:false|
-|address|text|null:false|
-|city|text|null:false|
+|address|string|null:false|
+|city|string|null:false|
 |number|string|null:false|
-|bill|text||
+|bill|string||
 
 ### Association
 - belongs_to :user
 
-## snsテーブル
+## snssテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 
 ### Association
 - belongs_to :user
 
-## cardテーブル
+## cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -87,12 +85,12 @@ Things you may want to cover:
 |number|string|unique:true,null:false|
 |cord|string|unique:true,null:false|
 |limit|string|null:false|
-|name|text|null:false|
+|name|string|null:false|
 
 ### Association
 - belongs_to :user
 
-## commentテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -104,7 +102,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-## itemテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -115,17 +113,17 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-## productテーブル
+## productsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 |price|integer|null:false|
 |content|text|null:false|
-|status|text|null:false|
-|derivery|text|null:false|
-|burden|text|null:false|
+|status|integer|null:false|
+|derivery|integer|null:false|
+|burden|integer|null:false|
 |day|data|null:false|
 
 ### Association
@@ -138,7 +136,7 @@ Things you may want to cover:
 - has_many :comments
 - has_many :images
 
-## imageテーブル
+## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -148,35 +146,35 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 
-## areaテーブル
+## areasテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 
 ### Association
 - belongs_to :product
 
-## categoryテーブル
+## categorysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null:false|
 |brnads_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 
 ### Association
 - belongs_to :product
 - has_many :brands, through: brand_categorys
 
-## brandテーブル
+## brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null:false|
 |categorys_id|references|null:false|
-|name|text|null:false|
+|name|string|null:false|
 
 ### Association
 - belongs_to :product
@@ -193,7 +191,7 @@ Things you may want to cover:
 - belongs_to :brand
 - belongs_to :category
 
-## likeテーブル
+## likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
