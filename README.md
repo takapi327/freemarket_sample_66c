@@ -51,7 +51,7 @@ Things you may want to cover:
 |tell|integer|unique:true, null:false|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 ## addresssテーブル
 
