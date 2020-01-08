@@ -33,6 +33,11 @@ Things you may want to cover:
 |password|string|null:false, null:false|
 |re_password|string|null:false, null:false|
 
+### Association
+- belongs_to :user_detail
+- has_many :product
+
+
 ## user_detailテーブル
 
 |Column|Type|Options|
@@ -42,6 +47,9 @@ Things you may want to cover:
 |tell|integer|unique:true, null:false|
 |zip|integer|null:false|
 |address|text|null:false|
+
+### Association
+- belongs_to :user
 
 <!-- ## snsテーブル
 
@@ -61,6 +69,10 @@ Things you may want to cover:
 |price|integer|null:false|
 |content|text|null:false|
 
+### Association
+- belongs_to :user
+- belongs_to :product_detail
+
 ## product_detailテーブル
 
 |Column|Type|Options|
@@ -73,3 +85,5 @@ Things you may want to cover:
 |day|data|null:false|
 |area|text|null:false|
 
+### Association
+- belongs_to :product
