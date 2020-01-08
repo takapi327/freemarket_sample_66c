@@ -34,7 +34,7 @@ Things you may want to cover:
 |re_password|string|null:false, null:false|
 
 ### Association
-- belongs_to :user_detail
+- has_one :user_detail
 - has_many :products
 - has_many :snss
 - has_many :comments
