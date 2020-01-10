@@ -15,7 +15,7 @@
     = f.label :password
     - if @minimum_password_length
       %em
-        (#{@minimum_password_length} characters minimum)
+        (7 characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
