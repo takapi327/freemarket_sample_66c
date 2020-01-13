@@ -85,3 +85,7 @@ end
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'mini_racer', platforms: :ruby
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google'
