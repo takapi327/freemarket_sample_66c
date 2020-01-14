@@ -1,0 +1,70 @@
+.wrapper
+  -# = render "header"
+  -# = render "fooder"
+  .show
+    .show__title
+      %h1= "#{@product.name}"
+    .show__item
+      .show__item__image
+      %table.show__item__table
+        %tbody
+          %tr
+            %th 出品者
+            %td= "#{@product.user_id}"
+            %td 匿名希望
+          %tr
+            %th カテゴリー
+            -# %td= "" データ元入力
+            %td レディース >バッグ >ショルダーバッグ
+          %tr
+            %th ブランド
+            -# %td= "" データ元入力
+            %td コーチ 
+          %tr
+            %th 商品の状態
+            -# %td= "#{@product.status}"
+            %td 傷や汚れあり 
+          %tr
+            %th 配送料の負担
+            -# %td= "#{@product.price}"
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            -# %td= "" データ元入力
+            %td 大阪府
+          %tr
+            %th 配送日の目安
+            -# %td= "#{@product.burden}"
+            %td 1〜２日で発送
+    .show-item-box
+      .item-place
+        %b¥3,000
+      .item-tax
+        (税込)
+      .item-fee
+        送料込み
+    .show-buy-btn
+      = link_to "購入画面に進む", "#", class: "buy-btn"
+    
+    .show-item-bottom
+      .item-description
+        ここには商品の説明が入ります。
+      .item-btn
+        .item-btn__like
+          ♡いいね！１
+        .item-btn__Inappropriate
+          🏳不適切な商品の報告
+        .item-btn__link
+          = link_to "🔒あんしん・あんぜんへの取り組み"
+      .show-coment
+        .show-coment__top
+          相手のことを考え丁寧なコメントを心掛けましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .show-coment__form
+          = form_for @product do |f|
+            .form
+              =f.text_area :content, class: "text"
+            =f.submit 'コメントする', class: 'form__submit'
+

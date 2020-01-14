@@ -1,0 +1,70 @@
+.box {
+  height: 300px;
+  width: 300px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: lightgray;
+  width: 1500px;
+  height: 2000px;
+}
+.header {
+  background-color: lightgray;
+  width: 1500px;
+  height: 100px;
+}
+.page {
+  margin: auto;
+  width: 1000px;
+}
+
+.side_bar {
+  float: left;
+  width: 300px;
+  &__list {
+    background-color: white;
+    li {
+      display: flex;
+      justify-content: space-between; //左右に分ける
+    }
+    &__content {
+      width: 300px;
+      border-bottom: solid 1px;
+      border-color: lightgray;
+      height: 50px;
+      line-height: 30px;
+      font-size: 14px;
+      padding: 10px;
+    }
+    &__content:hover {
+      background-color: rgba(156, 154, 154, 0.2);
+    }
+    &__content:hover .icon{
+      color: black;
+      transform: translate(2px, 0);  //カーソルに合わせると移動（右方向、下方向）
+    // box-shadow: 0 10px 15px -5px rgba(0,0,0,.15),0 0 5px rgba(0,0,0,.1);/*浮いた時の影*/	
+    // transform: translateY(-3px);/*浮く高さ*/	
+    // transition: 0.3s;/*浮く速さ（秒）*/	
+    // background: rgba(238,238,238,.4);/*浮いた時の背景色（なくてもよい）*/	
+    }
+    .icon {
+      transition: all 0.2s;
+      color: gray;
+    }
+   
+  }
+}
+
+.chevron-right {
+  height: 20px;
+  width: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
