@@ -19,8 +19,8 @@
         display:              flex;
         margin-right:         45px;
         .icon{
-          max-width: 100%;
-          max-height: 100%;
+          width: 134px;
+          height: 46px;
         }
       }
     }
@@ -35,14 +35,12 @@
           line-height:        1.4em;
           position:           relative;
           width:              100%;
-          -webkit-appearance: none;
           border-width:       1px;
           border-style:       solid;
           border-color:       rgb(204, 204, 204);
-          border-image:       initial;
           border-radius:      4px;
           outline:            none;
-          padding:            0px 50px 0px 10px;
+          padding:            0px 0px 0px 10px;
           transition:         all 0.3s ease-out 0s;
         }
         .input-search{
@@ -53,13 +51,8 @@
           right:              0px;
           top:                0px;
           width:              40px;
-          -webkit-appearance: none;
-          border-width:       initial;
           border-style:       none;
-          border-color:       initial;
-          border-image:       initial;
           border-radius:      0px 4px 4px 0px;
-          padding:            0px;
           font-size:          0.9rem;
         }
       }

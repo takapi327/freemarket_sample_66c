@@ -4,11 +4,11 @@
       .header__box__top__logo
         = image_tag "fmarket_logo_red.svg", class: "icon"
       .form
-        -# = form_for [@group, @message] do |f|
-        -#   .input-box
-        -#     = f.text_field :content, class: 'input-box__text', placeholder: '何かお探しですか？'
-        -#     = f.button :type => "submit", class: 'input-search' do
-        -#       = fa_icon 'search'
+        = form_for @product do |f|
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: '何かお探しですか？'
+            = f.button :type => "submit", class: 'input-search' do
+              = icon('fas', 'search')
 
     .header__box__bottom
       .header__box__bottom__menu
