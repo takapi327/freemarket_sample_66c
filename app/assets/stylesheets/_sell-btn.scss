@@ -1,0 +1,35 @@
+.sell-btn{
+  width: 160px;
+  height: 160px;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  margin-bottom: 40px;
+  .boll-btn{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #FF3333	;
+    .boll{
+      padding-top: 25px;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 22px;
+      text-align: center;
+      height: 54px;
+      margin: 8px auto 8px;
+      .sell{
+        padding-bottom: 5px;
+      }
+      .camera{
+        color: white;
+        font-size: 60px;
+      }
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+}
