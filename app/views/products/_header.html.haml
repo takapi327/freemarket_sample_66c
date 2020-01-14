@@ -7,7 +7,7 @@
         = form_for @product do |f|
           .input-box
             = f.text_field :content, class: 'input-box__text', placeholder: '何かお探しですか？'
-            = f.button :type => "submit", class: 'input-search' do
+            = f.button type: "submit", class: 'input-search' do
               = icon('fas', 'search')
 
     .header__box__bottom
