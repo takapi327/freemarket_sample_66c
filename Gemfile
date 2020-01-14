@@ -89,3 +89,4 @@ gem 'mini_racer', platforms: :ruby
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
+gem 'jquery-rails'

@@ -1,0 +1,110 @@
+.header
+  .header__box
+    .header__box__top
+      .header__box__top__logo
+        = image_tag "fmarket_logo_red.svg", class: "icon"
+      .form
+        = form_for @product do |f|
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: '何かお探しですか？'
+            = f.button type: "submit", class: 'input-search' do
+              = icon('fas', 'search')
+
+    .header__box__bottom
+      .header__box__bottom__menu
+        %ul.header__box__bottom__menu__item1#tabs
+          %li.header__box__bottom__menu__item1__box1
+            = icon('fas', 'list-ul', class: 'list')
+            = "カテゴリーから探す"
+          %ul.pull-dawn#tab
+            %ul.pull_menu
+              %li.pull_list1
+                = link_to "レディース", "#", class: "tab"
+                .pull_menu2
+                  .pull_sblist1
+                    = link_to "トップス", "#", class: "tab2"
+                    .pull_sbmenu
+                      .pull_sblist
+                        = link_to "Tシャツ/カットソー(半袖/袖なし)", "#", class: "tab2"
+                      .pull_sblist
+                        = link_to "Tシャツ/カットソー(七分/長袖)", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_sblist
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+              %li.pull_list2
+                = link_to "メンズ", "#", class: "tab"
+                %ul.pull_menu3
+                  .pull_list3
+                    = link_to "トップス", "#", class: "tab2"
+                  .pull_list3
+                    = link_to "ジャケット/アウター", "#", class: "tab2"
+              %li.pull_list
+                = link_to "ベビー・キッズ", "#", class: "tab"
+              %li.pull_list
+                = link_to "インテリア・住まい・小物", "#", class: "tab"
+              %li.pull_list
+                = link_to "本・音楽・ゲーム", "#", class: "tab"
+              %li.pull_list
+                = link_to "おもちゃ・ホビー・グッズ", "#", class: "tab"
+              %li.pull_list
+                = link_to "コスメ・香水・美容", "#", class: "tab"
+              %li.pull_list
+                = link_to "家電・スマホ・カメラ", "#", class: "tab"
+              %li.pull_list
+                = link_to "スポーツ・レジャー", "#", class: "tab"
+              %li.pull_list
+                = link_to "ハンドメイド", "#", class: "tab"
+              %li.pull_list
+                = link_to "チケット", "#", class: "tab"
+              %li.pull_list
+                = link_to "自動車・オートバイ", "#", class: "tab"
+              %li.pull_list
+                = link_to "その他", "#", class: "tab"
+              %li.pull_list
+                = link_to "カテゴリー一覧", "#", class: "tab"
+        %ul.header__box__bottom__menu__item2#tab2s
+          %li.header__box__bottom__menu__item2__box2
+            = icon('fas', 'tag', class: 'list')
+            = "ブランドから探す"
+          %ul.pull-dawn2#tab
+            %ul.pull_menu#tab
+              %li.pull_list
+                = link_to "シャネル", "#", class: "tab"
+              %li.pull_list
+                = link_to "ナイキ", "#", class: "tab"
+              %li.pull_list
+                = link_to "ルイ ヴィトン", "#", class: "tab"
+              %li.pull_list
+                = link_to "シュプリーム", "#", class: "tab"
+              %li.pull_list
+                = link_to "アディダス", "#", class: "tab"
+              %li.pull_list
+                = link_to "ブランド一覧", "#", class: "tab"
+      .header__box__bottom__login
+        .header__box__bottom__login__sign_up
+          = link_to "新規会員登録", "#", class: "btn"
+        .header__box__bottom__login__log_in
+          = link_to "ログイン", "#", class: "btn"
