@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.limit(10).includes(:user).order('created_at DESC')
+    @products = Product.includes(:user).order('created_at DESC').limit(10)
   end
 
   def show
