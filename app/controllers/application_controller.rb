@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
   private
   
   def basic_auth
-    #ユーザー名とパスワードでBasic認証ができるように設定しています。
+    # ターミナルで設定した環境変数を使ってログインできるようにした。
     authenticate_or_request_with_http_basic do |username, password|
-      username == '66_mercari_c' && password == '66c'
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
 
