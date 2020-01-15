@@ -60,3 +60,7 @@
 #     # password: "please use keys"
 #   }
 server '18.179.218.201', user: 'ec2-user', roles: %w{app db web}
+
+# 本番環境のみで実行するための記述
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
