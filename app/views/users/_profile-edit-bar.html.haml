@@ -1,0 +1,17 @@
+.edit_page
+  .main_contents__profiel
+    .main_bar__title
+      %h3 プロフィール
+    .main_bar__edit__image_box
+      = form_for(current_user) do |f|
+        .field
+          .field__top
+            .field-image
+              = icon("fas", "user-circle", class: "image")
+            .field-input
+              = f.text_field :nickname, class: "name_field", autofocus: true
+        .field__bottom
+          .field-input 
+            = f.text_area :email, class: "profiel_text", size: "69x8", placeholder: " 例）こんにちは⭐︎ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくトリフ引きできるよう心がけていますので、商品の発送方法などご質問がありましたらお気軽にどうぞ♪" #カラム変更
+          .actions
+            = f.submit "変更する", class: 'edit form_btn__edit-action-btn'

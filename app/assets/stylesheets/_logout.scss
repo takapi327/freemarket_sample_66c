@@ -1,0 +1,15 @@
+.logout {
+  height: 30vh;
+  width: 40vw;
+  background-color: white;
+  &__btn {
+    display:inline-block;
+    margin: 7.5vh 10vw;
+    height: 15vh;
+    width: 30vw;
+    background-color: red;
+    line-height: 15vh;
+    text-align: center;
+    color: white;
+  }
+}
