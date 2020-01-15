@@ -1,0 +1,87 @@
+.main-bar
+  .main-bar__up-side
+    .main-bar__up-side__user-intro
+      .main-bar__up-side__user-intro__user-icon
+        =icon('far', 'smile-beam', class: "icon")
+      .main-bar__up-side__user-intro__user-name name
+      .main-bar__up-side__user-intro__user-info
+        .main-bar__up-side__user-intro__user-info__eva 評価： 2
+        .main-bar__up-side__user-intro__user-info__exhibi 出品数:  6
+    %ul.tab-group
+      %li.tab.is-active お知らせ
+      %li.tab やることリスト
+    / タブを切り替えて表示するコンテンツ
+    .panel-group
+      .panel.is-show
+        .panel__content
+          .panel__content__image
+            =icon('fas', 'box-open', class: "boxicon")
+          .panel__content__info
+            .panel__content__info__message
+              こんにちは
+            .panel__content__info__data
+              .panel__content__info__data__clock
+                =icon('far', 'clock', class: "clockicon")
+              .panel__content__info____data__time
+                2日前
+      .panel__content
+        .panel__content__image
+          =icon('fas', 'box-open', class: "boxicon")
+        .panel__content__info
+          .panel__content__info__message
+            こんにちは
+          .panel__content__info__data
+            .panel__content__info__data__clock
+              =icon('far', 'clock', class: "clockicon")
+            .panel__content__info____data__time
+              2日前
+      .panel__content
+        .panel__content__image
+          =icon('fas', 'box-open', class: "boxicon")
+        .panel__content__info
+          .panel__content__info__message
+            こんにちは
+          .panel__content__info__data
+            .panel__content__info__data__clock
+              =icon('far', 'clock', class: "clockicon")
+            .panel__content__info____data__time
+              2日前
+      .panel__content
+        .panel__content__image
+          =icon('fas', 'box-open', class: "boxicon")
+        .panel__content__info
+          .panel__content__info__message
+            こんにちは
+          .panel__content__info__data
+            .panel__content__info__data__clock
+              =icon('far', 'clock', class: "clockicon")
+            .panel__content__info____data__time
+              2日前
+      .panel__content
+        .panel__content__image
+          =icon('fas', 'box-open', class: "boxicon")
+        .panel__content__info
+          .panel__content__info__message
+            こんにちは
+          .panel__content__info__data
+            .panel__content__info__data__clock
+              =icon('far', 'clock', class: "clockicon")
+            .panel__content__info____data__time
+              2日前
+      .panel 
+        
+    .main-bar__up-side__mypage-tab__go-list 
+      .main-bar__up-side__mypage-tab__go-list__btn 一覧に戻る
+  .main-bar__down-side
+    .main-bar__down-side__title 購入した商品
+    %ul.tab1-group
+      %li.tab1.is-active1 取引中
+      %li.tab1 過去の取引
+    / タブを切り替えて表示するコンテンツ
+    .panel1-group
+      .panel1.is-show1 
+        .panel1__content__image
+          =icon('fas', 'box-open', class: "boxicon")
+          .panel1__content__info
+            取引中の商品がありません
+      .panel1 Content-

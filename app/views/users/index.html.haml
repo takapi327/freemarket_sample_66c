@@ -1,5 +1,7 @@
 .wrapper
   = render "/products/header.html.haml"
-  = render "my-page.html.haml"
+  .my-page-background
+    = render "side-bar"
+    = render "userdetail-main-bar.html.haml"
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"
