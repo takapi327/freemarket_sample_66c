@@ -1,15 +1,16 @@
 .main-bar
   .main-bar__up-side
     .main-bar__up-side__user-intro
+      -# = image_tag "usericon.jpg"
       .main-bar__up-side__user-intro__user-icon
         =icon('far', 'smile-beam', class: "icon")
       .main-bar__up-side__user-intro__user-name name
       .main-bar__up-side__user-intro__user-info
         .main-bar__up-side__user-intro__user-info__eva 評価： 2
         .main-bar__up-side__user-intro__user-info__exhibi 出品数:  6
-    %ul.tab-group
-      %li.tab.is-active お知らせ
-      %li.tab やることリスト
+    %ul.tab3-group
+      %li.tab3.is-active お知らせ
+      %li.tab3 やることリスト
     / タブを切り替えて表示するコンテンツ
     .panel-group
       .panel.is-show

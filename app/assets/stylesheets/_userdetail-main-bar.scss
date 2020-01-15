@@ -4,15 +4,16 @@
 .main-bar__up-side {
   height: 600px;
   width: 700px;
-  background-color: rgb(218, 214, 214);
+  // background-color: rgb(218, 214, 214);
 }
 .main-bar__up-side__user-intro {
   height: 200px;
-  background: rgb(8, 135, 240);
+  background-color: rgb(250, 227, 19);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 .main-bar__up-side__user-intro__user-name {
   top: 130px;
@@ -62,11 +63,11 @@
 .main-bar__up-side__user-intro {
   background-image: url("public/back.jpeg")
 }
-.tab-group{
+.tab3-group{
   display: flex;
   justify-content: center;
 }
-.tab{
+.tab3{
   flex-grow: 1;
   padding:5px;
   list-style:none;
@@ -114,7 +115,7 @@
 }
 
 
-.tab.is-active{
+.tab3.is-active{
   background:#FFF;
   color:black;
   transition: all 0.2s ease-out;
