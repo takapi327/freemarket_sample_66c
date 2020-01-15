@@ -20,7 +20,7 @@
       line-height: 80px;
       border: 10px solid white;
     }
-    
+
     &__mypage-tab__go-list__btn:hover {
       background-color: white;
       cursor: pointer;
@@ -28,7 +28,7 @@
 
     &__user-intro {
       height: 200px;
-      background-color: rgb(250, 227, 19);
+      background-image: image-url("usericon.jpg");
       display: flex;
       justify-content: center;
       align-items: center;
