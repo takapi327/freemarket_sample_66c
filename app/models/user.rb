@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #deviseのデフォルトバリデーションはemail,passwordのみのため、追加しています
+  has_many :products
   validates :nickname, presence: true, length: { maximum: 6 }
 end

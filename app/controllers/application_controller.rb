@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # 悪意のあるユーザーの入力に対してのセキュリティ対策
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
