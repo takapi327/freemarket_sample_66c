@@ -1,0 +1,157 @@
+.main_bar {
+  width: 48vw;
+  background-color: white;
+  margin-left: 350px;
+  &__title {
+    border-bottom: solid 1px;
+    border-color: lightgray;
+    text-align: center;
+    padding: 10px;
+  }
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+p {
+  font-size: 14px;
+} 
+
+.main_contents {
+  padding: 40px;
+ 
+  .uploader_link {
+    text-align: right;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .uploader_link a{
+    color: #0099e8;
+  }
+  .form_list {
+    margin-top: 40px;
+    &__top {
+      display: flex;
+      &__title {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      &__any {
+        margin-left: 8px;
+        background-color: lightgray;
+        color: white;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        border-radius: 2px;
+        width: 30px;
+        padding: 2px;
+      }
+    }
+    &__text {
+      margin-top: 8px;
+      position: relative;
+    }
+    &__input {
+      height: 30px;
+      width: 40vw;
+      // border-radius: 2px;
+      // box-shadow: none;
+      padding: 10px;
+    }
+    &__inputenum {
+      background-color: white;
+      height: 50px;
+      width: 44vw;
+      padding: 10px;
+      -webkit-appearance: none; // デフォルトの選択ボタンを消す
+    }
+    .fa-chevron-down {
+    position: absolute;//子のポジション指定
+    right: 25px;//右25px空ける
+    top: 50%;//上から60%の位置へ
+    z-index: 2;//親の下へ潜り揉まないようにする
+    color: #888;
+    transform: translate(0, -50%);//translate(X方向の移動距離, Y方向の移動距離)
+    font-size: 18px;
+    }
+  }
+}
+
+.form_btn__action-btn {
+  background-color: red;
+  font-size: 14px;
+  margin-top: 40px; 
+  color: white;
+  height: 50px;
+  width: 44vw;
+  border: none;
+}
+
+.identification_link {
+  text-align: right;
+  bottom: 40px;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.identification_link a{
+  color: #0099e8;
+}
+
+.logout {
+  height: 30vh;
+  width: 40vw;
+  background-color: white;
+  &__btn {
+    display:inline-block;
+    margin: 7.5vh 10vw;
+    height: 15vh;
+    width: 30vw;
+    background-color: red;
+    line-height: 15vh;
+    text-align: center;
+    color: white;
+  }
+}
+
+.blunk {
+  height: 10px;
+  width: 50vw;
+  background-color: grey;
+}
+
+.field_top {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  width: 50vw;
+  background-image: url(bg.jpg);
+  background-size:  cover;
+  background-color:rgba(255,255,255,0.5); //background-imageの色をぼかす
+  background-blend-mode:lighten; //明るくする？
+  padding-top: 80px;
+}
+
+.image {
+  font-size: 3.0rem;
+}
+
+.name_field {
+  height: 50px;
+  width: 200px;
+}
+
+.field__bottom {
+  margin: 40px;
+}

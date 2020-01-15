@@ -1,0 +1,77 @@
+.main_bar
+  .main_bar__title
+    %h3 本人情報の登録
+  .main_contents
+    .explanatory_text
+      %p お客さまの本人情報をご登録ください。
+      %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+    .uploader_link
+      -# リンク先未設定
+      = link_to "本人確認機能のアップロードについて＞"
+    .identification_form
+      = form_for @user do |f|
+        -# エラー文
+        -# -if @user.errors.any?
+        -#   .Identification_form__errors
+        -#     %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+        -#     %ul
+        -#       - @user.errors.full_messages.each do |message|
+        -#         %li= message
+        .form_lists
+          .form_list
+            .form_list__top
+              = f.label :お名前, class: 'form_list__top__title' 
+              -# %span.form_list__top__any 設定がいるのか？
+            .form_list__text
+              -# user_detail.name
+              〇〇〇〇
+          .form_list
+            .form_list__top
+              = f.label :お名前カナ, class: 'form_list__top__title' 
+              -# %span.form_list__top__any 設定がいるのか？
+            .form_list__text
+              -# user_detail.kananame＋カラム
+              〇〇〇〇
+          .form_list
+            .form_list__top
+              = f.label :生年月日, class: 'form_list__top__title' 
+              -# %span.form_list__top__any 設定がいるのか？
+            .form_list__text
+              -# user_detail.birthday＋カラム
+              〇〇〇〇
+          .form_list
+            .form_list__top
+              = f.label :郵便番号, class: 'form_list__top__title' 
+              %span.form_list__top__any 任意
+            .form_list__text
+              = f.text_field :nickname, class: 'form_list__input', placeholder: " 例）1234567" #カラム変更
+          .form_list
+            .form_list__top
+              = f.label :都道府県, class: 'form_list__top__title'
+              = f.label :任意, class: 'form_list__top__any'
+            .form_list__text
+              = f.text_field :nickname, class: 'form_list__input', placeholder: " -- " #f.selectに変更
+              = icon('fas', 'chevron-down', class: 'fa-chevron-down')
+          .form_list
+            .form_list__top
+              = f.label :市区町村, class: 'form_list__top__title' 
+              = f.label :任意, class: 'form_list__top__any' 
+            .form_list__text
+              = f.text_field :nickname, class: 'form_list__input', placeholder: " 例）横浜市緑区" #カラム変更
+          .form_list
+            .form_list__top
+              = f.label :番地, class: 'form_list__top__title' 
+              = f.label :任意, class: 'form_list__top__any' 
+            .form_list__text
+              = f.text_field :nickname, class: 'form_list__input', placeholder: " 例）青山1-1-1" #カラム変更
+          .form_list
+            .form_list__top
+              = f.label :建物名, class: 'form_list__top__title' 
+              = f.label :任意, class: 'form_list__top__any' 
+            .form_list__text
+              = f.text_field :nickname, class: 'form_list__input', placeholder: " 例）柳ビル103" #カラム変更
+          .form_btn
+            = f.submit '登録する', class: 'form_btn__action-btn'
+    .identification_link
+      -# リンク先未設定
+      = link_to "本人情報の登録について＞"
