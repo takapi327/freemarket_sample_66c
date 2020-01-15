@@ -1,68 +1,66 @@
 .main-bar {
   margin-left: 350px;
-}
-.main-bar__up-side {
-  height: 600px;
-  width: 700px;
-  // background-color: rgb(218, 214, 214);
-}
-.main-bar__up-side__user-intro {
-  height: 200px;
-  background-color: rgb(250, 227, 19);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
-}
-.main-bar__up-side__user-intro__user-name {
-  top: 130px;
-  height: 16px;
-  // width: 100%;
-  margin-bottom: 5px;
-  
-}
-.main-bar__up-side__user-intro__user-icon {
-  font-size: 3rem;
-  // line-height: 200px;
-  // width: 100%;
-}
-.main-bar__up-side__user-intro__user-info {
-  display: flex;
-  // width: 100%;
-}
-.main-bar__up-side__user-intro__user-info__eva {
-  height: 16px;
-  // margin-top: 145px;
-  padding-right: 18px;
-  
-}
-.main-bar__up-side__user-intro__user-info__exhibi {
-  height: 16px;
-  // width: 100%;
-  // margin-top: 145px;
+
+  &__up-side {
+    height: 600px;
+    width: 700px;
+    
+    &__tab-panel {
+      height: 300px;
+    }
+
+    &__mypage-tab__go-list {
+      height: 80px;
+      background-color: rgb(218, 214, 214);
+    }
+
+    &__mypage-tab__go-list__btn {
+      background-color: lightgray;
+      text-align: center;
+      line-height: 80px;
+      border: 10px solid white;
+    }
+    
+    &__mypage-tab__go-list__btn:hover {
+      background-color: white;
+      cursor: pointer;
+    }
+
+    &__user-intro {
+      height: 200px;
+      background-color: rgb(250, 227, 19);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__user-name {
+      top: 130px;
+      height: 16px;
+      margin-bottom: 5px;
+      }
+
+      &__user-icon {
+      font-size: 3rem;
+      }
+
+      &__user-info {
+      display: flex;
+
+        &__eva {
+        height: 16px;
+        padding-right: 18px;
+        }
+
+        &__exhibi {
+        height: 16px;
+        }
+      }
+    }
+  } 
 }
 
-.main-bar__up-side__tab-panel {
-  height: 300px;
-}
-.main-bar__up-side__mypage-tab__go-list {
-  height: 80px;
-  background-color: rgb(218, 214, 214);
-}
-.main-bar__up-side__mypage-tab__go-list__btn {
-  background-color: lightgray;
-  text-align: center;
-  line-height: 80px;
-  border: 10px solid white;
-}
-.main-bar__up-side__mypage-tab__go-list__btn:hover {
-  background-color: white;
-  cursor: pointer;
-}
-.main-bar__up-side__user-intro {
-  background-image: url("public/back.jpeg")
-}
+
 .tab3-group{
   display: flex;
   justify-content: center;
@@ -71,7 +69,6 @@
   flex-grow: 1;
   padding:5px;
   list-style:none;
-  // border:solid 1px #FFF;
   text-align:center;
   cursor:pointer;
   font-size: 1.1rem;
@@ -98,18 +95,11 @@
 .panel__content__info {
   margin-left: 10px;
 }
-.panel__content__info__message {
 
-}
 .panel__content__info__data {
   display: flex;
 }
-.panel__content__info__data__clock {
 
-}
-.panel__content__info____data__time {
-
-}
 .panel{
   display:none;
 }
@@ -149,7 +139,6 @@
   flex-grow: 1;
   padding:5px;
   list-style:none;
-  // border:solid 1px #FFF;
   text-align:center;
   cursor:pointer;
   background-color: rgb(218, 214, 214);
