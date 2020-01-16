@@ -24,4 +24,8 @@ class UsersController < ApplicationController
     @product = Product.new
   end
 
+  def cardregister
+    @product = Product.new
+  end
+
 end
