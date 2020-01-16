@@ -19,5 +19,9 @@ class UsersController < ApplicationController
     @users = User.all
     @user = User.new
   end
-  
+
+  def logout
+    @product = Product.new
+  end
+
 end
