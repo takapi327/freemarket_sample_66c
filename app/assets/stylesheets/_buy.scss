@@ -1,0 +1,186 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.main-flame {
+  background-color: $flame-border_coler;
+
+  &-all {
+
+    &-box {
+      width: 750px;
+      margin: 0 auto;
+
+      &-buy_text {
+        height: 70px;
+        text-align: center;
+        padding-top: 30px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border: solid;
+        border-bottom: none;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+      }
+      &-buy_content {
+        height: 170px;
+        background-color: white;
+        border: solid;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+
+        &-item {
+          height: 170px;
+          width: 400px;
+          margin: 0 auto;
+
+          &_box {
+            height: 100px;
+            display: flex;
+            padding-top: 45px;
+
+            &-image {
+              height: 80px;
+              width: 70px;
+              background-color: darkseagreen;
+            }
+            &-detail {
+              height: 80px;
+              width: 180px;
+              margin-left: 20px;
+
+              &_name {
+                height: 30px;
+              }
+              &_price {
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-box-choice {
+      height: 550px;
+      background-color: white;
+      border-width: 1px;
+      border-width: 1px;
+      border-color: $flame-border_coler;
+
+      &-flame {
+        width: 400px;
+        margin: 0 auto;
+
+        &-price {
+          height: 150px;
+          border: solid;
+          border-width: 1px;
+          border-color: white;
+          border-bottom-color: $flame-border_coler;
+
+          &_box {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+
+            &_text {
+              width: 150px;
+              height: 50px;
+              text-align: center;
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: large;
+            }
+
+            &_number {
+              width: 150px;
+              height: 50px;
+              text-align: center;
+              margin-top: 40px;
+              font-size: xx-large;
+              font-weight: bold;
+            }
+          }
+
+          &_point {
+            height: 50px;
+            margin-top: 30px;
+            margin-left: 35px;
+          }
+        }
+        .main-flame-all-box-choice-payment {
+          height: 120px;
+          width: 400px;
+          border: solid;
+          border-width: 1px;
+          border-color: white;
+          border-bottom-color: $flame-border_coler;
+
+          &-text {
+            width: 400px;
+            padding-top: 30px;
+            margin-left: 35px;
+          }
+          &-registration {
+            width: 400px;
+            margin-left: 35px;
+
+            .registration_link {
+              color: rgb(1, 165, 230);
+              text-decoration: none;
+            }
+          }
+        }
+        .main-flame-all-box-choice-delivery {
+          height: 120px;
+          width: 400px;
+          border: solid;
+          border-width: 1px;
+          border-color: white;
+          border-bottom-color: $flame-border_coler;
+
+          &-text {
+            width: 400px;
+            padding-top: 30px;
+            margin-left: 35px;
+          }
+
+          &-registration {
+            width: 400px;
+            margin-left: 35px;
+
+            .registration_link {
+              color: rgb(1, 165, 230);
+              text-decoration: none;
+            }
+          }
+        }
+        .main-flame-all-box-choice-buy {
+          height: 200px;
+          width: 400px;
+
+          &-button {
+            height: 60px;
+            width: 400px;
+            display: flex;
+            text-align:center;
+
+            .button {
+              height: 60px;
+              width: 400px;
+              line-height:60px;
+              border: solid;
+              border-width: 1px;
+              border-color: rgb(255, 43, 43);
+              text-decoration: none;
+              padding: 0 164.5px;
+              margin-top: 40px;
+              background-color: rgb(255, 43, 43);
+              font-family: 'arial narrow';
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

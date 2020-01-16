@@ -1,0 +1,54 @@
+.pay {
+  height: 350px;
+  width: 700px;
+  margin-left: 350px;
+  background-color: white;
+
+  &-upper {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-family: bold;
+  font-size: 1.7rem;
+  border-bottom: 1px solid lightgray;
+  }
+
+  &-lower-box {
+    height: 100px;
+    width: 570px;
+    border-bottom: 1px solid lightgray;
+    margin: 0 auto;
+    padding: 50px 50px 50px 200px;
+
+    &-title {
+    margin-bottom: 20px;
+    }
+
+    &-btn {
+    display: flex;
+    background-color: red;
+    height: 50px;
+    width: 320px;
+    text-align: center;
+
+      &-icon {
+      color: white;
+      line-height: 50px;
+      margin-right: 20px;
+      margin-left: 30px;
+      }
+
+      &-text {
+      color: white;
+      line-height: 50px;
+      }
+    }
+  }
+}
+
+
+.pay-lower-guide {
+  color: #0099E8;
+  margin-left: 500px;
+  margin-top: 50px;
+}

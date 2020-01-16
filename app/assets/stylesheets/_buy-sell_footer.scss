@@ -1,0 +1,68 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.buy-exhibition_footer {
+  background-color: $flame-border_coler;
+
+  &-flame {
+    height: 250px;
+
+    &-body {
+      height: 250px;
+      width: 500px;
+      margin: 0 auto;
+
+      &_text {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        font-size: small;
+        padding-top: 40px;
+
+        &-privacy {
+
+          .privacy_link {
+            text-decoration-color: black;
+            text-decoration: none;
+          }
+        }
+        &-terms {
+
+          .terms_link {
+            text-decoration-color: black;
+            text-decoration: none;
+          }
+        }
+        &-specific {
+
+          .specific_link {
+            text-decoration-color: black;
+            text-decoration: none;
+          }
+        }
+      }
+      &_logo {
+        width: 500px;
+        height: 150px;
+
+        &_content {
+          height: 95px;
+          width: 100px;
+          margin: 0 auto;
+          padding-top: 40px;
+
+          .icon_logo_fmarket {
+            height: 100px;
+            width: 100px;
+          }
+        }
+        &_text {
+          width: 100px;
+          margin: 0 auto;
+          font-size: small;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
