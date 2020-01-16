@@ -63,6 +63,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
   config.include Devise::Test::ControllerHelpers, type: :controller
-   #omniauth_macros.rbからhelperメソッドを要求する
+  config.include ControllerMacros, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  #omniauth_macros.rbからhelperメソッドを要求する
   config.include OmniauthMacros
 end

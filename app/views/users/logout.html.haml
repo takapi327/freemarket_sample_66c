@@ -1,0 +1,9 @@
+.wrapper
+  = render "/products/header.html.haml"
+  .my-page-background
+    = render "side-bar"
+    .logout
+      .logout__btn
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout_btn'
+  = render "/products/footer.html.haml"
+  = render "/products/sell-btn.html.haml"

@@ -90,3 +90,5 @@ gem 'omniauth'
 gem 'omniauth-facebook' #facebookでのログイン用gem
 gem 'omniauth-google-oauth2' #googleでのログイン用gem,oatuh2が最新のため指定しています。
 gem "omniauth-rails_csrf_protection" #セキュリティ対策のgem,ここまでがsns認証用のgem
+gem 'jquery-rails'
+gem 'ancestry'

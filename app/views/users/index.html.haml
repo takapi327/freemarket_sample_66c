@@ -5,3 +5,10 @@
   ログインしていません
   = link_to '新規登録', new_user_path
   = link_to 'ログイン', new_user_session_path
+.wrapper
+  = render "/products/header.html.haml"
+  .my-page-background
+    = render "side-bar"
+    = render "userdetail-main-bar.html.haml"
+  = render "/products/footer.html.haml"
+  = render "/products/sell-btn.html.haml"

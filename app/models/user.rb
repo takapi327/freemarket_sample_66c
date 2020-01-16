@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 20 }
   #sns_credentialsとのアソシエーション
   has_many :sns_credentials
+  has_many :products
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
