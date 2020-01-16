@@ -102,17 +102,6 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-## itemsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null:false|
-|product_id|references|null:false|
-
-### Association
-- belongs_to :user
-- belongs_to :product
-
 ## productsテーブル
 
 |Column|Type|Options|
@@ -165,8 +154,9 @@ Things you may want to cover:
 |name|string|null:false|
 
 ### Association
-- belongs_to :product
+- has_many :products
 - has_many :brands, through: brand_categorys
+- has_ancestry
 
 ## brandsテーブル
 

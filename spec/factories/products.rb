@@ -1,14 +1,13 @@
 FactoryBot.define do
   factory :product do
-    association :user, :factory => :user
-
-    name                {"knit"}
-    price               {"1000"}
-    derivery            {"2019/01/15"}
-    status              {"good"}
-    burden              {"250"}
-    content             {"新品です"}
-    day                 {"2020/1/1"}
-    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
+    name              {"takao"}
+    derivery          {"1"}
+    status            {"1"}
+    price             {"1"}
+    burden            {"1"}
+    content           {"1"}
+    day               {"2020-01-01"}
+    association :user, factory: :user
+    association :image, factory: :image
   end
 end
