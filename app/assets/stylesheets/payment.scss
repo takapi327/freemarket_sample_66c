@@ -3,43 +3,49 @@
   width: 700px;
   margin-left: 350px;
   background-color: white;
-}
-.pay-upper {
+
+  &-upper {
   height: 50px;
   line-height: 50px;
   text-align: center;
   font-family: bold;
   font-size: 1.7rem;
   border-bottom: 1px solid lightgray;
-}
-.pay-down-box {
-  height: 100px;
-  width: 570px;
-  border-bottom: 1px solid lightgray;
-  margin: 0 auto;
-  padding: 50px 50px 50px 200px;
-}
-.pay-down-box-title {
-  margin-bottom: 20px;
-}
-.pay-down-box-btn {
-  display: flex;
-  background-color: red;
-  height: 50px;
-  width: 320px;
-  text-align: center;
-}
-.pay-down-box-btn-icon {
-  color: white;
-  line-height: 50px;
-  margin-right: 20px;
-  margin-left: 30px;
+  }
+
+  &-down-box {
+    height: 100px;
+    width: 570px;
+    border-bottom: 1px solid lightgray;
+    margin: 0 auto;
+    padding: 50px 50px 50px 200px;
+
+    &-title {
+    margin-bottom: 20px;
+    }
+
+    &-btn {
+    display: flex;
+    background-color: red;
+    height: 50px;
+    width: 320px;
+    text-align: center;
+
+      &-icon {
+      color: white;
+      line-height: 50px;
+      margin-right: 20px;
+      margin-left: 30px;
+      }
+      
+      &-text {
+      color: white;
+      line-height: 50px;
+      }
+    }
+  }
 }
 
-.pay-down-box-btn-text {
-  color: white;
-  line-height: 50px;
-}
 
 .pay-down-link {
   color: #0099E8;
