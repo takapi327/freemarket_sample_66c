@@ -85,7 +85,8 @@ end
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby #ここからsns認証用のgem開始
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google'
+gem 'omniauth-facebook' #facebookでのログイン用gem
+gem 'omniauth-google-oauth2' #googleでのログイン用gem,oatuh2が最新のため指定しています。
+gem "omniauth-rails_csrf_protection" #セキュリティ対策のgem,ここまでがsns認証用のgem
