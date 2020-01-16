@@ -4,11 +4,17 @@ RSpec.describe ProductsController, type: :controller do
   describe ProductsController do
 
     describe 'GET #new' do
+      before do
+        user = FactoryBot.create(:user)
+        login user
+      end
+      
       it 'renders the :new template'do
         get :new
         expect(response).to render_template :new
       end
     end
+
   end
   describe '#create' do
     let(:user) { FactoryBot.create(:user) }
@@ -21,15 +27,14 @@ RSpec.describe ProductsController, type: :controller do
       end
 
       context 'can save' do
-        subject{
-          post :create,
-          params: params
-        }
+        # subject{
+        #   post :create, params: params
+        # }
 
         it 'count up product' do
           # binding.pry
-          subject{product.create{product}}
-          expect{subject}.to change{Product.count}.by(1)
+          # product.create{product}
+          expect{post :create, params: params}.to change(Product, :count).by(1)
         end
 
         it 'redirect to index' do
@@ -60,6 +65,7 @@ RSpec.describe ProductsController, type: :controller do
 
     context 'not log in' do
       it 'redirects to new_user_session_path' do
+        # binding.pry
         post :create, params: params
         expect(response).to redirect_to(new_user_session_path)
       end
