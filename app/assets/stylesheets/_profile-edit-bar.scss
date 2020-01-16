@@ -1,0 +1,55 @@
+.edit_page {
+  margin-left: 350px;
+  width: 48vw;
+  background-color: white;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.field {
+  &__top {
+  display: flex;
+  justify-content: center;
+  height: 90px;
+  width: 48vw;
+  background-image: image-url("bg.jpg");
+  background-size:  cover;
+  background-color:rgba(255,255,255,0.5); //background-imageの色をぼかす
+  background-blend-mode:lighten; //明るくする？
+  padding-top: 90px;
+  }
+  &__bottom {
+    margin: 40px 15px 0;
+    height: 300px;
+  }
+}
+
+.image {
+  font-size: 3.0rem;
+}
+
+#norton-idsafe-field-logo-imgId {
+  display: none;
+}
+
+.name_field {
+  height: 40px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.profiel_text {
+  padding: 10px;
+}
+
+.form_btn__edit-action-btn {
+  background-color: red;
+  font-size: 14px; 
+  color: white;
+  height: 50px;
+  width: 46vw;
+  border: none;
+}

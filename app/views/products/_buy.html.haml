@@ -1,0 +1,45 @@
+.main-flame
+  .main-flame-all
+    .main-flame-all-box
+      .main-flame-all-box-buy_text
+        購入内容の確認
+      .main-flame-all-box-buy_content
+        .main-flame-all-box-buy_content-item
+          .main-flame-all-box-buy_content-item_box
+            .main-flame-all-box-buy_content-item_box-image
+            .main-flame-all-box-buy_content-item_box-detail
+              .main-flame-all-box-buy_content-item_box-detail_name
+                ZARA ワンピース
+              .main-flame-all-box-buy_content-item_box-detail_price
+                ¥1,600 （税込）送料込み
+      .main-flame-all-box-choice
+        .main-flame-all-box-choice-flame
+          .main-flame-all-box-choice-flame-price
+            .main-flame-all-box-choice-flame-price_box
+              .main-flame-all-box-choice-flame-price_box_text
+                支払い金額
+              .main-flame-all-box-choice-flame-price_box_number
+                ¥1,600
+            .main-flame-all-box-choice-flame-price_point
+              = icon('far', 'square')
+              ポイントを使用 (所持ポイント: P300)
+
+          .main-flame-all-box-choice-payment
+            .main-flame-all-box-choice-payment-text
+              支払い方法
+            .main-flame-all-box-choice-payment-registration
+              = link_to "#", class: "registration_link" do
+                = icon('fas', 'plus-circle')
+                登録してください
+
+          .main-flame-all-box-choice-delivery
+            .main-flame-all-box-choice-delivery-text
+              配送先
+            .main-flame-all-box-choice-delivery-registration
+              = link_to "#", class: "registration_link" do
+                = icon('fas', 'plus-circle')
+                登録してください
+
+          .main-flame-all-box-choice-buy
+            .main-flame-all-box-choice-buy-button
+              = link_to '購入する', '#', class: 'button'

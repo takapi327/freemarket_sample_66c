@@ -1,0 +1,21 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.buy-exhibition_header {
+  font-family: 'arial narrow';
+  background-color: $flame-border_coler;
+
+  &-body {
+    height: 130px;
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+
+      .icon_fmarket {
+        height: 100px;
+        width: 200px;
+      }
+    }
+  }
+}

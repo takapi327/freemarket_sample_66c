@@ -1,0 +1,19 @@
+.logout {
+  margin-left: 350px;
+  height: 160px;
+  width: 680px;
+  background-color: white;
+  &__btn {
+    display:inline-block;
+    margin: 55px 200px;
+    height: 50px;
+    width: 300px;
+    background-color: red;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .logout_btn {
+    color: white;
+  }
+}
