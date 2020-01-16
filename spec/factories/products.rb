@@ -7,7 +7,6 @@ FactoryBot.define do
     burden            {"1"}
     content           {"1"}
     day               {"2020-01-01"}
-    # user_id           {"1"}
     association :user, factory: :user
     association :image, factory: :image
   end
