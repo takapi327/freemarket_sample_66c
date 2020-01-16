@@ -1,0 +1,211 @@
+.background{
+  background-color: lightgray;
+  padding-top: 50px;
+}
+.wrapper-product-show {
+  margin-left: 350px;
+  width: 700px;
+  background-color: white;
+}
+
+.product-show {
+  box-sizing: border-box;
+  width: 700px;
+  padding: 20px 40px;
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &__item {
+    display: flex;
+    &__image {
+      height: 410px;
+      width: 300px;
+      background-color: blue;
+      margin-right: 20px;
+      &__main{
+        height: 350px;
+        width: 260px;
+        background-image: image-url("bg.jpg");
+        margin: 0 auto;
+      }
+      &__sub {
+        display: flex;
+        .owl-bot {
+          height: 30px;
+          width: 30px;
+          background-color: slateblue;
+        }
+      }
+    }
+    &__table {
+      th {
+        background-color: lightgray;
+        padding: 10px;
+        font-size: 14px;
+        width: 100px;
+      }
+      td {
+        font-size: 14px;
+        padding: 10px;
+        width: 200px;
+      }
+      .face-icon {
+        font-size: 1.3rem;
+        .fa-grin {
+          color: pink;
+          margin-right: 5px;
+        }
+        .fa-meh {
+          color: rgb(192, 192, 76);
+          margin-right: 5px;
+        }
+        .fa-frown {
+          color: skyblue;
+          margin-right: 5px;
+        }
+      }
+    }
+    &__box {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      .item-price {
+        font-size: 40px;
+        margin-right: 20px;
+        font-weight: bold;
+        align-self: flex-end;
+      }
+      .item-tax {
+        font-size: 10px;
+        align-self: flex-end;
+      }
+      .item-fee {
+        align-self: flex-end;
+      }
+    }
+    &__bottom {
+      padding: 40px 0 40px;
+      .item-description {
+        height: 300px;
+      }
+      .item-btn {
+        display: flex;
+        justify-content: space-between;
+      }
+      .item-btn-left {
+        display: flex;
+        &__like, &__inappropriate{
+          background-color: lightgrey;
+          border-radius: 20px;
+          font-size: 12px;
+          padding: 5px;
+          margin-right: 5px;
+        }
+      }
+      .item-btn-right {
+        &__link a{
+          color: skyblue;
+        }
+      }
+    }
+  }
+  &__comment {
+    padding: 20px 40px;
+    &__top {
+      background-color: yellowgreen;
+      font-size: 13px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  }
+  &__buy-btn a{
+    background-color: red;
+    height: 50px;
+    width: 600px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+.blunk{
+  background-color: lightgrey;
+  height: 5px;
+  width: 700px;
+}
+
+.form__submit__text {
+  width: 618px;
+  height: 100px;
+}
+.form__submit__comment{
+  width: 620px;
+  height: 50px;
+  background-color: gray;
+  color: white;
+}
+.bottom-page-link {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 15px 0 15px;
+}
+.bottom-page-link a{
+  color: blue;
+}
+.bottom-icon-box {
+  box-sizing: border-box;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  font-size: 3.0rem;
+  background-color: white;
+  .fa-facebook-square {
+    color: blue;
+    margin: 5px;
+  }
+  .fa-twitter-square {
+    color: skyblue;
+    margin: 5px;
+  }
+  .fa-pinterest-square {
+    color: red;
+    margin: 5px;
+    
+  }
+}
+
+.bottom-product {
+  background-color: lightgray;
+  &__title{
+  color: skyblue;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0 10px;
+  }
+  &__boxs {
+    display: flex;
+  }
+  &__box {
+    height: 300px;
+    width: 230px;
+    margin-right: 10px;
+    &__image {
+      box-sizing: border-box;
+      height: 200px;
+      text-align: center;
+      background-color: rgb(57, 57, 160);
+      padding-top: 100px;
+    }
+    &__text {
+      padding: 10px;
+      background-color: white;
+      font-size: 12px;
+    }
+  }
+}
