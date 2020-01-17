@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #deviseのクラスを継承したコントローラを使用させるためにdeviseのルーティングを変更
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "products#index"
   get 'users/logout' => 'users#logout'
   get 'users/cardregister' => 'users#cardregister'
