@@ -48,7 +48,6 @@ $(function(){
     if(file_box.files.length == 1){
       $('input[type=file]').val(null)
       dataBox.clearData();
-      console.log(dataBox)
     }else{
       $.each(file_box.files, function(i, input){
         if(input.name == delete_name){
@@ -63,8 +62,4 @@ $(function(){
     $('#box').show()
     $('#box').attr('class', `sell-image_box-${num}`)
   })
-  // $(document).on('click', '.item-img_operetion_edit', function(){
-  //   var edit_img = $(this).parent().parent()
-  //   var edit_name = $('edit_img').data('image')
-  // })
 });
