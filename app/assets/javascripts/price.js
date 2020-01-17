@@ -2,7 +2,6 @@ $(function(){
 
   $('.price_text').on({
     'input' : function(e){
-    // console.log('hello');
 
       var profit = document.getElementById('id').value;
       var tax_price = function(price){
