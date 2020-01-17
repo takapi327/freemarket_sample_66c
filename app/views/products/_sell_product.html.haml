@@ -42,7 +42,6 @@
                 カテゴリー
                 %span.require 必須
               %div.select-box.box{:action => "", :name => "form1"}
-                -# %select#select1
                 = f.fields_for :categories do |c|
                   = c.select :name, name: "product[categories_attributes][][name]" do
                     %option{:value => ""} ---
@@ -147,7 +146,6 @@
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                -# %select#select1 
                 = f.select :day do
                   %option{:value => ""} ---
                   %option{:value => "1"} 1~2日で発送
