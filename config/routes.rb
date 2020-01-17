@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "products#index"
-  get 'users/logout' => 'users#logout'
-  get 'users/cardregister' => 'users#cardregister'
+  get 'users/logout', to: 'users#logout'
+  get 'users/cardregister', to: 'users#cardregister'
   resources :products, only: [:index, :new, :create, :show]
   resources :users, only: [:index, :show, :edit]
 end

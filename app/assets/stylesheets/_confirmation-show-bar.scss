@@ -17,12 +17,6 @@ h4 {
   font-size: 16px;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
 p {
   font-size: 14px;
 } 
@@ -37,6 +31,7 @@ p {
   }
   .uploader_link a{
     color: #0099e8;
+    text-decoration: none;
   }
   .form_list {
     margin-top: 40px;
