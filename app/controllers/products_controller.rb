@@ -8,4 +8,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def buy
+    @product = Product.new
+  end
+
+  require 'payjp'
 end

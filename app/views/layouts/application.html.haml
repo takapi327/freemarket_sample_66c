@@ -7,5 +7,7 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %script{type: "text/javascript"} Payjp.setPublicKey('pk_test_54865b81e89cc5981c073402');
   %body
     = yield
