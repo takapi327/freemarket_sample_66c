@@ -11,4 +11,5 @@ class Product < ApplicationRecord
   validates :user_id, presence: true
   validates :price, presence: true
   accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :areas
 end
