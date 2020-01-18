@@ -18,6 +18,7 @@ class CardsController < ApplicationController
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card.save
       # binding.pry
       # if @card
       #   redirect_to action: "index"
