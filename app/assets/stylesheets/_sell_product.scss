@@ -20,18 +20,7 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .require{
-          background: #ea352d;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          font-size: 12px;
-          vertical-align: top;
-          width: 32px;
-          height: 19px;
-          font-weight: bold;
-        }
+       @include require();
         p{
           margin: 8px 0 0;
           line-height: 1.5;
@@ -106,52 +95,14 @@
         padding: 40px;
         .product__name{
           height: 100%;
-          .require{
-            background: #ea352d;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-            width: 32px;
-            height: 19px;
-            font-weight: bold;
-          }
-          label{
-            font-size: 14px;
-            font-weight: bold;
-          }
-          .form__product__name{
-            width: 100%;
-            margin: 8px 0 0;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-            box-sizing: border-box;
-          }
+          @include require();
+          @include label();
+          @include product();
         }
         .product__content{
           margin: 40px 0 0;
-          .require{
-            background: #ea352d;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-            width: 32px;
-            height: 19px;
-            font-weight: bold;
-          }
-          label{
-            font-size: 14px;
-            font-weight: bold;
-          }
+          @include require();
+          @include label();
           .form__product__name{
             width: 100%;
             margin: 8px 0 0;
@@ -170,170 +121,12 @@
         border-top: 1px solid #eee;
         padding: 40px;
         box-sizing: border-box;
-        .index__tittle{
-          float: left;
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-        }
-        .index__box{
-          float: right;
-          width: 400px;
-          margin: 0;
-        }
-        .product__category__group{
-          margin-bottom: 28px;
-        }
-        .require{
-          background: #ea352d;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          font-size: 12px;
-          vertical-align: top;
-          width: 32px;
-          height: 19px;
-          font-weight: bold;
-        }
-        label{
-          font-size: 14px;
-          font-weight: bold;
-        }
-        .select-box{
-          overflow: hidden;
-          width: 90%;
-          margin: 0.5em auto;
-          text-align: center;
-        }
-        .select-box select{
-          width: 100%;
-          padding-right: 1em;
-          cursor: pointer;
-          text-indent: 0.01px;
-          text-overflow: ellipsis;
-          border: none;
-          outline: none;
-          background: transparent;
-          background-image: none;
-          box-shadow: none;
-          -webkit-appearance: none;
-          appearance: none;
-        }
-        .select-box select::-ms-expand {
-          display: none;
-        }
-        .select-box.box{
-          width: 100%;
-          height: 48px;
-          position: relative;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-        }
-        .select-box.box::before{
-          position: absolute;
-          top: 1.3em;
-          right: 0.8em;
-          width: 0;
-          height: 0;
-          padding: 0;
-          content: '';
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-top: 6px solid #000;
-          pointer-events: none;
-        }
-        .select-box.box select{
-          line-height: 30px;
-          padding: 8px 38px 8px 8px;
-	        color: #000;
-        }
+        @include product-file();
       }
       .sell-content__derivery{
         border-top: 1px solid #eee;
         padding: 40px;
-        .index__tittle{
-          float: left;
-          color: #888;
-          font-size: 14px;
-          font-weight: bold;
-        }
-        .index__box{
-          float: right;
-          width: 400px;
-          margin: 0;
-        }
-        .product__category__group{
-          margin-bottom: 28px;
-        }
-        .require{
-          background: #ea352d;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          color: #fff;
-          font-size: 12px;
-          vertical-align: top;
-          width: 32px;
-          height: 19px;
-          font-weight: bold;
-        }
-        label{
-          font-size: 14px;
-          font-weight: bold;
-        }
-        .select-box{
-          overflow: hidden;
-          width: 90%;
-          margin: 0.5em auto;
-          text-align: center;
-        }
-        .select-box select{
-          width: 100%;
-          padding-right: 1em;
-          cursor: pointer;
-          text-indent: 0.01px;
-          text-overflow: ellipsis;
-          border: none;
-          outline: none;
-          background: transparent;
-          background-image: none;
-          box-shadow: none;
-          -webkit-appearance: none;
-          appearance: none;
-        }
-        .select-box select::-ms-expand {
-          display: none;
-        }
-        .select-box.box{
-          width: 100%;
-          height: 48px;
-          position: relative;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-        }
-        .select-box.box::before{
-          position: absolute;
-          top: 1.3em;
-          right: 0.8em;
-          width: 0;
-          height: 0;
-          padding: 0;
-          content: '';
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-top: 6px solid #000;
-          pointer-events: none;
-        }
-        .select-box.box select{
-          line-height: 30px;
-          padding: 8px 38px 8px 8px;
-	        color: #000;
-        }
+        @include product-file();
       }
       .clearfix::after{
         content: "";
