@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_092311) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.string "name", null: false
+    t.integer "name", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_areas_on_product_id"
@@ -40,17 +40,19 @@ ActiveRecord::Schema.define(version: 2020_01_14_092311) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "derivery", null: false
+    t.string "derivery"
     t.string "name", null: false
     t.integer "status", default: 0, null: false
     t.integer "price", null: false
     t.integer "burden", default: 0, null: false
     t.text "content", null: false
-    t.date "day", null: false
+    t.string "day", null: false
     t.bigint "buyer_id"
+    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
+    t.index ["seller_id"], name: "index_products_on_seller_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -81,5 +83,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_092311) do
   add_foreign_key "images", "products"
   add_foreign_key "products", "users"
   add_foreign_key "products", "users", column: "buyer_id"
+  add_foreign_key "products", "users", column: "seller_id"
   add_foreign_key "sns_credentials", "users"
 end
