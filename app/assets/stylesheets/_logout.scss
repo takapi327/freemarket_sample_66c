@@ -1,19 +1,23 @@
 .logout {
-  margin-left: 350px;
-  height: 160px;
-  width: 680px;
+  box-sizing: border-box;
+  float: right;
+  height: 12%;
+  width: 48vw;
+  padding: 50px;
   background-color: white;
   &__btn {
-    display:inline-block;
-    margin: 55px 200px;
-    height: 50px;
-    width: 300px;
-    background-color: red;
-    line-height: 50px;
-    text-align: center;
-    font-size: 14px;
+    max-width: 320px;
+    margin: 0 auto;
   }
-  .logout_btn {
+  &__btn a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    height: 50px;
+    width: 24vw;
+    font-size: 14px;
+    background-color: red;
     color: white;
+    line-height: 50px;
   }
 }
