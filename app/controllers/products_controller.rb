@@ -27,6 +27,11 @@ class ProductsController < ApplicationController
     # binding.pry
   end
 
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params) 
+  end
+
   private
   def product_params
     params.require(:product).permit(:id, :name, :content, :status, :burden, :day, :price, :derivery, images_attributes: [:image], areas_attributes: [:name], categories_attributes: [:name]).merge(user_id: current_user.id)
