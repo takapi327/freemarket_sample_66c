@@ -1,7 +1,7 @@
 .main_bar {
   width: 48vw;
   background-color: white;
-  margin-left: 350px;
+  float: right;
   &__title {
     border-bottom: solid 1px;
     border-color: lightgray;
@@ -59,7 +59,7 @@ p {
     }
     &__input {
       height: 30px;
-      width: 40vw;
+      width: 42vw;
       // border-radius: 2px;
       // box-shadow: none;
       padding: 10px;
@@ -73,7 +73,7 @@ p {
     }
     .fa-chevron-down {
     position: absolute;//子のポジション指定
-    right: 25px;//右25px空ける
+    right: 1vw;//右25px空ける
     top: 50%;//上から60%の位置へ
     z-index: 2;//親の下へ潜り揉まないようにする
     color: #888;
