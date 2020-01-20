@@ -1,5 +1,5 @@
 .edit_page {
-  margin-left: 350px;
+  float: right;
   width: 48vw;
   background-color: white;
 }
@@ -23,7 +23,7 @@ h3 {
   }
   &__bottom {
     margin: 40px 15px 0;
-    height: 300px;
+    min-height: 300px;
   }
 }
 
@@ -36,9 +36,11 @@ h3 {
 }
 
 .name_field {
+  box-sizing: border-box;
   height: 40px;
   width: 200px;
   margin-left: 10px;
+  padding: 5px;
 }
 
 .profiel_text {
