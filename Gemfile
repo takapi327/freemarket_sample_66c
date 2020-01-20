@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -92,3 +92,4 @@ gem 'omniauth-google-oauth2' #googleでのログイン用gem,oatuh2が最新の�
 gem "omniauth-rails_csrf_protection" #セキュリティ対策のgem,ここまでがsns認証用のgem
 gem 'jquery-rails'
 gem 'ancestry'
+gem 'active_hash'
