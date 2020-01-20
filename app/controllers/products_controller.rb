@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @product.save
     redirect_to new_user_session_path
   end
-
+  
   def show
     @product = Product.find(params[:id])
   end

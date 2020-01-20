@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root "products#index"
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
-  resources :products, only: [:index, :new, :create, :show]
+  resources :products, only: [:index, :new, :create, :show, :edit]
   resources :users, only: [:index, :show, :edit]
 end
