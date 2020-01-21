@@ -97,4 +97,23 @@ RSpec.describe ProductsController, type: :controller do
       end
     end
   end
+
+  describe "GET #show" do
+    context 'create product' do
+      before do
+        @product = FactoryBot.create(:product)
+      end
+      it "assigns the requested product to @product" do
+        product = create(:product)
+        get :show, params: { id: product }
+        expect(assigns(:product)).to eq product
+      end
+
+      it "renders the :show template" do
+        get :show, params: { id: @product }
+        expect(response).to render_template :show
+      end
+    end
+  end
+
 end
