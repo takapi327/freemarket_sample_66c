@@ -209,3 +209,43 @@
     }
   }
 }
+.product-show__swittch {
+  width: 700px;
+  height: 250px;
+}
+.product-show__swittch__edit a{
+  background-color: red;
+  height: 50px;
+  width: 670px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin: 16px 0 16px 15px;
+}
+.product-show__swittch__text {
+  text-align: center;
+}
+.product-show__swittch__stop {
+  background-color: #aaa;
+  height: 50px;
+  width: 670px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin: 16px 0 16px 15px;
+}
+.product-show__swittch__delete {
+  background-color: #aaa;
+  height: 50px;
+  width: 670px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin: 16px 0 16px 15px;
+}
