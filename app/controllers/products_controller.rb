@@ -29,7 +29,9 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update(product_params) 
+    @product.update(product_params)
+    redirect_to root_path
+    
   end
 
   private
