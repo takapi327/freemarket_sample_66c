@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
-    redirect_to new_user_session_path
+    redirect_to root_path
   end
 
   def show
