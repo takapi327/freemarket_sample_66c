@@ -47,6 +47,19 @@
   }
 }
 
+@mixin login(){
+  display: block;
+  padding-left: 14px;
+}
+
+@mixin logina{
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 32px;
+  padding: 0px 7px;
+}
+
 // ここからsell_priduct.scss
 @mixin require(){
   .require{

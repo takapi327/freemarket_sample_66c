@@ -1,7 +1,33 @@
 .aside{
-  background-color: #3399FF;
+  background-image: url(bg.jpg);
   height: calc(100vh - 417.86px);
   width: 100vw;
+  background-size: cover;
+  .Ftittle{
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    left: 300px;
+    top: 90px;
+  }
+  .Ftittle1{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    left: 300px;
+    top: 100px;
+  }
+  .Fbox{
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    position: relative;
+    left: 300px;
+    top: 120px;
+  }
 }
 .footer{
   position: relative;
