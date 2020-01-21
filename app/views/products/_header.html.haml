@@ -2,7 +2,7 @@
   .header__box
     .header__box__top
       .header__box__top__logo
-        = image_tag "fmarket_logo_red.svg", class: "icon"
+        = link_to image_tag("fmarket_logo_red.svg", class: "icon"),root_path
       .form
         = form_for @product do |f|
           .input-box
@@ -104,7 +104,22 @@
               %li.pull_list
                 = link_to "ブランド一覧", "#", class: "tab"
       .header__box__bottom__login
-        .header__box__bottom__login__sign_up
-          = link_to "新規会員登録", "#", class: "btn"
-        .header__box__bottom__login__log_in
-          = link_to "ログイン", "#", class: "btn"
+        - if user_signed_in?
+          %ul.header__box__bottom__login__box
+            %li.box__like
+              = icon('fas', 'heart fa-lg', class: 'login')
+              = link_to "いいね!一覧", "#"
+            %li.box__notification
+              = icon('fas', 'bell fa-lg', class: 'login')
+              = link_to "お知らせ", "#"
+            %li.box__todo
+              = icon('fas', 'check fa-lg', class: 'login')
+              = link_to "やることリスト", "#"
+            %li.box__mypage
+              = icon('fas', 'user-circle fa-2x', class: 'login')
+              = link_to "マイページ", users_path
+        - else
+          .header__box__bottom__login__sign_up
+            = link_to "新規会員登録", new_user_registration_path, class: "btn"
+          .header__box__bottom__login__log_in
+            = link_to "ログイン", new_user_session_path, class: "btn"

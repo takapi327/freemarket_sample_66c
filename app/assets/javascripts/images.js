@@ -4,9 +4,21 @@ $(function(){
 
   var file_box = document.querySelector('input[type = file]')
 
-  $('#img-file').change(function(){
+  var DropArea = document.getElementById('image-box-1');
+
+  DropArea.addEventListener('dragover', function(e){
+    e.preventDefault();
+  });
+
+  DropArea.addEventListener('dragleave', function(e){
+    e.preventDefault();
+  });
+
+  DropArea.addEventListener('drop', function(e){
+    e.preventDefault();
+    var files = e.dataTransfer.files
     var file = $('input[type = file]').prop('files')[0];
-    $.each(this.files, function(i, file){
+    $.each(files, function(i, file){
       var file_img = new FileReader();
 
       dataBox.items.add(file)
@@ -39,11 +51,10 @@ $(function(){
       };
       $('#box').attr('class', `sell-image_box-${num}`)
    });
-  });
-  
+});
   // 画像を削除するアクション
   $(document).on('click', '.item-img_operetion_delete', function(){
-    var delete_img = $(this).parent().parent()
+    var delete_img = $(this).parents('.item-img')
     var delete_name = $('delete_img').data('image')
     if(file_box.files.length == 1){
       $('input[type=file]').val(null)
@@ -56,7 +67,7 @@ $(function(){
       })
       file_box.files = dataBox.files
     }
-    delete_img.remove();
+    delete_img.remove()
     
     var num = $('.item-img').length
     $('#box').show()

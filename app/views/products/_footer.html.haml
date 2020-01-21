@@ -1,4 +1,9 @@
 .aside
+  %p.Ftittle
+    = "スマホでかんたんフリマアプリ"
+  %p.Ftittle1
+    = "今すぐ無料ダウンロード!"
+  .Fbox
 .footer
   .footer__nav
     .footer__nav__menu
@@ -71,6 +76,6 @@
           = link_to "United States", "#", class: "text"
   .footer__bottom
     .footer__bottom__logo
-      = image_tag "fmarket_logo_red.svg", class: "icon2"
+      = link_to image_tag("fmarket_logo_red.svg", class: "icon2"),root_path
     .footer__bottom__copy
       ©︎ Fmarket,int.
