@@ -64,14 +64,7 @@
                 商品の状態
                 %span.require 必須
               %div.select-box.box
-                = f.select :status, name: "product[categories_attributes][][name]" do
-                  %option{value: ""} ---
-                  %option{value: "1"} 新品、未使用
-                  %option{value: "2"} 未使用に近い
-                  %option{value: "3"} 目立った傷や汚れなし
-                  %option{value: "4"} やや傷や汚れあり
-                  %option{value: "5"} 傷や汚れあり
-                  %option{value: "5"} 全体的に状態が悪い
+                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}, name: "product[categories_attributes][][name]"
           .sell-content__derivery.clearfix
             %h3.index__tittle
               配送について
