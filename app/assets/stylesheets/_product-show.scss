@@ -20,14 +20,12 @@
   &__item {
     display: flex;
     &__image {
-      height: 410px;
+      height: 400px;
       width: 20vw;
-      background-color: blue;
       margin-right: 20px;
       &__main{
         height: 350px;
         width: 90%;
-        background-image: image-url("bg.jpg");
         margin: 0 auto;
       }
       &__sub {

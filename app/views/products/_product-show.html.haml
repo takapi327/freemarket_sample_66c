@@ -5,9 +5,15 @@
         %h2= "#{@product.name}"
       .product-show__item
         .product-show__item__image
-          .product-show__item__image__main
+          .product-show__item__image__main#main-image
+            = image_tag "#{@images[0].image}", class: "main-image", width:250, height:300
           .product-show__item__image__sub
-            .owl-dot
+            .product-show__item__image__sub__box
+            %ul.sub-image
+              %li
+                - @images.each do |i|
+                  = image_tag i.image.to_s,width:50,height:70, class: "thumb"
+              .owl-dot
         %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
           %tbody
             %tr
