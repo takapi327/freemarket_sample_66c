@@ -18,13 +18,4 @@ class Product < ApplicationRecord
     return Product.all unless search
     Product.where(['name LIKE ?', "%#{search}%"])
   end
-
-  # def last_image
-  #   # if(last_image = images.last).present?
-  #   #   if last_image.image?
-  #   #     last_image.image
-  #   #   end
-  #   # end
-  #   image.last
-  # end
 end
