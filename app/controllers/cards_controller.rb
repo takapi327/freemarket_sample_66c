@@ -6,7 +6,7 @@ class CardsController < ApplicationController
     # redirect_to action: "show" if card.exists?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def make #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = 'sk_test_cf62dd25d74a63a633cea0bf'
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -19,9 +19,8 @@ class CardsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       @card.save
-      # binding.pry
       # if @card
-      #   redirect_to action: "index"
+      redirect_to buy_products_path
       # else
       #   redirect_to action: "pay"
       # end

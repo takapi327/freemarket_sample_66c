@@ -4,7 +4,7 @@
       クレジットカード情報入力
     .card-form
       .card-form__box
-        = form_tag(pay_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
+        = form_tag(make_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
           .card-form__box__number
             %label{class:'box-group--label', for: 'card_number'} カード番号
             %span.input-require

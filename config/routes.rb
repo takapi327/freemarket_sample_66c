@@ -1,17 +1,29 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "cards#show"
-  post 'products', to: 'products#buy'
-  # post 'cards', to: 'cards#pay'
+  root "products#index"
+  post 'pay', to: 'purchase#pay'
 
   resources :cards, only: [:new, :show] do
     collection do
-      post 'pay', to: 'cards#pay'
+      post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'
     end
   end
 
-  resources :products, only: [:index, :new, :show]
+  resources :purchase, only: [:new] do
+    member do
+      get 'index', to: 'purchase#index'
+      # post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+
+  resources :products, only: [:index, :new, :show] do
+    member do
+      get 'buy', to: 'products#buy'
+    end
+  end
+
   resources :users, only: [:index, :show, :edit]
 end
