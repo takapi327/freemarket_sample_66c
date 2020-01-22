@@ -1,0 +1,25 @@
+.search
+  .search-right
+    %section.items-box-container
+      -if @search.present?
+        %h2.search-tittle
+          = @search
+          %span.search-result-head-text
+            の検索結果
+        .search-result-number
+          ="1-#{@products.count}件表示"
+      -else
+        %h2.search-result-nil
+          新着商品
+      .product__boxs
+        -# = link_to product_path(@product)
+        %ul.product__boxs-parent
+          %li.product__boxs-list
+            - @products.each do |products|
+              .product__boxs-file
+                .product__boxs-image
+                  = image_tag "#{products.images.first.image}", class: 'image'
+                .product__boxs-price
+                  = ('¥' + products.price.to_s(:delimited))
+                .product__boxs-content
+                  = products.content

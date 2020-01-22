@@ -3,13 +3,19 @@
     .header__box__top
       .header__box__top__logo
         = link_to image_tag("fmarket_logo_red.svg", class: "icon"),root_path
-      .form
-        = form_for @product do |f|
+        .form
           .input-box
-            = f.text_field :content, class: 'input-box__text', placeholder: '何かお探しですか？'
-            = f.button type: "submit", class: 'input-search' do
-              = icon('fas', 'search')
-
+            -# = f.text_field :search, class: 'input-box__text', placeholder: '何かお探しですか？'
+            -# = f.button type: "search", class: 'input-search' do
+            -#   = link_to icon('fas', 'search'), searches_path
+            = form_tag(searches_path,method: :get) do
+              = text_field_tag :search, "", class: 'input-box__text', placeholder:"何かお探しですか？"
+              = submit_tag 'search', class: 'input-search', :name => nil, id: 'tagid' 
+              %label{for: "tagid"}
+                = icon('fas', 'search')
+            
+      -# .form
+      -#   = form_for @product do |f|
     .header__box__bottom
       .header__box__bottom__menu
         %ul.header__box__bottom__menu__item1#tabs

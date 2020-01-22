@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'users/cardregister', to: 'users#cardregister'
   resources :products, only: [:index, :new, :create, :show, :destroy]
   resources :users, only: [:index, :show, :edit]
+  resources :searches, only: [:index]
 end

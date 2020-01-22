@@ -13,4 +13,18 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :areas
   accepts_nested_attributes_for :categories
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
+
+  # def last_image
+  #   # if(last_image = images.last).present?
+  #   #   if last_image.image?
+  #   #     last_image.image
+  #   #   end
+  #   # end
+  #   image.last
+  # end
 end
