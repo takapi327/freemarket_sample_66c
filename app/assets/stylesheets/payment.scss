@@ -30,7 +30,9 @@
     height: 50px;
     width: 320px;
     text-align: center;
-
+    cursor: pointer;
+    text-decoration: none;
+    
       &-icon {
       color: white;
       line-height: 50px;
@@ -41,6 +43,7 @@
       &-text {
       color: white;
       line-height: 50px;
+      text-decoration: none;
       }
     }
   }
