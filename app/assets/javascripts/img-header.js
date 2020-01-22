@@ -1,14 +1,15 @@
-$(function(){
-  const img = ["img.ipg"];
-  let num = -1;
+// スライドショーの機能を実装している段階です。まだ未実装なためコメントアウトをしています。
+// window.onload = ()=>{
+//   const img = ["assets/images/img1.jpg"];
+//   let num = -1;
 
-  function slideshow_timer(){
-    if(num == 1){
-      num = 0;
-    }else{
-      num ++;
-    }
-    document.getElementById('img').src = img[num];
-  }
-   setInterval(slideshow_timer, 1000);
-});
+//   function slideshow_timer(){
+//     if(num == 1){
+//       num = 0;
+//     }else{
+//       num ++;
+//     }
+//     document.getElementById('img').src = img[num];
+//   }
+//    setInterval(slideshow_timer, 3000);
+// }

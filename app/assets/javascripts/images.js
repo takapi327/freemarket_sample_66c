@@ -17,7 +17,7 @@ $(function(){
   DropArea.addEventListener('drop', function(e){
     e.preventDefault();
     var files = e.dataTransfer.files
-    var file = $('input[type = file]').prop('files')[0];
+    // var file = $('input[type = file]').prop('files')[0];
     $.each(files, function(i, file){
       var file_img = new FileReader();
 
