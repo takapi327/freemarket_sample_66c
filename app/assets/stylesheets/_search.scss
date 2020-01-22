@@ -27,53 +27,51 @@
           width: 100%;
           cursor: pointer;
           .product__boxs-parent{
-            height: 600px;
-            width: 100%;
             list-style: none;
-            .product__boxs-list{
-              display: flex;
-              .product__boxs-file{
-                margin-right: 20px;
-                margin-bottom: 20px;
-                height: 200px;
-                width: 150px;
-                .product__boxs-image{
-                  height: 140px;
-                  box-sizing: border-box;
-                  .image{
-                    height: 150px;
-                    width: 150px;
-                    box-sizing: border-box;
-                  }
-                  
-                }
-                .product__boxs-price{
-                  height: 25px;
-                  width: 70px;
-                  background-color: black;
-                  border-top-right-radius: 25px;
-                  border-bottom-right-radius: 25px;
-                  margin-bottom: 5px;
-                  background: rgba(17, 16, 16, 0.3);
-                  font-size: 18px;
-                  text-align: center;
-                  line-height: 25px;
-                  color: white;
-                  position: relative;
-                  bottom: 20px;
-                }
-                .product__boxs-content{
-                  word-break: break-word;
-                  overflow: hidden;
-                  height: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            .product__boxs-file{
+              margin-right: 20px;
+              margin-bottom: 20px;
+              height: 200px;
+              width: 150px;
+              margin-top: 0;
+              .product__boxs-image{
+                height: 140px;
+                box-sizing: border-box;
+                .image{
+                  height: 150px;
                   width: 150px;
-                  padding: 5px;
                   box-sizing: border-box;
-                  background-color: white;
-                  position: relative;
-                  bottom: 20px;
-                  font-size: 14px;
                 }
+                
+              }
+              .product__boxs-price{
+                height: 25px;
+                width: 70px;
+                background-color: black;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                margin-bottom: 5px;
+                background: rgba(17, 16, 16, 0.3);
+                font-size: 18px;
+                text-align: center;
+                line-height: 25px;
+                color: white;
+                position: relative;
+                bottom: 20px;
+              }
+              .product__boxs-content{
+                word-break: break-word;
+                overflow: hidden;
+                height: 50px;
+                width: 150px;
+                padding: 5px;
+                box-sizing: border-box;
+                background-color: white;
+                position: relative;
+                bottom: 20px;
+                font-size: 14px;
               }
             }
           }

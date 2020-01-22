@@ -13,12 +13,11 @@
           新着商品
       .product__boxs
         %ul.product__boxs-parent
-          %li.product__boxs-list
-            - @products.each do |products|
-              .product__boxs-file
-                .product__boxs-image
-                  = image_tag "#{products.images.first.image}", class: 'image'
-                .product__boxs-price
-                  = ('¥' + products.price.to_s(:delimited))
-                .product__boxs-content
-                  = products.content
+          - @products.each do |products|
+            %li.product__boxs-file
+              .product__boxs-image
+                = image_tag "#{products.images.first.image}", class: 'image'
+              .product__boxs-price
+                = ('¥' + products.price.to_s(:delimited))
+              .product__boxs-content
+                = products.content
