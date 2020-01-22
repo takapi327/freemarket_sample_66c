@@ -64,6 +64,7 @@
                 商品の状態
                 %span.require 必須
               %div.select-box.box
+                = f.text_field :status
                 = f.select :status, name: "product[categories_attributes][][name]" do
                   %option{value: ""} ---
                   %option{value: "1"} 新品、未使用

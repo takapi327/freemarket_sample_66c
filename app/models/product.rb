@@ -13,4 +13,10 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :areas
   accepts_nested_attributes_for :categories
+
+
+  enum status:{
+    "---":0,
+     送料込み(出品者負担):1,着払い(購入者負担):2
+  }
 end
