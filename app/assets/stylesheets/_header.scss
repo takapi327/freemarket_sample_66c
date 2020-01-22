@@ -25,7 +25,6 @@
       }
     }
     .form{
-      // position:               relative;
       width:                  100%;
       .input-box{
         &__text{
@@ -46,15 +45,6 @@
         }
         .input-search{
           background-color:   transparent;
-          // cursor:             pointer;
-          // height:             40px;
-          // position:           absolute;
-          // // right:              0px;
-          // top:                0px;
-          // width:              40px;
-          // border-style:       none;
-          // border-radius:      0px 4px 4px 0px;
-          // font-size:          0.9rem;
           display: none;
         }
         .fa-search{
