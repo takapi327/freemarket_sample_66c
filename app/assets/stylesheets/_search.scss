@@ -3,21 +3,21 @@
   .search{
     margin: 40px 210px 0;
     display: block;
-    .search-right{
+    &-right{
       box-sizing: border-box;
       width: 700px;
-      .items-box-container{
+      &-container{
         margin: 0 auto;
-        .search-tittle{
+        &-tittle{
           font-size: 22px;
           margin: 0 0 8px;
           font-weight: bold;
         }
-        .search-result-head-text{
+        &-text{
           font-size: 18px;
           font-weight: normal;
         }
-        .search-result-number{
+        &-number{
           margin: 16px 0;
           font-size: 12px;
           color: #888;
@@ -26,17 +26,17 @@
           height: 600px;
           width: 100%;
           cursor: pointer;
-          .product__boxs-parent{
+          &-parent{
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            .product__boxs-file{
+            &-file{
               margin-right: 20px;
               margin-bottom: 20px;
               height: 200px;
               width: 150px;
               margin-top: 0;
-              .product__boxs-image{
+              &-image{
                 height: 140px;
                 box-sizing: border-box;
                 .image{
@@ -46,7 +46,7 @@
                 }
                 
               }
-              .product__boxs-price{
+              &-price{
                 height: 25px;
                 width: 70px;
                 background-color: black;
@@ -61,7 +61,7 @@
                 position: relative;
                 bottom: 20px;
               }
-              .product__boxs-content{
+              &-content{
                 word-break: break-word;
                 overflow: hidden;
                 height: 50px;

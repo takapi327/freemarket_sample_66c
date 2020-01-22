@@ -1,23 +1,23 @@
 .search
   .search-right
-    %section.items-box-container
-      -if @search.present?
-        %h2.search-tittle
+    %section.search-right-container
+      - if @search.present?
+        %h2.search-right-container-tittle
           = @search
-          %span.search-result-head-text
+          %span.search-right-container-text
             の検索結果
-        .search-result-number
+        .search-right-container-number
           ="1-#{@products.count}件表示"
-      -else
+      - else
         %h2.search-result-nil
           新着商品
       .product__boxs
         %ul.product__boxs-parent
           - @products.each do |products|
-            %li.product__boxs-file
-              .product__boxs-image
+            %li.product__boxs-parent-file
+              .product__boxs-parent-file-image
                 = image_tag "#{products.images.first.image}", class: 'image'
-              .product__boxs-price
+              .product__boxs-parent-file-price
                 = ('¥' + products.price.to_s(:delimited))
-              .product__boxs-content
+              .product__boxs-parent-file-content
                 = products.content
