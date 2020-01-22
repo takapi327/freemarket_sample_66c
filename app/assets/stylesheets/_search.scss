@@ -26,12 +26,10 @@
           height: 600px;
           width: 100%;
           cursor: pointer;
-          // display: block;
           .product__boxs-parent{
             height: 600px;
             width: 100%;
             list-style: none;
-            // display:flex;
             .product__boxs-list{
               display: flex;
               .product__boxs-file{
@@ -40,7 +38,6 @@
                 height: 200px;
                 width: 150px;
                 .product__boxs-image{
-                  // width: 150px;
                   height: 140px;
                   box-sizing: border-box;
                   .image{
