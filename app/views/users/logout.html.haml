@@ -1,5 +1,9 @@
 .wrapper
   = render "/products/header.html.haml"
+  %ul.breadcrumb-list
+    - breadcrumb :mypage
+    - breadcrumb :logout
+    = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
   .my-page-background
     = render "side-bar"
     .logout
