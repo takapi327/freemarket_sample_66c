@@ -18,7 +18,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_cf62dd25d74a63a633cea0bf"
     Payjp::Charge.create(

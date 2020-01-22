@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :cards
 
   #deviseのデフォルトバリデーションはemail,passwordのみのため、追加しています
-  validates :nickname, presence: true, length: { maximum: 6 }
+  validates :nickname, presence: true, length: { maximum: 20 }
 end
