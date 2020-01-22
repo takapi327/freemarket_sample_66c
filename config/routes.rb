@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #deviseのクラスを継承したコントローラを使用させるためにdeviseのルーティングを変更
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "products#index"
   post 'pay', to: 'purchase#pay'
   get 'done', to: 'purchase#done'
+
+  resources :users, only: [:index, :show, :edit]
+  get 'users/logout', to: 'users#logout'
+  get 'users/cardregister', to: 'users#cardregister'
 
   resources :cards, only: [:new, :show] do
     collection do
@@ -20,11 +27,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:index, :new, :show] do
+  resources :products, only: [:index, :new, :create, :show, :destroy] do
     member do
       get 'buy', to: 'products#buy'
     end
   end
 
-  resources :users, only: [:index, :show, :edit]
+  resources :searches, only: [:index]
 end

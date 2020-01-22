@@ -71,7 +71,7 @@
   %h4 設定
   %ul.side_bar__list
     %li.side_bar__list__content
-      = link_to "プロフィール", "#", class: "sidebar-tab" # リンク先未設定
+      = link_to "プロフィール", edit_user_path(current_user), class: "sidebar-tab" # リンク先未設定
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
@@ -79,7 +79,7 @@
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
-      = link_to "支払い方法", "#", class: "sidebar-tab" # リンク先未設定
+      = link_to "支払い方法", users_cardregister_path, class: "sidebar-tab"
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
@@ -87,7 +87,7 @@
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
-      = link_to "本人情報", "#", class: "sidebar-tab" # リンク先未設定
+      = link_to "本人情報", user_path(current_user), class: "sidebar-tab" # リンク先未設定
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
@@ -95,7 +95,7 @@
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
     %li.side_bar__list__content
-      = link_to "ログアウト", "#", class: "sidebar-tab" # リンク先未設定
+      = link_to "ログアウト", users_logout_path, class: "sidebar-tab"
       .icon
         = icon('fas', 'chevron-right', class: 'icon')
       

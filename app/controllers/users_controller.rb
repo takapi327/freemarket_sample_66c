@@ -19,5 +19,18 @@ class UsersController < ApplicationController
     @users = User.all
     @user = User.new
   end
-  
+
+  def logout
+    @product = Product.new
+  end
+
+  def cardregister
+    @product = Product.new
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:id, :nickname, :email).merge(user_id: current_user.id)
+  end
+
 end
