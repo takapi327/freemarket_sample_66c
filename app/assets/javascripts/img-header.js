@@ -1,3 +1,4 @@
+// スライドショーの機能を実装している段階です。まだ未実装なためコメントアウトをしています。
 // window.onload = ()=>{
 //   const img = ["assets/images/img1.jpg"];
 //   let num = -1;
