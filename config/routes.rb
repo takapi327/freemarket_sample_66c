@@ -5,15 +5,23 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "products#index"
+  get 'users/logout', to: 'users#logout'
+  get 'users/cardregister', to: 'users#cardregister'
   post 'pay', to: 'purchase#pay'
   get 'done', to: 'purchase#done'
 
-  resources :users, only: [:index, :show, :edit]
-  get 'users/logout', to: 'users#logout'
-  get 'users/cardregister', to: 'users#cardregister'
+  resources :products, only: [:index, :new, :create, :show, :destroy] do
+    member do
+      get 'buy', to: 'products#buy'
+    end
+  end
 
+  resources :users, only: [:index, :show, :edit]
+  
+  resources :searches, only: [:index]
+  
   resources :cards, only: [:new, :show] do
-    collection do
+    member do
       post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'
     end
@@ -26,12 +34,4 @@ Rails.application.routes.draw do
       # get 'done', to: 'purchase#done'
     end
   end
-
-  resources :products, only: [:index, :new, :create, :show, :destroy] do
-    member do
-      get 'buy', to: 'products#buy'
-    end
-  end
-
-  resources :searches, only: [:index]
 end

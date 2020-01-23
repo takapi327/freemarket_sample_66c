@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
     else
       alert('削除できませんでした。')
     end
+  end
     
 
   private

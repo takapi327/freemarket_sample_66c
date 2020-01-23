@@ -403,9 +403,9 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   omniauth
   omniauth-facebook
-  payjp
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
+  payjp
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4)

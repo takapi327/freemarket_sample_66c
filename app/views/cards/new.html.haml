@@ -4,7 +4,7 @@
       クレジットカード情報入力
     .card-form
       .card-form__box
-        = form_tag(make_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
+        = form_tag(make_card_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
           .card-form__box__number
             %label{class:'box-group--label', for: 'card_number'} カード番号
             %span.input-require
@@ -75,5 +75,6 @@
               %span.question-form__mark ?
               %span.question-form__text 
                 カード裏面の番号とは？
+                
           #card_token
-          = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
+            = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'

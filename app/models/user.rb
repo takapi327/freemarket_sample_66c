@@ -5,13 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
          #5行目のomniauthableとomniauth_providersが追加オプション
 
-  has_many :cards
-
   #deviseのデフォルトバリデーションはemail,passwordのみのため、追加しています
   validates :nickname, presence: true, length: { maximum: 20 }
   #sns_credentialsとのアソシエーション
   has_many :sns_credentials
   has_many :products
+  has_many :cards
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
