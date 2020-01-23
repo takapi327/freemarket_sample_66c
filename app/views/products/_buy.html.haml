@@ -9,9 +9,9 @@
             .main-flame-all-box-buy_content-item_box-image
             .main-flame-all-box-buy_content-item_box-detail
               .main-flame-all-box-buy_content-item_box-detail_name
-                ZARA ワンピース
+                = @product.name
               .main-flame-all-box-buy_content-item_box-detail_price
-                ¥1,600 （税込）送料込み
+                = ('¥' + @product.price.to_s(:delimited))
       .main-flame-all-box-choice
         .main-flame-all-box-choice-flame
           .main-flame-all-box-choice-flame-price
@@ -19,7 +19,7 @@
               .main-flame-all-box-choice-flame-price_box_text
                 支払い金額
               .main-flame-all-box-choice-flame-price_box_number
-                ¥1,600
+                = ('¥' + @product.price.to_s(:delimited) + '(税込)')
             .main-flame-all-box-choice-flame-price_point
               = icon('far', 'square')
               ポイントを使用 (所持ポイント: P300)

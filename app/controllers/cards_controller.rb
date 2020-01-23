@@ -3,7 +3,6 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    # redirect_to action: "show" if card.exists?
   end
 
   def make #payjpとCardのデータベース作成を実施します。
@@ -19,11 +18,6 @@ class CardsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       @card.save
-      # if @card
-      # redirect_to buy_products_path
-      # else
-      #   redirect_to action: "pay"
-      # end
     end
   end
 

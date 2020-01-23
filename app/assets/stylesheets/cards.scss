@@ -8,6 +8,61 @@
     background-color: green;
 
     .credit-update__label {
+        height: 45px;
+        text-align: center;
+        padding-top: 5px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border: solid;
+        border-bottom: none;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+    }
+  } 
+  .card-form {
+    height: 520px;
+    width: 700px;
+    background-color: hotpink;
+
+    .card-form__main {
+      padding-top: 50px;
+      background-color: blue;
+      padding-bottom: 50px;
+
+      .card-form__main-box {
+        height: 620px;
+        width: 450px;
+        background-color: lawngreen;
+        margin: 0 auto;
+
+        .card-form__box__number {
+          height: 200px;
+          width: 700px;
+
+          .input-require {
+            background-color: red;
+            height: 30px;
+            width: 35px;
+            color: white;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius:  3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            margin-left: 5px;
+          }
+          .card-form__box__number-text {
+            height: 50px;
+            width: 450px;
+            
+            #card_number {
+              height: 50px;
+              width: 100%;
+            }
+          }
+
+        }
+      }
     }
   }
 }

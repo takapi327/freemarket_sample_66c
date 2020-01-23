@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   root "products#index"
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
-  post 'pay', to: 'purchase#pay'
-  get 'done', to: 'purchase#done'
 
   resources :products, only: [:index, :new, :create, :show, :destroy] do
     member do
@@ -21,7 +19,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:index]
   
   resources :cards, only: [:new, :show] do
-    member do
+    collection do
       post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'
     end
@@ -30,8 +28,8 @@ Rails.application.routes.draw do
   resources :purchase, only: [:new] do
     member do
       get 'index', to: 'purchase#index'
-      # post 'pay', to: 'purchase#pay'
-      # get 'done', to: 'purchase#done'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 end
