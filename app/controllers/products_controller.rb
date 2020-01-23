@@ -9,9 +9,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
 
-    @product.areas.new
-    # @product.categories.new
-
   end
 
   def create
@@ -33,6 +30,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
+  end
   def destroy
     @product = Product.find(params[:id])
     if @product.user_id == current_user.id && @product.destroy
