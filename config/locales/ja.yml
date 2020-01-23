@@ -12,3 +12,12 @@ ja:
         some_scratches_and_dirt: やや傷や汚れあり
         there_are_scratches_and_dirt: 傷や汚れあり
         bad: 全体的に状態が悪い
+
+      day:
+        one_two: 1~2日で発送
+        two_three: 2~3日で発送
+        four_seven: 4~7日で発送
+
+    category:
+      name:
+        lady: 女

@@ -87,11 +87,7 @@
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                = f.select :day do
-                  %option{value: ""} ---
-                  %option{value: "1"} 1~2日で発送
-                  %option{value: "2"} 2~3日で発送
-                  %option{value: "3"} 4~7日で発送
+                = f.select :day, Product.days_i18n.invert, {prompt: "---"}
           .sell-content__index.clearfix
             %h3.index__tittle
               販売価格(300~9,999,999)

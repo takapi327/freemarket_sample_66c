@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer    :price,     null:false                                    #商品の価格
       t.integer    :burden,    null:false, default: 0                        #配送料
       t.text       :content,   null:false                                    #商品の詳細
-      t.string     :day,       null:false                                    #配達日数
+      t.integer     :day,       null:false                                    #配達日数
       t.references :buyer,     foreign_key:{to_table: :users}                #購入者情報
       t.references :seller,    foreign_key:{to_table: :users}                #売主情報
 

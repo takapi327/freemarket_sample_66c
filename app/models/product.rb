@@ -28,5 +28,10 @@ class Product < ApplicationRecord
     bad: 5
   }
 
+  enum day:{
+    one_two: 1,
+    two_three: 2,
+    four_seven: 3
+  }
   
 end

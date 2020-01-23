@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_092311) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.string "name", null: false
+    t.integer "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_092311) do
     t.integer "price", null: false
     t.integer "burden", default: 0, null: false
     t.text "content", null: false
-    t.string "day", null: false
+    t.integer "day", null: false
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.datetime "created_at", null: false

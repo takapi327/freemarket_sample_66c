@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
     @product.areas.new
-    @product.categories.new
+    # @product.categories.new
   end
 
   def create

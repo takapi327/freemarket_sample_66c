@@ -42,22 +42,8 @@
                 カテゴリー
                 %span.require 必須
               %div.select-box.box{action: "", name: "form1"}
-                = f.fields_for :categories do |c|
-                  = c.select :name, name: "product[categories_attributes][][name]" do
-                    %option{value: ""} ---
-                    %option{value: "1"} レディース
-                    %option{value: "2"} メンズ
-                    %option{value: "3"} ベビー・キッズ
-                    %option{value: "4"} インテリア・住まい・小物
-                    %option{value: "5"} 本・音楽・ゲーム
-                    %option{value: "6"} おもちゃ・ホビー・グッズ
-                    %option{value: "7"} コスメ・香水・美容
-                    %option{value: "8"} 家電・スマホ・カメラ
-                    %option{value: "9"} スポーツ・レジャー
-                    %option{value: "10"} ハンドメイド
-                    %option{value: "11"} チケット
-                    %option{value: "12"} 自転車・オートバイ
-                    %option{value: "13"} その他
+                = f.select :name, Category.names_i18n.invert, {prompt: "---"}
+                    
               %div#add
               .product__category__group
               %label
@@ -81,17 +67,13 @@
                 %span.require 必須
               %div.select-box.box
                 = f.fields_for :areas do |d|
-                  = f.select :name, Area.names.keys,{}, name: "product[areas_attributes][][name]"
+                  = d.select :name, Area.names.keys,{}, name: "product[areas_attributes][][name]"
               .product__category__group
               %label
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                = f.select :day do
-                  %option{value: ""} ---
-                  %option{value: "1"} 1~2日で発送
-                  %option{value: "2"} 2~3日で発送
-                  %option{value: "3"} 4~7日で発送
+                = f.select :day, Product.days_i18n.invert, {prompt: "---"}
           .sell-content__index.clearfix
             %h3.index__tittle
               販売価格(300~9,999,999)
