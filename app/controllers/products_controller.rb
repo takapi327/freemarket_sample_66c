@@ -8,10 +8,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-
-    @product.areas.new
-    # @product.categories.new
-
   end
 
   def create
@@ -33,6 +29,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
+  end
+
   def destroy
     @product = Product.find(params[:id])
     if @product.user_id == current_user.id && @product.destroy
@@ -45,7 +43,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-
     params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 

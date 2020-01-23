@@ -6,52 +6,55 @@ $(function(){
 
   var DropArea = document.getElementById('image-box-1');
 
-  DropArea.addEventListener('dragover', function(e){
-    e.preventDefault();
-  });
+  if (DropArea != null){
+    DropArea.addEventListener('dragover', function(e){
+      e.preventDefault();
+    });
+  
 
-  DropArea.addEventListener('dragleave', function(e){
-    e.preventDefault();
-  });
+    DropArea.addEventListener('dragleave', function(e){
+      e.preventDefault();
+    });
 
-  DropArea.addEventListener('drop', function(e){
-    e.preventDefault();
-    var files = e.dataTransfer.files
-    // var file = $('input[type = file]').prop('files')[0];
-    $.each(files, function(i, file){
-      var file_img = new FileReader();
+    DropArea.addEventListener('drop', function(e){
+      e.preventDefault();
+      var files = e.dataTransfer.files
+      // var file = $('input[type = file]').prop('files')[0];
+      $.each(files, function(i, file){
+        var file_img = new FileReader();
 
-      dataBox.items.add(file)
+        dataBox.items.add(file)
 
-      file_box.files = dataBox.files
+        file_box.files = dataBox.files
 
-      var num = $('.item-img').length + 1 + i
-      file_img.readAsDataURL(file);
+        var num = $('.item-img').length + 1 + i
+        file_img.readAsDataURL(file);
 
-      // 投稿した画像が10枚になったらフォームを消す
-      if(num == 10){
-        $('#box').css('display', 'none')
-      }
-      // 画像をテキストボックスに入れた際に追加するビュー
-      file_img.onload = function(){
-        var src = file_img.result
-        var html = `<div class = 'item-img' data-image = '$(file.name)}'>
-                      <div class = 'item-img_content'>
-                        <div class = 'item-img_content_icon'>
-                          <img src="${src}" width="114" height="80">
+        // 投稿した画像が10枚になったらフォームを消す
+        if(num == 10){
+          $('#box').css('display', 'none')
+        }
+        // 画像をテキストボックスに入れた際に追加するビュー
+        file_img.onload = function(){
+          var src = file_img.result
+          var html = `<div class = 'item-img' data-image = '$(file.name)}'>
+                        <div class = 'item-img_content'>
+                          <div class = 'item-img_content_icon'>
+                            <img src="${src}" width="114" height="80">
+                          </div>
                         </div>
-                      </div>
-                      <div class = 'item-img_operetion'>
-                        <div class = 'item-img_operetion_delete'>削除</div>
-                        <div class = 'item-img_operetion_edit'>編集</div>
-                      </div>
-                    </div>`
-                        
-        $('#box').before(html);
-      };
-      $('#box').attr('class', `sell-image_box-${num}`)
-   });
-});
+                        <div class = 'item-img_operetion'>
+                          <div class = 'item-img_operetion_delete'>削除</div>
+                          <div class = 'item-img_operetion_edit'>編集</div>
+                        </div>
+                      </div>`
+                          
+          $('#box').before(html);
+        };
+        $('#box').attr('class', `sell-image_box-${num}`)
+      });
+    });
+  }
   // 画像を削除するアクション
   $(document).on('click', '.item-img_operetion_delete', function(){
     var delete_img = $(this).parents('.item-img')
