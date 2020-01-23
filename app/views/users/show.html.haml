@@ -1,5 +1,9 @@
 .wrapper
   = render "/products/header.html.haml"
+  %ul.breadcrumb-list
+    - breadcrumb :mypage
+    - breadcrumb :detail
+    = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
   .my-page-background
     = render "side-bar"
     = render "confirmation-show-bar"

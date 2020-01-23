@@ -93,4 +93,4 @@ gem "omniauth-rails_csrf_protection" #セキュリティ対策のgem,ここま�
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'active_hash'
-gem 'enum_help'
+gem "gretel"

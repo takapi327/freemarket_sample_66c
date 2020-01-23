@@ -1,13 +1,12 @@
 FactoryBot.define do
   factory :product do
-    name              {"takao"}
-    derivery          {"1"}
-    status            {"1"}
-    price             {"1"}
-    burden            {"1"}
-    content           {"1"}
-    day               {"2020-01-01"}
+    name              {Faker::Name.last_name}
+    derivery          {Faker::Number.number(digits: 2)}
+    status            {Faker::Number.number(digits: 2)}
+    price             {Faker::Number.number(digits: 2)}
+    burden            {Faker::Number.number(digits: 2)}
+    content           {Faker::Number.number(digits: 2)}
+    day               {Faker::Number.number(digits: 2)}
     association :user, factory: :user
-    association :image, factory: :image
   end
 end

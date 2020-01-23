@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
-    redirect_to new_user_session_path
+    redirect_to root_path
   end
   
   def show
@@ -31,6 +31,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.user_id == current_user.id && @product.destroy
+      redirect_to root_path
+    else
+      alert('削除できませんでした。')
+    end
+    
   end
 
   private
