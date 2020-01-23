@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   #データベースに保存されなかった場合には、各自コメントアウトを行い確認してください。
   belongs_to :user, optional: true
   belongs_to :category
+
   has_many :likes
   has_many :comments
   has_many :images
