@@ -30,7 +30,6 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     redirect_to root_path
   end
-
   def destroy
     @product = Product.find(params[:id])
     if @product.user_id == current_user.id && @product.destroy
