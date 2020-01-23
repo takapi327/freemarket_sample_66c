@@ -42,7 +42,6 @@
                 カテゴリー
                 %span.require 必須
               %div.select-box.box{action: "", name: "form1"}
-                = f.text_field :categories
                 = f.fields_for :categories do |c|
                   = c.select :name, name: "product[categories_attributes][][name]" do
                     %option{value: ""} ---
@@ -65,15 +64,7 @@
                 商品の状態
                 %span.require 必須
               %div.select-box.box
-                = f.text_field :status, class: 'select-box box'
-                = f.select :status, name: "product[categories_attributes][][name]", selected: @product.status do
-                  %option{value: ""} ---
-                  %option{value: "1"} 新品、未使用
-                  %option{value: "2"} 未使用に近い
-                  %option{value: "3"} 目立った傷や汚れなし
-                  %option{value: "4"} やや傷や汚れあり
-                  %option{value: "5"} 傷や汚れあり
-                  %option{value: "5"} 全体的に状態が悪い
+                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}
           .sell-content__derivery.clearfix
             %h3.index__tittle
               配送について
@@ -83,11 +74,7 @@
                 配送料の負担
                 %span.require 必須
               %div.select-box.box
-                = f.text_field :burden
-                = f.select :burden do
-                  %option{value: ""} ---
-                  %option{value: "1"} 送料込み(出品者負担)
-                  %option{value: "2"} 着払い(購入者負担)
+                = f.select :burden, Product.burdens_i18n.invert, {prompt: "---"}
               .product__category__group
               %label
                 発送元の地域
@@ -100,7 +87,6 @@
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                = f.text_field :day
                 = f.select :day do
                   %option{value: ""} ---
                   %option{value: "1"} 1~2日で発送

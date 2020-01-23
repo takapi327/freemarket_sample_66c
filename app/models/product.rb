@@ -2,7 +2,7 @@ class Product < ApplicationRecord
 
   #データベースに保存されなかった場合には、各自コメントアウトを行い確認してください。
   belongs_to :user, optional: true
-  has_many :categories
+  belongs_to :category
   has_many :brands
   has_many :areas
   has_many :likes
@@ -12,12 +12,21 @@ class Product < ApplicationRecord
   validates :price, presence: true
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :areas
-  accepts_nested_attributes_for :categories
+  accepts_nested_attributes_for :category
 
 
-  enum status:{
+  enum burden:{
     postage_included: 1,
     postage_not_included: 2
   }
+
+  enum status:{
+    start: 1,
+    no_noticeable_scratches_or_dirt: 2,
+    some_scratches_and_dirt: 3,
+    there_are_scratches_and_dirt: 4,
+    bad: 5
+  }
+
   
 end

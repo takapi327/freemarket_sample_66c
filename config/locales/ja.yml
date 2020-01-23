@@ -1,6 +1,14 @@
 ja:
   enums:
     product:
+      burden:
+        postage_included: 送料込み(出品者負担)
+        postage_not_included: 着払い(購入者負担)
+
+
       status:
-        postage_included: 新品
-        postage_not_included: 中古
+        start: 未使用に近い
+        no_noticeable_scratches_or_dirt: 目立った傷や汚れなし
+        some_scratches_and_dirt: やや傷や汚れあり
+        there_are_scratches_and_dirt: 傷や汚れあり
+        bad: 全体的に状態が悪い

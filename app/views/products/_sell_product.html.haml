@@ -64,7 +64,7 @@
                 商品の状態
                 %span.require 必須
               %div.select-box.box
-                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}, name: "product[categories_attributes][][name]"
+                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}
           .sell-content__derivery.clearfix
             %h3.index__tittle
               配送について
@@ -74,10 +74,7 @@
                 配送料の負担
                 %span.require 必須
               %div.select-box.box
-                = f.select :burden do
-                  %option{value: ""} ---
-                  %option{value: "1"} 送料込み(出品者負担)
-                  %option{value: "2"} 着払い(購入者負担)
+                = f.select :burden, Product.burdens_i18n.invert, {prompt: "---"}
               .product__category__group
               %label
                 発送元の地域
