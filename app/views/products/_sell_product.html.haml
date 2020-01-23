@@ -42,15 +42,18 @@
                 カテゴリー
                 %span.require 必須
               %div.select-box.box{action: "", name: "form1"}
-                = f.select :name, Category.names_i18n.invert, {prompt: "---"}
-                    
+
+                = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"}
+
               %div#add
               .product__category__group
               %label
                 商品の状態
                 %span.require 必須
               %div.select-box.box
-                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :status_id, Status.all, :id, :name, {prompt: "---"}
+
           .sell-content__derivery.clearfix
             %h3.index__tittle
               配送について
@@ -60,20 +63,25 @@
                 配送料の負担
                 %span.require 必須
               %div.select-box.box
-                = f.select :burden, Product.burdens_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :burden_id, Burden.all, :id, :name, {prompt: "---"}
+
               .product__category__group
               %label
                 発送元の地域
                 %span.require 必須
               %div.select-box.box
-                = f.fields_for :areas do |d|
-                  = d.select :name, Area.names.keys,{}, name: "product[areas_attributes][][name]"
+
+                = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"}
+
               .product__category__group
               %label
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                = f.select :day, Product.days_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :day_id, Day.all, :id, :name, {prompt: "---"}
+
           .sell-content__index.clearfix
             %h3.index__tittle
               販売価格(300~9,999,999)
