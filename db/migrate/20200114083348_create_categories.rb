@@ -2,8 +2,9 @@ class CreateCategories < ActiveRecord::Migration[5.2]
   def change
     create_table :categories do |t|
 
-      t.references :product,   null:false,   foreign_key:true   #商品ID
-      t.string     :name,      null:false                       #カテゴリー名
+
+      t.string     :name                  #カテゴリー名
+
  
       t.timestamps
     end

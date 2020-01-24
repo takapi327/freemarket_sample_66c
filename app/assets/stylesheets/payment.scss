@@ -30,6 +30,8 @@
     height: 50px;
     width: 320px;
     text-align: center;
+    cursor: pointer;
+    text-decoration: none;
 
       &-icon {
       color: white;
@@ -41,6 +43,7 @@
       &-text {
       color: white;
       line-height: 50px;
+      text-decoration: none;
       }
     }
   }
@@ -51,4 +54,21 @@
   color: #0099E8;
   margin-left: 500px;
   margin-top: 50px;
+}
+.pay-lower-guide:hover{
+  text-decoration: underline;
+  }
+
+.pay-lower-box-btn a {
+  display: flex;
+  background-color: red;
+  // height: 50px;
+  // width: 320px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.pay-lower-box-btn-text a{
+  color: white;
 }
