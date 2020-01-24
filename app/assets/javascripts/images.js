@@ -6,7 +6,7 @@ $(function(){
 
   var DropArea = document.getElementById('image-box-1');
 
-  if(DropArea != null){
+  if (DropArea != null){
     DropArea.addEventListener('dragover', function(e){
       e.preventDefault();
     });

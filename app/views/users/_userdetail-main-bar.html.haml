@@ -4,7 +4,8 @@
       -# = image_tag "usericon.jpg"
       .main-bar__up-side__user-intro__user-icon
         =icon('fas', 'user-circle', class: "icon")
-      .main-bar__up-side__user-intro__user-name name
+      .main-bar__up-side__user-intro__user-name
+        = "#{current_user.nickname}"
       .main-bar__up-side__user-intro__user-info
         .main-bar__up-side__user-intro__user-info__eva 評価： 2
         .main-bar__up-side__user-intro__user-info__exhibi 出品数:  6
@@ -41,7 +42,7 @@
           =icon('fas', 'box-open', class: "boxicon")
         .panel__content__info
           .panel__content__info__message
-            こんにちは
+            最高です
           .panel__content__info__data
             .panel__content__info__data__clock
               =icon('far', 'clock', class: "clockicon")
@@ -52,7 +53,7 @@
           =icon('fas', 'box-open', class: "boxicon")
         .panel__content__info
           .panel__content__info__message
-            こんにちは
+            絶不調
           .panel__content__info__data
             .panel__content__info__data__clock
               =icon('far', 'clock', class: "clockicon")
@@ -63,7 +64,7 @@
           =icon('fas', 'box-open', class: "boxicon")
         .panel__content__info
           .panel__content__info__message
-            こんにちは
+            OH MY ガー
           .panel__content__info__data
             .panel__content__info__data__clock
               =icon('far', 'clock', class: "clockicon")

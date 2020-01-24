@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'buy', to: 'products#buy'
     end
   end
-
+  
   resources :users, only: [:index, :show, :edit]
   
   resources :searches, only: [:index]
