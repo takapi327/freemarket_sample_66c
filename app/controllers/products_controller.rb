@@ -21,12 +21,6 @@ class ProductsController < ApplicationController
     @images = Image.where(product_id: @product.id)
   end
 
-
-  def buy
-    @product = Product.find(params[:id])
-  end
-  
-
   def edit
     @product = Product.find(params[:id])
   end
@@ -37,23 +31,20 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     redirect_to root_path
   end
-
   def destroy
     @product = Product.find(params[:id])
-    if @product.user_id == current_user.id
-       @product.destroy
+    if @product.user_id == current_user.id && @product.destroy
       redirect_to root_path
     else
       alert('削除できませんでした。')
     end
-  end
     
+  end
 
   private
   def product_params
     params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
-  
 
 end
 

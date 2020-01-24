@@ -10,7 +10,7 @@ $(function() {
   $('img.main-image').stop().fadeIn(200);
   }
   );
-  サムネイルの枠を変更
+  // サムネイルの枠を変更
   $(this).css({"opacity": "1"});
   });
   
