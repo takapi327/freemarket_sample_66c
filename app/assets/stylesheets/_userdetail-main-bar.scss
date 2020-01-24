@@ -1,9 +1,9 @@
 .main-bar {
-  margin-left: 350px;
-
+  width: 48vw;
+  max-width: 670px;
   &__up-side {
     height: 600px;
-    width: 700px;
+
     
     &__tab-panel {
       height: 300px;
@@ -120,7 +120,8 @@
 }
 
 .main-bar__down-side {
-  width: 700px;
+  width: 48vw;
+  max-width: 670px;
   margin-top: 300px;
 }
 .main-bar__down-side__title {

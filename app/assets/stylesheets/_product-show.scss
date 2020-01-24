@@ -30,6 +30,7 @@
       }
       &__sub {
         display: flex;
+        flex-wrap: wrap;
         .owl-bot {
           height: 30px;
           width: 30px;
