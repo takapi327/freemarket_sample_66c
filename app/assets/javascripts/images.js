@@ -10,7 +10,6 @@ $(function(){
     DropArea.addEventListener('dragover', function(e){
       e.preventDefault();
     });
-  
 
     DropArea.addEventListener('dragleave', function(e){
       e.preventDefault();
