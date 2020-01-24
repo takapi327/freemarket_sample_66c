@@ -65,6 +65,8 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include ControllerMacros, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
+  config.include PayjpMock
+  config.include ControllerMacros, type: :controller
   #omniauth_macros.rbからhelperメソッドを要求する
   config.include OmniauthMacros
 end
