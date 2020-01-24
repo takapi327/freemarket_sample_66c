@@ -9,54 +9,49 @@
     margin:                   0px auto;
     padding:                  8px 0px 0px;
     &__top{
+      width:                    1020px;
+      height: 40px;
       display:                flex;
       -webkit-box-pack:       justify;
-      justify-content:        space-between;
       &__logo{
         width:                134px;
         -webkit-box-align:    center;
         align-items:          center;
-        display:              flex;
         margin-right:         45px;
         .icon{
           width: 134px;
           height: 46px;
         }
       }
-    }
-    .form{
-      width:                  100%;
       .input-box{
+        width: 100%;
+        position: relative;
         &__text{
           background-color:   rgb(245, 245, 245);
           font-size:          16px;
           height:             40px;
           line-height:        1.4em;
-          position:           relative;
-          width:              57vw;
+          width:              840px;
           border-width:       1px;
           border-style:       solid;
           border-color:       rgb(204, 204, 204);
           border-radius:      4px;
-          outline:            none;
           padding:            0px 0px 0px 10px;
-          transition:         all 0.3s ease-out 0s;
-          margin-left: 40px;
+          box-sizing: border-box;
         }
         .input-search{
-          background-color:   transparent;
           display: none;
         }
         .fa-search{
           cursor:             pointer;
-          height:             40px;
+          text-align: center;
+          display: block;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
           position:           absolute;
-          right:              215px;
-          top:                25px;
-          width:              40px;
-          border-style:       none;
-          border-radius:      0px 4px 4px 0px;
-          font-size:          0.9rem;
+          right:              0px;
+          top:                0px;
         }
       }
     }
