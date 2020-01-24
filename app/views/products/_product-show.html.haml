@@ -76,7 +76,8 @@
         .product-show__swittch__edit
           = link_to "商品の編集", edit_product_path(@product.id)
         .product-show__swittch__text or
-        .product-show__swittch__stop 出品を一旦停止する
+        .product-show__swittch__stop
+          = link_to "出品を一旦停止する", "#"
         .product-show__swittch__delete 
           =link_to "この商品を削除する", product_path(@product.id), method: :delete
 - else
