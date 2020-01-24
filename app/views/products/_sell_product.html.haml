@@ -16,10 +16,9 @@
                   .input-area 
                     = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
                     %label{for: 'img-file'}
-                      %pre 
-                        :preserve
-                          ドラッグアンドドロップ
-                          またはクリックしてファイルをアップロード
+                      %pre
+                        ドラッグアンドドロップ
+                        またはクリックしてファイルをアップロード
           .sell-content__product
             .product__name
               %label
@@ -32,7 +31,7 @@
                 商品の説明
                 %span.require 必須
               %div
-                = f.text_field :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+                = f.text_area :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
           .sell-content__index.clearfix
             %h3.index__tittle
               商品の詳細

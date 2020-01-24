@@ -3,13 +3,12 @@
     .header__box__top
       .header__box__top__logo
         = link_to image_tag("fmarket_logo_red.svg", class: "icon"),root_path
-        .form
-          .input-box
-            = form_tag(searches_path,method: :get) do
-              = text_field_tag :search, "", class: 'input-box__text', placeholder:"何かお探しですか？"
-              = submit_tag 'search', class: 'input-search', :name => nil, id: 'tagid' 
-              %label{for: "tagid"}
-                = icon('fas', 'search')
+      .input-box
+        = form_tag(searches_path,method: :get) do
+          = text_field_tag :search, "", class: 'input-box__text', placeholder:"何かお探しですか？"
+          = submit_tag 'search', class: 'input-search', name: nil, id: 'tagid' 
+          %label{for: "tagid"}
+            = icon('fas', 'search')
     .header__box__bottom
       .header__box__bottom__menu
         %ul.header__box__bottom__menu__item1#tabs

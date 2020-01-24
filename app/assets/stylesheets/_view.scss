@@ -136,12 +136,14 @@ margin-right: 10px;
   overflow: scroll;
   background-color: rgb(238, 231, 231);
 
-  .img-header {
-    height: 400px;
-    width: 100vw;
-    background-size: cover;
+  .main-advertising{
+    height: 380px;
+    .img-header {
+      height: 100%;
+      width: 100vw;
+      background-size: cover;
+    }
   }
-
   .main-firest {
     background-color: rgb(238, 231, 231);
     margin-bottom: 100px;
