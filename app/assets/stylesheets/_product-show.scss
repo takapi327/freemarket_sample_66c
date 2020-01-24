@@ -70,19 +70,17 @@
     &__box {
       display: flex;
       justify-content: center;
+      align-items: flex-end;
       margin-top: 20px;
       .item-price {
         font-size: 40px;
         margin-right: 20px;
         font-weight: bold;
-        align-self: flex-end;
       }
       .item-tax {
         font-size: 10px;
-        align-self: flex-end;
       }
       .item-fee {
-        align-self: flex-end;
       }
     }
     &__bottom {
