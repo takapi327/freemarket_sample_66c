@@ -18,17 +18,22 @@ RSpec.describe ProductsController, type: :controller do
   end
   describe '#create' do
     let(:user) { FactoryBot.create(:user) }
+    let(:category){ FactoryBot.create(:category) }
     let(:params) {{user_id: user, product: attributes_for(:product)}}
 
     context 'log in' do
       before do
+        # binding.pry
         user = FactoryBot.create(:user)
+        # category = FactoryBot.create(:category)
         product = attributes_for(:product)
+        # category = @product.category_id
         login user
       end
 
       context 'can save' do
         it 'count up product' do
+          # binding.pry
           expect{post :create, params: params}.to change(Product, :count).by(1)
         end
 
@@ -84,6 +89,7 @@ RSpec.describe ProductsController, type: :controller do
   describe "destroy" do
     let(:user) { FactoryBot.create(:user) }
     let(:params) {{user_id: user.id}}
+    let(:category){ FactoryBot.create(:category) }
     context 'log in' do
       before do
         @product = FactoryBot.create(:product)
@@ -99,6 +105,7 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #show" do
+    let(:category){ FactoryBot.create(:category) }
     context 'create product' do
       before do
         @product = FactoryBot.create(:product)
@@ -116,4 +123,5 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
+  
 end
