@@ -48,9 +48,10 @@
                     %option{value: "10"}10
                     %option{value: "11"}11
                     %option{value: "12"}12
-                  %i.card-form-expire-icon
-                    = icon('fas', 'chevron-down')
                   %span{class: "month"} 月
+                  .body-credit-card-form__main-box_expire-items_select-month_icon
+                    = label :text, class: 'down_icon' do
+                      = icon('fas', 'chevron-down')
                 .body-credit-card-form__main-box_expire-items_select-year
                   %select#exp_year{name: "exp_year", type: "text"}
                     %option{value: "2019"}19
@@ -64,15 +65,16 @@
                     %option{value: "2027"}27
                     %option{value: "2028"}28
                     %option{value: "2029"}29
-                  %i.card-form-expire-icon
-                    = icon('fas', 'chevron-down')
                   %span{class:"year"} 年
+                  .body-credit-card-form__main-box_expire-items_select-year_icon
+                    = icon('fas', 'chevron-down')
 
             .body-credit-card-form__main-box_security-code
               %label.box-group--label{for: "cvc"} セキュリティーコード
               %span.input-require
                 必須
-              = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
+              .body-credit-card-form__main-box_security-code_text
+                = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
               .question-form
                 %span.question-form__mark ?
                 %span.question-form__text 

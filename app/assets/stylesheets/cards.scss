@@ -55,6 +55,7 @@
           &-text {
             height: 50px;
             width: 450px;
+            border: none;
             
             #card_number {
               height: 50px;
@@ -94,20 +95,82 @@
             display: flex;
 
             .body-credit-card-form__main-box_expire-items_select-month {
+              position: relative;
               
               #exp_month {
                 height: 50px;
-                width: 100px;
+                width: 130px;
+                background-image: none;
+                box-shadow: none;
+                -webkit-appearance: none;
+                appearance: none;
+                border: none;
+                outline: none;
+                padding: 0 15px;
+              }
+              .month {
+                margin-left: 10px;
+              }
+              .body-credit-card-form__main-box_expire-items_select-month_icon {
+                margin-left: 100px;
+                position: absolute;
+                top: 20px;
               }
             }
 
             .body-credit-card-form__main-box_expire-items_select-year {
+              position: relative;
+              margin-left: 10px;
               
               #exp_year {
                 height: 50px;
-                width: 100px;
+                width: 130px;
+                background-image: none;
+                box-shadow: none;
+                -webkit-appearance: none;
+                appearance: none;
+                border: none;
+                outline: none;
+                padding: 0 15px;
+              }
+              .year {
+                margin-left: 10px;
+              }
+              .body-credit-card-form__main-box_expire-items_select-year_icon {
+                margin-left: 100px;
+                position: absolute;
+                top: 20px;
               }
             }
+          }
+        }
+        .body-credit-card-form__main-box_security-code {
+          height: 100px;
+          width: 450px;
+          background-color: cyan;
+          padding-top: 30px;
+
+          .body-credit-card-form__main-box_security-code_text {
+
+            #cvc {
+              height: 50px;
+              width: 100%;
+              border: none;
+            }
+          }
+        }
+        #card_token {
+          height: 70px;
+          width: 450px;
+          background-color: darkolivegreen;
+          padding-top: 30px;
+
+          #token_submit {
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            color: white;
+            border: none;
           }
         }
       }
