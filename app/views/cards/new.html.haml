@@ -10,7 +10,7 @@
               %label{class:'box-group--label', for: 'card_number'} カード番号
               %span.input-require
                 必須
-              .body-credit-card-form__box__number-text
+              .body-credit-card-form__main-box__number-text
                 = text_field_tag "number", "", class: 'card-number--input', type: "text", id: 'card_number', maxlength: "16", placeholder: "    半角数字のみ"
               .registration-error{type: "hidden", value: "必須項目です"}
               %ul.card-list
