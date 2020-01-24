@@ -29,12 +29,12 @@
                 %li.card-list--item 
                   = image_tag "discover.svg", width:"32", height:"20"
 
-            .card-form__box__expire
+            .body-credit-card-form__main-box_expire
               %label.box-group--label 有効期限
               %span.input-require
                 必須
-              .card-expire
-                .card-expire__select-month
+              .body-credit-card-form__main-box_expire-items
+                .body-credit-card-form__main-box_expire-items_select-month
                   %select#exp_month{name: "exp_month", type: "text"}
                     %option{value: "1"}01
                     %option{value: "2"}02
@@ -51,7 +51,7 @@
                   %i.card-form-expire-icon
                     = icon('fas', 'chevron-down')
                   %span{class: "month"} 月
-                .card-expire__select-year
+                .body-credit-card-form__main-box_expire-items_select-year
                   %select#exp_year{name: "exp_year", type: "text"}
                     %option{value: "2019"}19
                     %option{value: "2020"}20
@@ -68,7 +68,7 @@
                     = icon('fas', 'chevron-down')
                   %span{class:"year"} 年
 
-            .card-form__box__security-code
+            .body-credit-card-form__main-box_security-code
               %label.box-group--label{for: "cvc"} セキュリティーコード
               %span.input-require
                 必須
