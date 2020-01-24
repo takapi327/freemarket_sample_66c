@@ -38,7 +38,8 @@
 
         &__number {
           height: 120px;
-          width: 700px;
+          width: 450px;
+          background-color: blueviolet;
 
           .input-require {
             background-color: red;
@@ -65,6 +66,48 @@
           }
           .card-list {
             display: flex;
+          }
+        }
+        .body-credit-card-form__main-box_expire {
+          height: 70px;
+          width: 450px;
+          background-color: chocolate;
+          padding-top: 30px;
+
+          .box-group--label {
+
+          }
+
+          .input-require {
+            background-color: red;
+            height: 30px;
+            width: 35px;
+            color: white;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius:  3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            margin-left: 5px;
+          }
+
+          .body-credit-card-form__main-box_expire-items {
+            display: flex;
+
+            .body-credit-card-form__main-box_expire-items_select-month {
+              
+              #exp_month {
+                height: 50px;
+                width: 100px;
+              }
+            }
+
+            .body-credit-card-form__main-box_expire-items_select-year {
+              
+              #exp_year {
+                height: 50px;
+                width: 100px;
+              }
+            }
           }
         }
       }

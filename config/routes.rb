@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
 
-  resources :products, only: [:index, :new, :create, :show, :destroy] do
+  resources :products, only: [:index, :new, :create, :show, :destroy, :edit] do
     member do
       get 'buy', to: 'products#buy'
     end
