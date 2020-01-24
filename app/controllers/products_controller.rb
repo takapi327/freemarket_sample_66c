@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
+    Product.update(seller_id: current_user.id)
     redirect_to root_path
   end
   
