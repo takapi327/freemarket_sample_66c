@@ -123,5 +123,28 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
-  
+  describe "GET #edit" do
+    let(:user) { FactoryBot.create(:user) }
+    let(:category){ FactoryBot.create(:category) }
+    let(:params) {{user_id: user, product: attributes_for(:product)}}
+    context 'create product' do
+      # binding.pry
+      before do
+        user = FactoryBot.create(:user)
+        login user
+      end
+
+      it "assigns the requested product to @product" do
+        product = create(:product)
+        get :edit, params: { id: product }
+        expect(assigns(:product)).to eq product
+      end
+
+      it "renders the :edit template" do
+        product = create(:product)
+        get :edit, params: { id: product }
+        expect(response).to render_template :edit
+      end
+    end
+  end
 end
