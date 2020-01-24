@@ -1,9 +1,8 @@
 .main-bar {
-  margin-left: 350px;
-
+  width: 48vw;
+  max-width: 670px;
   &__up-side {
     height: 600px;
-    width: 48vw;
     
     &__tab-panel {
       height: 300px;

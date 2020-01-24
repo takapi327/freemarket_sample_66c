@@ -7,8 +7,13 @@
         .product-show__item
           .product-show__item__image
             .product-show__item__image__main
+              = image_tag "#{@images[0].image}", class: "main-image", width:250, height:300
             .product-show__item__image__sub
-              .owl-dot
+              .product-show__item__image__sub__box
+                %ul
+                  %li
+                    - @images.each do |i|
+                      = image_tag i.image.to_s,width:50,height:65, class: "sub-image"
           %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
             %tbody
               %tr
@@ -72,7 +77,8 @@
           = link_to "商品の編集", edit_product_path(@product.id)
         .product-show__swittch__text or
         .product-show__swittch__stop 出品を一旦停止する
-        .product-show__swittch__delete この商品を削除する
+        .product-show__swittch__delete 
+          =link_to "この商品を削除する", product_path(@product.id), method: :delete
 - else
   .background
     .wrapper-product-show
@@ -82,8 +88,13 @@
         .product-show__item
           .product-show__item__image
             .product-show__item__image__main
+              = image_tag "#{@images[0].image}", class: "main-image", width:250, height:300
             .product-show__item__image__sub
-              .owl-dot
+              .product-show__item__image__sub__box
+                %ul
+                  %li
+                    - @images.each do |i|
+                      = image_tag i.image.to_s,width:50,height:65, class: "sub-image"
           %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
             %tbody
               %tr
