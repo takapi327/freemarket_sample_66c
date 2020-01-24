@@ -1,15 +1,21 @@
-$(function(){
-  $('.sub-image li').hover(function(){
-      //オーバーしたliのインデックスを取得
-      var index = $('.sub-image li').index(this);
-      //オーバーした画像URLを取得
-      var imageurl = $('.sub-image li').eq(index).find('img').attr('src');
-      //ulのクラス名を取得（空白で分割）
-      className = $(this).parent().attr('class').split(" ");
-      //元のメイン画像を保存しておく
-      defaultImage = $('.main-image'+className[1]).attr('src');
-      $('.main-image'+className[1]).attr('src',imageurl);
-  },function(){
-      $('.main-image'+className[1]).attr('src',defaultImage);
+$(function() {
+  $('img.sub-image').mouseover(function(){
+  // "_thumb"を削った画像ファイル名を取得
+  var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1"+"$2");
+  
+  // 画像入れ替え
+  $('img.main-image').stop().fadeOut(50,
+  function(){
+  $('img.main-image').attr('src', selectedSrc);
+  $('img.main-image').stop().fadeIn(200);
+  }
+  );
+  サムネイルの枠を変更
+  $(this).css({"opacity": "1"});
   });
-});
+  
+  // // マウスアウトでサムネイル枠もとに戻す
+  $('img.sub-image').mouseout(function(){
+  $(this).css({"opacity": "0.4"});
+  });
+ });
