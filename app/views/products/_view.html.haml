@@ -1,4 +1,4 @@
--# ただの10個表示のhaml(ビューのプルリク用）
+-# 商品一覧表示機能ありのhaml
 
 .main
   .main-advertising
@@ -25,102 +25,14 @@
           = link_to "もっと見る ＞", class:"link"
       .main-firest-top-photos
         %ul.main-firest-top-photos-parent
-          %li.main-firest-top-photos-parent_list
-            .main-firest-top-photos-parent_list-body
-              .main-firest-top-photos-parent_list-body-image
-                .main-firest-top-photos-parent_list-body-image-price
-                  ¥100
-              .main-firest-top-photos-parent_list-body-title
-                %figcaption.main-firest-top-photos-parent_list-body-title-a
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list2
-            .main-firest-top-photos-parent_list-body2
-              .main-firest-top-photos-parent_list-body-image2
-                .main-firest-top-photos-parent_list-body-image-price2
-                  ¥200
-              .main-firest-top-photos-parent_list-body-title2
-                %figcaption.main-firest-top-photos-parent_list-body-title-b
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list3
-            .main-firest-top-photos-parent_list-body3
-              .main-firest-top-photos-parent_list-body-image3
-                .main-firest-top-photos-parent_list-body-image-price3
-                  ¥300
-              .main-firest-top-photos-parent_list-body-title3
-                %figcaption.main-firest-top-photos-parent_list-body-title-c
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list4
-            .main-firest-top-photos-parent_list-body4
-              .main-firest-top-photos-parent_list-body-image4
-                .main-firest-top-photos-parent_list-body-image-price4
-                  ¥400
-              .main-firest-top-photos-parent_list-body-title4
-                %figcaption.main-firest-top-photos-parent_list-body-title-d
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list5
-            .main-firest-top-photos-parent_list-body5
-              .main-firest-top-photos-parent_list-body-image5
-                .main-firest-top-photos-parent_list-body-image-price5
-                  ¥500
-              .main-firest-top-photos-parent_list-body-title5
-                %figcaption.main-firest-top-photos-parent_list-body-title-e
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list6
-            .main-firest-top-photos-parent_list-body6
-              .main-firest-top-photos-parent_list-body-image6
-                .main-firest-top-photos-parent_list-body-image-price6
-                  ¥600
-              .main-firest-top-photos-parent_list-body-title6
-                %figcaption.main-firest-top-photos-parent_list-body-title-f
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list7
-            .main-firest-top-photos-parent_list-body7
-              .main-firest-top-photos-parent_list-body-image7
-                .main-firest-top-photos-parent_list-body-image-price7
-                  ¥700
-              .main-firest-top-photos-parent_list-body-title7
-                %figcaption.main-firest-top-photos-parent_list-body-title-g
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list8
-            .main-firest-top-photos-parent_list-body8
-              .main-firest-top-photos-parent_list-body-image8
-                .main-firest-top-photos-parent_list-body-image-price8
-                  ¥800
-              .main-firest-top-photos-parent_list-body-title8
-                %figcaption.main-firest-top-photos-parent_list-body-title-h
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list9
-            .main-firest-top-photos-parent_list-body9
-              .main-firest-top-photos-parent_list-body-image9
-                .main-firest-top-photos-parent_list-body-image-price9
-                  ¥900
-              .main-firest-top-photos-parent_list-body-title9
-                %figcaption.main-firest-top-photos-parent_list-body-title-i
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
-
-          %li.main-firest-top-photos-parent_list10
-            .main-firest-top-photos-parent_list-body10
-              .main-firest-top-photos-parent_list-body-image10
-                .main-firest-top-photos-parent_list-body-image-price10
-                  ¥1000
-              .main-firest-top-photos-parent_list-body-title10
-                %figcaption.main-firest-top-photos-parent_list-body-title-j
-                  ショートパンツ レディース M CECIL McBEE キレイめ
-                  .transparent
+          - @products.each do |product|
+            %li.main-firest-top-photos-parent_list
+              .main-firest-top-photos-parent_list-body
+                .main-firest-top-photos-parent_list-body-image
+                  .main-firest-top-photos-parent_list-body-image-price
+                    ¥
+                    = product.price
+                .main-firest-top-photos-parent_list-body-title
+                  %figcaption.main-firest-top-photos-parent_list-body-title-a
+                    = link_to product.name, product_path(product.id)
+                    .transparent
