@@ -5,19 +5,20 @@
     - breadcrumb :card
     = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
   .my-page-background
-    = render "side-bar"
-    .pay
-      .pay-upper 支払い方法
-      .pay-lower
-        .pay-lower-box
-          .pay-lower-box-title クレジットカード一覧
-          .pay-lower-box-btn
-            .pay-lower-box-btn-icon
-              =icon('far', 'credit-card')
-            .pay-lower-box-btn-text
-              = link_to "クレジットカードを追加する","#"
-      .pay-lower-guide
-        支払い方法について
-        = icon('fas', 'chevron-right')
+    .contents-wrapper
+      = render "side-bar"
+      .pay
+        .pay-upper 支払い方法
+        .pay-lower
+          .pay-lower-box
+            .pay-lower-box-title クレジットカード一覧
+            .pay-lower-box-btn
+              .pay-lower-box-btn-icon
+                =icon('far', 'credit-card')
+              .pay-lower-box-btn-text
+                = link_to "クレジットカードを追加する", make_cards_path
+        .pay-lower-guide
+          支払い方法について
+          = icon('fas', 'chevron-right')
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"
