@@ -5,7 +5,7 @@
     .body-credit-card-form
       .body-credit-card-form__main
         .body-credit-card-form__main-box
-          = form_tag(make_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
+          = form_tag(make_product_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
             .body-credit-card-form__main-box__number
               %label{class:'box-group--label', for: 'card_number'} カード番号
               %span.input-require
@@ -50,8 +50,8 @@
                     %option{value: "12"}12
                   %span{class: "month"} 月
                   .body-credit-card-form__main-box_expire-items_select-month_icon
-                    = label :text, class: 'down_icon' do
-                      = icon('fas', 'chevron-down')
+                    = icon('fas', 'chevron-down')
+
                 .body-credit-card-form__main-box_expire-items_select-year
                   %select#exp_year{name: "exp_year", type: "text"}
                     %option{value: "2019"}19
@@ -68,7 +68,6 @@
                   %span{class:"year"} 年
                   .body-credit-card-form__main-box_expire-items_select-year_icon
                     = icon('fas', 'chevron-down')
-
             .body-credit-card-form__main-box_security-code
               %label.box-group--label{for: "cvc"} セキュリティーコード
               %span.input-require
@@ -76,9 +75,10 @@
               .body-credit-card-form__main-box_security-code_text
                 = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
               .question-form
-                %span.question-form__mark ?
                 %span.question-form__text 
                   カード裏面の番号とは？
                   
             #card_token
               = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
+
+              -# = link_to '戻る', , class: "card-form__box"

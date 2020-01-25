@@ -1,0 +1,14 @@
+.done-main-flame
+  .done-main-flame-all
+    .done-main-flame-all-box
+      .done-main-flame-all-box-buy_text
+        購入が完了しました！
+      .done-main-flame-all-box-buy_content
+        .done-main-flame-all-box-buy_content-item
+          .done-main-flame-all-box-buy_content-item_box
+            .done-main-flame-all-box-buy_content-item_box-image
+            .done-main-flame-all-box-buy_content-item_box-detail
+              .done-main-flame-all-box-buy_content-item_box-detail_name
+                = @product.name
+              .done-main-flame-all-box-buy_content-item_box-detail_price
+                = ('¥' + @product.price.to_s(:delimited) + '(税込み)')

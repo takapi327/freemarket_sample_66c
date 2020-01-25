@@ -1,6 +1,4 @@
-%h2 購入が完了しました！
-= @product.name
-.done-main
-¥
-= @product.price
-(送料込み)
+.wrapper
+  = render "products/header.html.haml"
+  = render "done.html.haml"
+  = render "products/footer.html.haml"
