@@ -22,9 +22,6 @@ class CardsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       @card.save
-      # redirect_to controller: 'products', action: 'buy'
-      # redirect_to "/products/#{@product.id}/buy"
-      # @product = Product.find(params[:id])
       # redirect_to @card
       redirect_to buy_product_path(@product)
     end
