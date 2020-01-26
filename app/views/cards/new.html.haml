@@ -73,12 +73,10 @@
               %span.input-require
                 必須
               .body-credit-card-form__main-box_security-code_text
-                = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
+                = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "    カード背面４桁もしくは３桁の番号"
               .question-form
                 %span.question-form__text 
                   カード裏面の番号とは？
                   
             #card_token
               = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
-
-              -# = link_to '戻る', , class: "card-form__box"
