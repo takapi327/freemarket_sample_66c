@@ -19,20 +19,22 @@
 
     #main-firest-top-contents
       .main-firest-top-contents-new_arrival
-        .main-firest-top-contents-new_arrival-left
-          商品新着アイテム
-        .main-firest-top-contents-new_arrival-right
-          = link_to "もっと見る ＞", class:"link"
       .main-firest-top-photos
+        .main-firest-top-photos-items
+          .main-firest-top-photos-items-new
+            商品新着アイテム
+          .main-firest-top-photos-items-look
+            = link_to "もっと見る ＞", class:"link"
         %ul.main-firest-top-photos-parent
           - @products.each do |product|
-            %li.main-firest-top-photos-parent_list
-              .main-firest-top-photos-parent_list-body
-                .main-firest-top-photos-parent_list-body-image
-                  .main-firest-top-photos-parent_list-body-image-price
-                    ¥
-                    = product.price
-                .main-firest-top-photos-parent_list-body-title
-                  %figcaption.main-firest-top-photos-parent_list-body-title-a
-                    = link_to product.name, product_path(product.id)
-                    .transparent
+            = link_to (product_path(product.id)) do
+              %li.main-firest-top-photos-parent_list
+                .main-firest-top-photos-parent_list-body
+                  .main-firest-top-photos-parent_list-body-image
+                    -# = image_tag("#{product.images.first.image}", class: 'image-fot')
+                    .main-firest-top-photos-parent_list-body-image-price
+                      = ('¥' + product.price.to_s(:delimited))
+                  .main-firest-top-photos-parent_list-body-title
+                    %figcaption.main-firest-top-photos-parent_list-body-title-a
+                      .transparent
+                        = product.name
