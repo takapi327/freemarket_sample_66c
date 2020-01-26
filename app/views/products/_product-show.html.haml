@@ -1,4 +1,4 @@
-- if current_user.id == @product.id
+- if current_user.id == @product.seller_id
   .background
     .wrapper-product-show
       .product-show
@@ -7,83 +7,13 @@
         .product-show__item
           .product-show__item__image
             .product-show__item__image__main
+              = image_tag "#{@images[0].image}", class: "main-image", width:250, height:300
             .product-show__item__image__sub
-              .owl-dot
-          %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
-            %tbody
-              %tr
-                %th 出品者
-                %td 
-                  匿名希望
-                  .face-icon
-                    =icon('fas', 'grin')
-                    =icon('fas', 'meh')
-                    =icon('fas', 'frown')
-              %tr
-                %th カテゴリー
-                %td 
-                  %p レディース
-                  %p >バッグ
-                  %p >ショルダーバッグ
-              %tr
-                %th ブランド
-                %td コーチ 
-              %tr
-                %th 商品の状態
-                %td 傷や汚れあり 
-              %tr
-                %th 配送料の負担
-                %td 送料込み(出品者負担)
-              %tr
-                %th 配送の方法
-                %td らくらくメルカリ便
-              %tr
-                %th 配送元地域
-                %td 大阪府
-              %tr
-                %th 配送日の目安
-                %td 1〜２日で発送
-        .product-show__item__box
-          .item-price
-            ¥3,000
-          .item-tax
-            (税込)
-          .item-fee
-            送料込み
-        .product-show__buy-btn
-          = link_to "購入画面に進む", buy_product_path(@product.id), class: "buy-btn"
-        
-        .product-show__item__bottom
-          .item-description
-            ここには商品の説明が入ります。ここには商品の説明が入ります。ここには商品の説明が入ります。ここには商品の説明が入ります。
-          .item-btn
-            .item-btn-left
-              .item-btn-left__like
-                ♡いいね！１
-              .item-btn-left__inappropriate
-                🏳不適切な商品の報告
-            .item-btn-right
-              .item-btn-right__link
-                = link_to "🔒あんしん・あんぜんへの取り組み"
-    
-      .blunk
-      .product-show__swittch
-        .product-show__swittch__edit
-          = link_to "商品の編集", edit_product_path(@product.id)
-        .product-show__swittch__text or
-        .product-show__swittch__stop 出品を一旦停止する
-        .product-show__swittch__delete この商品を削除する
-- else
-  .background
-    .wrapper-product-show
-      .product-show
-        .product-show__title
-          %h2= "#{@product.name}"
-        .product-show__item
-          .product-show__item__image
-            .product-show__item__image__main
-            .product-show__item__image__sub
-              .owl-dot
+              .product-show__item__image__sub__box
+                %ul
+                  %li
+                    - @images.each do |i|
+                      = image_tag i.image.to_s,width:50,height:65, class: "sub-image"
           %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
             %tbody
               %tr
@@ -127,6 +57,88 @@
             送料込み
         .product-show__buy-btn
           = link_to "購入画面に進む", buy_product_path, class: "buy-btn"
+        
+        .product-show__item__bottom
+          .item-description
+            ここには商品の説明が入ります。ここには商品の説明が入ります。ここには商品の説明が入ります。ここには商品の説明が入ります。
+          .item-btn
+            .item-btn-left
+              .item-btn-left__like
+                ♡いいね！１
+              .item-btn-left__inappropriate
+                🏳不適切な商品の報告
+            .item-btn-right
+              .item-btn-right__link
+                = link_to "🔒あんしん・あんぜんへの取り組み"
+    
+      .blunk
+      .product-show__swittch
+        .product-show__swittch__edit
+          = link_to "商品の編集", edit_product_path(@product.id)
+        .product-show__swittch__text or
+        .product-show__swittch__stop
+          = link_to "出品を一旦停止する", "#"
+        .product-show__swittch__delete 
+          =link_to "この商品を削除する", product_path(@product.id), method: :delete
+- else
+  .background
+    .wrapper-product-show
+      .product-show
+        .product-show__title
+          %h2= "#{@product.name}"
+        .product-show__item
+          .product-show__item__image
+            .product-show__item__image__main
+              = image_tag "#{@images[0].image}", class: "main-image", width:250, height:300
+            .product-show__item__image__sub
+              .product-show__item__image__sub__box
+                %ul
+                  %li
+                    - @images.each do |i|
+                      = image_tag i.image.to_s,width:50,height:65, class: "sub-image"
+          %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
+            %tbody
+              %tr
+                %th 出品者
+                %td 
+                  匿名希望
+                  .face-icon
+                    =icon('fas', 'grin')
+                    =icon('fas', 'meh')
+                    =icon('fas', 'frown')
+              %tr
+                %th カテゴリー
+                %td 
+                  %p レディース
+                  %p >バッグ
+                  %p >ショルダーバッグ
+              %tr
+                %th ブランド
+                %td コーチ 
+              %tr
+                %th 商品の状態
+                %td 傷や汚れあり 
+              %tr
+                %th 配送料の負担
+                %td 送料込み(出品者負担)
+              %tr
+                %th 配送の方法
+                %td らくらくメルカリ便
+              %tr
+                %th 配送元地域
+                %td 大阪府
+              %tr
+                %th 配送日の目安
+                %td 1〜２日で発送
+        .product-show__item__box
+          .item-price
+            ¥3,000
+          .item-tax
+            (税込)
+          .item-fee
+            送料込み
+        .product-show__buy-btn
+          = link_to "購入画面に進む", buy_product_path(@product.id), class: "buy-btn"
         
         .product-show__item__bottom
           .item-description
@@ -185,5 +197,3 @@
                 Tシャツ
               .bottom-product__box__price
                 ¥2,000
-
-

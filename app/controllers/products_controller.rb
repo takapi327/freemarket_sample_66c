@@ -13,11 +13,13 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
+    Product.update(seller_id: current_user.id)
     redirect_to root_path
   end
   
   def show
     @product = Product.find(params[:id])
+    @images = Image.where(product_id: @product.id)
   end
 
 
@@ -31,7 +33,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # binding.pry
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
