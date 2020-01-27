@@ -26,7 +26,6 @@ Rails.application.routes.draw do
   
   resources :cards, only: [:show] do
     collection do
-      # post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'
     end
   end
