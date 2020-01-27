@@ -28,13 +28,29 @@
         %ul.main-firest-top-photos-parent
           - @products.each do |product|
             = link_to (product_path(product.id)) do
-              %li.main-firest-top-photos-parent_list
-                .main-firest-top-photos-parent_list-body
-                  .main-firest-top-photos-parent_list-body-image
-                    -# = image_tag("#{product.images.first.image}", class: 'image-fot')
-                    .main-firest-top-photos-parent_list-body-image-price
-                      = ('¥' + product.price.to_s(:delimited))
-                  .main-firest-top-photos-parent_list-body-title
-                    %figcaption.main-firest-top-photos-parent_list-body-title-a
-                      .transparent
-                        = product.name
+              - if product.buyer_id.blank?
+                %li.main-firest-top-photos-parent_list
+                  .main-firest-top-photos-parent_list-body
+                    .main-firest-top-photos-parent_list-body-image
+                      -# = image_tag("#{product.images.first.image}", class: 'image-fot')
+                      .main-firest-top-photos-parent_list-body-image-price
+                        = ('¥' + product.price.to_s(:delimited))
+                    .main-firest-top-photos-parent_list-body-title
+                      %figcaption.main-firest-top-photos-parent_list-body-title-a
+                        .transparent
+                          = product.name
+              - else
+                %li.main-firest-top-photos-parent_list
+                  .main-firest-top-photos-parent_list-body
+                    .main-firest-top-photos-parent_list-body-image
+                      = image_tag("#{product.images.first.image}", class: 'image-fot')
+                      .main-firest-top-photos-parent_list-body-image-sold
+                        .main-firest-top-photos-parent_list-body-image-sold_text
+                          SOLD
+                      .main-firest-top-photos-parent_list-body-image-price
+                        = ('¥' + product.price.to_s(:delimited))
+                    .main-firest-top-photos-parent_list-body-title
+                      %figcaption.main-firest-top-photos-parent_list-body-title-a
+                        .transparent
+                          = product.name
+                    
