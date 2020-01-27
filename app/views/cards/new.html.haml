@@ -5,7 +5,7 @@
     .body-credit-card-form
       .body-credit-card-form__main
         .body-credit-card-form__main-box
-          = form_tag(make_product_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
+          = form_tag(make_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
             .body-credit-card-form__main-box__number
               %label{class:'box-group--label', for: 'card_number'} カード番号
               %span.input-require
