@@ -7,6 +7,7 @@
         .index-main-flame-all-box-buy_content-item
           .index-main-flame-all-box-buy_content-item_box
             .index-main-flame-all-box-buy_content-item_box-image
+              = image_tag("#{@product.images.first.image}", class: 'image-fot_index')
             .index-main-flame-all-box-buy_content-item_box-detail
               .index-main-flame-all-box-buy_content-item_box-detail_name
                 = @product.name
