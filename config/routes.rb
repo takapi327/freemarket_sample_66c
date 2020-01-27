@@ -9,12 +9,6 @@ Rails.application.routes.draw do
   get 'users/cardregister', to: 'users#cardregister'
 
   resources :products, only: [:index, :new, :create, :show, :destroy, :edit] do
-    resources :cards do
-      collection do
-        get "new"
-        post "make"
-      end
-    end
     member do
       get 'buy', to: 'products#buy'
     end
@@ -24,8 +18,9 @@ Rails.application.routes.draw do
   
   resources :searches, only: [:index]
   
-  resources :cards, only: [:show] do
+  resources :cards, only: [:new,:show] do
     collection do
+      post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'
     end
   end
