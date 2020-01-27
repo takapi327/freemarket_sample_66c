@@ -32,14 +32,14 @@
           = u.label 'お名前', class: "user-detail"
           .required-name
             必須
-          = u.text_field :last_name, autofocus: true, placeholder: '例) 高尾', class: 'form-substance'
-          = u.text_field :first_name, autofocus: true, placeholder: '例) 誠一', class: 'form-substance'
+          = u.text_field :last_name, autofocus: true, placeholder: '例) 山田', class: 'form-substance'
+          = u.text_field :first_name, autofocus: true, placeholder: '例) 彩', class: 'form-substance'
         
           = u.label 'お名前カナ', class: "user-detail"
           .required-kana
             必須
-          = u.text_field :last_kana_name, autofocus: true, placeholder: '例) タカオ', class: 'form-substance'
-          = u.text_field :first_kana_name, autofocus: true, placeholder: '例) セイイチ', class: 'form-substance'
+          = u.text_field :last_kana_name, autofocus: true, placeholder: '例) ヤマダ', class: 'form-substance'
+          = u.text_field :first_kana_name, autofocus: true, placeholder: '例) アヤ', class: 'form-substance'
         
         = u.fields_for @address, local: true do |ad|
           .address
@@ -52,8 +52,7 @@
             = ad.label '都道府県', class: "address"
             .required-address
               必須
-            = ad.text_field :prefectures, autofocus: true, placeholder: '例) 香川県', class: 'form-substance'
-          -# = ad.colliction_select :prefectures, Area.all, :id, :name, {prompt: "---"},class: 'form-substance'
+          = ad.collection_select :prefectures, Area.all, :id, :name, {prompt: ""}, class: 'form-substance'
         
           .address
             = ad.label '市区町村', class: "address"
