@@ -1,20 +1,17 @@
 $flame-border_coler: rgb(238, 236, 236);
 
 .show-main-flame {
-  background-color: $flame-border_coler;
+  width: 500px;
 
   &-all {
-    padding-bottom: 50px;
-    padding-top: 50px;
 
     &-box {
-      width: 900px;
-      margin: 0 auto;
+      width: 700px;
 
       &-buy_text {
-        height: 100px;
+        height: 80px;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 50px;
         font-size: x-large;
         background-color: white;
         font-family: 'arial narrow';
@@ -24,12 +21,12 @@ $flame-border_coler: rgb(238, 236, 236);
         border-color: $flame-border_coler;
       }
       &-buy_content {
-        height: 250px;
+        height: 150px;
         background-color: white;
         border: solid;
         border-width: 1px;
         border-color: $flame-border_coler;
-        padding-top: 70px;
+        padding-top: 100px;
         display: flex;
         justify-content: center;
 
@@ -42,38 +39,41 @@ $flame-border_coler: rgb(238, 236, 236);
           border-width: 1px;
           border-color: rgb(255, 43, 43);
           border-radius: 5px;
-          margin-top: 50px;
+          margin-top: 10px;
+          margin-right: 40px;
         }
 
         &-item {
           height: 170px;
-          width: 400px;
+          width: 200px;
 
           &_box {
             height: 100px;
             display: flex;
             padding-top: 45px;
-            margin-left: 70px;
+            margin-left: 50px;
 
-            &-image {
-              height: 80px;
-              width: 70px;
-              background-color: darkseagreen;
-            }
             &-detail {
-              height: 150px;
+              height: 100px;
               width: 300px;
               margin-left: 20px;
-
-              &_card_number {
-                height: 30px;
-                font-size: x-large;
-              }
-              &_date {
-                height: 30px;
-                font-size: x-large;
-              }
+              font-size: x-large;
             }
+          }
+        }
+        .main-flame-all-box-choice-payment {
+          height: 100px;
+          width: 400px;
+          border: solid;
+          border-width: 1px;
+          border-color: rgb(1, 165, 230);
+          border-bottom-color: $flame-border_coler;
+          margin-top: 100px;
+
+          &-text {
+            width: 400px;
+            padding-top: 50px;
+            margin-left: 35px;
           }
         }
       }

@@ -17,7 +17,7 @@
               .pay-lower-box-btn-icon
                 =icon('far', 'credit-card')
               .pay-lower-box-btn-text
-                = link_to "クレジットカードを追加する","#"
+                = link_to "クレジットカードを追加する", new_card_path
         .pay-lower-guide
           支払い方法について
           = icon('fas', 'chevron-right')
@@ -30,24 +30,7 @@
   .my-page-background
     .contents-wrapper
       = render "side-bar"
-      .show-main-flame
-        .show-main-flame-all
-          .show-main-flame-all-box
-            .show-main-flame-all-box-buy_text
-              支払い方法
-            .show-main-flame-all-box-buy_content
-              .show-main-flame-all-box-buy_content-item
-                .show-main-flame-all-box-buy_content-item_box
-                  .show-main-flame-all-box-buy_content-item_box-detail
-                    .show-main-flame-all-box-buy_content-item_box-detail_card_number
-                      = "**** **** **** " + @default_card_information.last4
-                    .show-main-flame-all-box-buy_content-item_box-detail_date
-                      - exp_month = @default_card_information.exp_month.to_s
-                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-                      = exp_month + " / " + exp_year
-              = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-                %input{ type: "hidden", name: "card_id", value: "" }
-                %button.destroy_button 削除する
+      = render "cards/card_show"
 
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"
