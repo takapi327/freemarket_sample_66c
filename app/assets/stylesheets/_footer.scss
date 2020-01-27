@@ -1,34 +1,37 @@
 .aside{
-  background-image: url(bg.jpg);
   height: calc(100vh - 417.86px);
   width: 100vw;
   background-size: cover;
+  position: relative;
   .Ftittle{
     font-size: 24px;
     color: white;
     font-weight: bold;
     width: 500px;
-    position: relative;
+    position: absolute;
     left: 300px;
-    top: 90px;
+    top: 100px;
+    z-index: 3;
   }
   .Ftittle1{
     font-size: 35px;
     color: white;
     font-weight: bold;
     width: 500px;
-    position: relative;
+    position: absolute;
     left: 300px;
-    top: 100px;
+    top: 150px;
+    z-index: 3;
   }
   .Fbox{
     background-color: white;
     height: 60px;
     width: 60px;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
     left: 300px;
-    top: 120px;
+    top: 230px;
+    z-index: 3;
   }
 }
 .footer{
@@ -38,7 +41,8 @@
   font-size: 12px;
   padding: 0px 20px 10px;
   &__nav{
-    margin: 0 190px;
+    width: 1020px;
+    margin: 0 auto;
     display: flex;
     &__menu{
       margin-top: 18px;
@@ -85,20 +89,21 @@
     float: right;
   }
   &__bottom{
+    width: 1020px;
     align-items: center;
-    text-align: center;
-    margin: 30px auto 20px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
     &__logo{
       width: 140px;
-      position: relative;
-      top: 25px;
-      left: 180px;
       .icon2{
         background-color: white;
       }
     }
     &__copy{
       font-size: 13px;
+      width: 54%;
     }
   }
   a{

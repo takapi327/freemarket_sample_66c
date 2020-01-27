@@ -8,17 +8,22 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-
   end
 
   def create
     # binding.pry
     @product = Product.new(product_params)
     @product.save
+    Product.update(seller_id: current_user.id)
     redirect_to root_path
   end
   
   def show
+    @product = Product.find(params[:id])
+    @images = Image.where(product_id: @product.id)
+  end
+
+  def buy
     @product = Product.find(params[:id])
   end
 
@@ -27,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # binding.pry
     @product = Product.find(params[:id])
     @product.update(product_params)
     redirect_to root_path
@@ -44,7 +48,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-
     params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
