@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #eeecec;
+}
+
 .complete-registration-header {
   @include progress-bar();
 }
@@ -41,5 +45,38 @@
           color: white;
           margin: 50px auto;
         }
+  }
+}
+
+.aside-complete {
+  height: calc(100vh - 417.86px);
+  background-size: cover;
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+
+  img.aside {
+    width: 700px;
+  }
+
+  .Ftittle-complete {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    width: 500px;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    z-index: 3;
+  }
+  .Ftittle1-complete {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    width: 500px;
+    position: absolute;
+    left: 180px;
+    top: 150px;
+    z-index: 3;
   }
 }
