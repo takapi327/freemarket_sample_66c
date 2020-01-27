@@ -1,0 +1,84 @@
+.address-header
+  =render 'products/buy-sell_header'
+  %nav.progress-bar
+    %ul.progress-bar__status
+      %li.complete
+        会員情報
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        電話番号認証
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.is-active
+        住所入力
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        支払い方法
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        完了
+        .progress-bar__status__circle
+
+.address-main
+  .address-main__form
+    .address-main__form__upper
+      住所入力
+    .address-main__form__lower
+      = form_with model: UserDetail.new, url: {controller: 'registrations', action: 'create_address'}, local: true do |u|
+        .address-main__form__lower__name-form
+          = u.label 'お名前', class: "user-detail"
+          .required-name
+            必須
+          = u.text_field :last_name, autofocus: true, placeholder: '例) 高尾', class: 'form-substance'
+          = u.text_field :first_name, autofocus: true, placeholder: '例) 誠一', class: 'form-substance'
+        
+          = u.label 'お名前カナ', class: "user-detail"
+          .required-kana
+            必須
+          = u.text_field :last_kana_name, autofocus: true, placeholder: '例) タカオ', class: 'form-substance'
+          = u.text_field :first_kana_name, autofocus: true, placeholder: '例) セイイチ', class: 'form-substance'
+        
+        = u.fields_for @address, local: true do |ad|
+          .address
+            = ad.label '郵便番号', class: "address"
+            .required-address
+              必須
+          = ad.text_field :zip, autofocus: true, placeholder: '例) 123-4567', class: 'form-substance'
+        
+          .address
+            = ad.label '都道府県', class: "address"
+            .required-address
+              必須
+            = ad.text_field :prefectures, autofocus: true, placeholder: '例) 香川県', class: 'form-substance'
+          -# = ad.colliction_select :prefectures, Area.all, :id, :name, {prompt: "---"},class: 'form-substance'
+        
+          .address
+            = ad.label '市区町村', class: "address"
+            .required-address
+              必須
+          = ad.text_field :city, autofocus: true, placeholder: '例) 丸亀市綾歌町', class: 'form-substance'
+        
+          .address
+            = ad.label '番地', class: "address"
+            .required-address
+              必須
+          = ad.text_field :number, autofocus: true, placeholder: '例) 熊玉1-1-1', class: 'form-substance'
+        
+          .address
+            = ad.label '建物名', class: "address"
+            .any-address
+              任意
+          = ad.text_field :bill, autofocus: true, placeholder: '例) 岡部ビル 315', class: 'form-substance'
+        
+          .address
+            = ad.label '電話', class: "address"
+            .any-address
+              任意
+          = ad.telephone_field :landline, autofocus: true, placeholder: '例) 0877123456', class: 'form-substance'
+        = u.submit "次へ進む", class: 'submit'
+        
+.address-footer
+  = render 'products/buy-sell_footer'

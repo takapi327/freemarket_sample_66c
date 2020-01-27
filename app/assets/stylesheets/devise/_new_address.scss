@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+.address-header {
+  @include progress-bar();
+}
+
+.address-main {
+  background-color: #eeecec;
+  &__form {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    height: 100vh;
+
+    &__upper {
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: solid 1px #eeeeee;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    &__lower {
+      padding: 24px 16px 40px;
+      height: calc(100vh - 101px);
+      overflow: scroll;
+      position: relative;
+
+      &__name-form {
+        width: 315px;
+        margin: 0 auto;
+        position: relative;
+
+        .user-detail {
+          display: block;
+          width: 315px;
+          margin: 30px auto 0;
+          text-align: left;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .required-name {
+          @include required-signup();
+          position: absolute;
+          top: 1px;
+          right: 220px;
+        }
+
+        .required-kana {
+          @include required-signup();
+          position: absolute;
+          top: 150px;
+          right: 200px;
+        }
+      }
+
+      .form-substance {
+        display: block;
+        width: 315px;
+        line-height: 40px;
+        margin: 0 auto 10px;
+        padding-left: 10px;
+      }
+
+      .address {
+        display: block;
+        width: 315px;
+        margin: 30px auto 0;
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+      }
+
+      .required-address {
+        background-color: red;
+        line-height: 15px;
+        font-size: 10px;
+        width: 30px;
+        color: white;
+        padding: 0 5px;
+        position: absolute;
+        top: 2px;
+        right: 225px;
+      }
+
+      .any-address {
+        background-color: #ccc;
+        line-height: 15px;
+        font-size: 10px;
+        width: 30px;
+        color: white;
+        padding: 0 5px;
+        position: absolute;
+        top: 2px;
+        right: 225px;
+      }
+    }
+      .submit {
+        display: block;
+        margin: 40px auto 0;
+        background-color: red;
+        color: white;
+        line-height: 50px;
+        width: 315px;
+      }
+  }
+}
