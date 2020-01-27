@@ -116,7 +116,7 @@
               = link_to "やることリスト", "#"
             %li.box__mypage
               = icon('fas', 'user-circle fa-2x', class: 'login')
-              = link_to "マイページ", users_path
+              = link_to "マイページ", user_path(current_user)
         - else
           .header__box__bottom__login__sign_up
             = link_to "新規会員登録", new_user_registration_path, class: "btn"
