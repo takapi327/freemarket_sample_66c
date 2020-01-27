@@ -113,22 +113,5 @@ RSpec.describe ProductsController, type: :controller do
       end
     end
 
-
-  describe "#update" do
-    before do
-      @product = create(:product)
-      user = @product.user
-      login user
-    end
-    context 'can updata' do
-      it 'change name' do
-        # binding.pry
-        # product = build(:product, name: "takapi")
-        patch :update, params: { id: @product.id, product: attributes_for(:product, name: 'takapi')}
-        expect(@product.reload.name).to eq("takapi")
-      end
-    end
-  end
-
   end
 end
