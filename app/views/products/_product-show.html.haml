@@ -17,7 +17,7 @@
           %table{border: "1", style: "border-collapse: collapse", class: "product-show__item__table"}
             %tbody
               %tr
-                %th 出品者
+                %th 
                 %td 
                   匿名希望
                   .face-icon
@@ -50,7 +50,7 @@
                 %td 1〜２日で発送
         .product-show__item__box
           .item-price
-            ¥3,000
+            = "¥#{@product.price}"
           .item-tax
             (税込)
           .item-fee
