@@ -7,7 +7,7 @@
         .main-flame-all-box-buy_content-item
           .main-flame-all-box-buy_content-item_box
             .main-flame-all-box-buy_content-item_box-image
-              -# = image_tag("#{product.images.first.image}", class: 'image-fot')
+              -# = image_tag("#{product.images.first.image}", class: 'image-fot_buy')
             .main-flame-all-box-buy_content-item_box-detail
               .main-flame-all-box-buy_content-item_box-detail_name
                 = @product.name
@@ -29,7 +29,7 @@
             .main-flame-all-box-choice-payment-text
               支払い方法
             .main-flame-all-box-choice-payment-registration
-              = link_to product_cards_path(@product.id), class: "registration_link" do
+              = link_to new_card_path(@product.id), class: "registration_link" do
                 = icon('fas', 'plus-circle')
                 登録してください
 
@@ -40,7 +40,13 @@
               = link_to "#", class: "registration_link" do
                 = icon('fas', 'plus-circle')
                 登録してください
-
-          .main-flame-all-box-choice-buy
-            .main-flame-all-box-choice-buy-button
-              = link_to '購入する', purchase_path, class: 'button'
+                
+          - if @product.buyer_id.blank?
+            .main-flame-all-box-choice-buy
+              .main-flame-all-box-choice-buy-button
+                = link_to '購入する', "", class: 'button_cannot_buy'
+          
+          - else
+            .main-flame-all-box-choice-buy
+              .main-flame-all-box-choice-buy-button
+                = link_to '購入する', purchase_path, class: 'button_can_buy'
