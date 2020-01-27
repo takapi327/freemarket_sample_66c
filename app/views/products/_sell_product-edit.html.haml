@@ -1,0 +1,121 @@
+.product-page
+  %section.product-page__main__wrapper
+    = form_for @product do |f|
+      %h2.product-tittle
+        = "商品の情報を入力"
+      .form
+        .form__block
+          .sell-content
+            %h3.sell-image__tittle
+              出品画像
+              %span.require 必須
+              %p 最大10枚までアップロードできます
+            #image-box-1
+              .sell-image_box-0#box
+                -# = f.fields_for :images do |i|
+                -#   .input-area 
+                -#     = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
+                -#     %label{for: 'img-file'}
+                -#       %pre 
+                -#         :preserve
+                -#           ドラッグアンドドロップ
+                -#           またはクリックしてファイルをアップロード
+          .sell-content__product
+            .product__name
+              %label
+                商品名
+                %span.require 必須
+              %div
+                = f.text_field :name, class: 'form__product__name', placeholder: '商品名(必須 40文字まで)'
+            .product__content
+              %label
+                商品の説明
+                %span.require 必須
+              %div
+                = f.text_field :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+          .sell-content__index.clearfix
+            %h3.index__tittle
+              商品の詳細
+            .index__box
+              .product__category
+              %label
+                カテゴリー
+                %span.require 必須
+              %div.select-box.box{action: "", name: "form1"}
+                = f.fields_for :categories do |c|
+                  = c.select :name, name: "product[categories_attributes][][name]" do
+                    %option{value: ""} ---
+                    %option{value: "1"} レディース
+                    %option{value: "2"} メンズ
+                    %option{value: "3"} ベビー・キッズ
+                    %option{value: "4"} インテリア・住まい・小物
+                    %option{value: "5"} 本・音楽・ゲーム
+                    %option{value: "6"} おもちゃ・ホビー・グッズ
+                    %option{value: "7"} コスメ・香水・美容
+                    %option{value: "8"} 家電・スマホ・カメラ
+                    %option{value: "9"} スポーツ・レジャー
+                    %option{value: "10"} ハンドメイド
+                    %option{value: "11"} チケット
+                    %option{value: "12"} 自転車・オートバイ
+                    %option{value: "13"} その他
+              %div#add
+              .product__category__group
+              %label
+                商品の状態
+                %span.require 必須
+              %div.select-box.box
+                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}
+          .sell-content__derivery.clearfix
+            %h3.index__tittle
+              配送について
+            .index__box
+              .product__category
+              %label
+                配送料の負担
+                %span.require 必須
+              %div.select-box.box
+                = f.select :burden, Product.burdens_i18n.invert, {prompt: "---"}
+              .product__category__group
+              %label
+                発送元の地域
+                %span.require 必須
+              %div.select-box.box
+                = f.fields_for :areas do |d|
+                  = d.select :name, Area.names.keys,{}, name: "product[areas_attributes][][name]"
+              .product__category__group
+              %label
+                発送までの日数
+                %span.require 必須
+              %div.select-box.box
+                = f.select :day, Product.days_i18n.invert, {prompt: "---"}
+          .sell-content__index.clearfix
+            %h3.index__tittle
+              販売価格(300~9,999,999)
+            .index__box
+              %ul.product__category__group
+                %li.price
+                  .price__box
+                    %label
+                      価格
+                      %span.require 必須
+                    %div.price_textbox
+                      ¥
+                      = f.text_field :price, class: 'price_text', id: 'id',placeholder: '例)300'
+                %li.price_tax
+                  .tax_tittle
+                    販売手数料(10%)
+                  .tax_price#tax
+                    = "-"
+                %li.price_tax_profit
+                  .profit_tittle
+                    販売利益
+                  .profit_price#profit
+                    = "--"
+          .sell-content__form__btn
+            %div
+              %p 禁止されている出品、行為を必ずご確認ください。
+              %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+              %p また、出品をもちまして加盟店規約に同意したことになります。
+              = f.submit '変更する', class: 'form-btn'
+              .back-btn
+                = link_to 'もどる', product_path

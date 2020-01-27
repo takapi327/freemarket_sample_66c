@@ -23,6 +23,7 @@ RSpec.describe ProductsController, type: :controller do
     context 'log in' do
       before do
         user = FactoryBot.create(:user)
+        product = attributes_for(:product)
         login user
       end
 
@@ -64,10 +65,12 @@ RSpec.describe ProductsController, type: :controller do
       end
     end
   end
-end
   describe "GET index" do
+    before do
+      user = FactoryBot.create(:user)
+      login user
+    end
     it 'populates an array of products ordered by created_at DESC' do
-      user = create(:user)
       products = create_list(:product, 3) 
       get :index
       expect(assigns(:products)).to match(products.sort{ |a, b| b.created_at <=> a.created_at } )
@@ -78,4 +81,39 @@ end
       expect(response).to render_template :index
     end
   end
+  describe "destroy" do
+    let(:user) { FactoryBot.create(:user) }
+    let(:params) {{user_id: user.id}}
+    context 'log in' do
+      before do
+        @product = FactoryBot.create(:product)
+        user = @product.user
+        login user
+      end
+      context 'can delete' do 
+        it 'product destroy' do
+          expect{delete :destroy, params: { id: @product.id }}.to change(Product, :count).by(-1)
+        end
+      end
+    end
+  end
+
+  describe "GET #show" do
+    context 'create product' do
+      before do
+        @product = FactoryBot.create(:product)
+      end
+      it "assigns the requested product to @product" do
+        product = create(:product)
+        get :show, params: { id: product }
+        expect(assigns(:product)).to eq product
+      end
+
+      it "renders the :show template" do
+        get :show, params: { id: @product }
+        expect(response).to render_template :show
+      end
+    end
+  end
+
 end

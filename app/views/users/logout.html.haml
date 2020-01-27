@@ -1,9 +1,14 @@
 .wrapper
   = render "/products/header.html.haml"
+  %ul.breadcrumb-list
+    - breadcrumb :mypage
+    - breadcrumb :logout
+    = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
   .my-page-background
-    = render "side-bar"
-    .logout
-      .logout__btn
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout_btn'
+    .contents-wrapper
+      = render "side-bar"
+      .logout
+        .logout__btn
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout_btn'
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"

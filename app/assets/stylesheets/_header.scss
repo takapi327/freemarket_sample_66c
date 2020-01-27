@@ -9,51 +9,49 @@
     margin:                   0px auto;
     padding:                  8px 0px 0px;
     &__top{
+      width:                    1020px;
+      height: 40px;
       display:                flex;
       -webkit-box-pack:       justify;
-      justify-content:        space-between;
       &__logo{
         width:                134px;
         -webkit-box-align:    center;
         align-items:          center;
-        display:              flex;
         margin-right:         45px;
         .icon{
           width: 134px;
           height: 46px;
         }
       }
-    }
-    .form{
-      position:               relative;
-      width:                  100%;
       .input-box{
+        width: 100%;
+        position: relative;
         &__text{
           background-color:   rgb(245, 245, 245);
           font-size:          16px;
           height:             40px;
           line-height:        1.4em;
-          position:           relative;
-          width:              100%;
+          width:              840px;
           border-width:       1px;
           border-style:       solid;
           border-color:       rgb(204, 204, 204);
           border-radius:      4px;
-          outline:            none;
           padding:            0px 0px 0px 10px;
-          transition:         all 0.3s ease-out 0s;
+          box-sizing: border-box;
         }
         .input-search{
-          background-color:   transparent;
+          display: none;
+        }
+        .fa-search{
           cursor:             pointer;
-          height:             40px;
+          text-align: center;
+          display: block;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
           position:           absolute;
           right:              0px;
           top:                0px;
-          width:              40px;
-          border-style:       none;
-          border-radius:      0px 4px 4px 0px;
-          font-size:          0.9rem;
         }
       }
     }
@@ -78,13 +76,7 @@
             font-weight:      600;
             line-height:      36px;
             white-space:      nowrap;
-            .list{
-              max-width:      100%;
-              max-height:     100%;
-              color:          rgb(234, 53, 45);
-              height:         12px;
-              margin-right:   4px;
-            }
+            @include list();
             &__box1 li a:hover{
               color:        #3399FF;
             }
@@ -103,13 +95,7 @@
             font-weight:      600;
             line-height:      36px;
             white-space:      nowrap;
-            .list{
-              max-width:      100%;
-              max-height:     100%;
-              color:          rgb(234, 53, 45);
-              height:         12px;
-              margin-right:   4px;
-            }
+            @include list();
           }
         }
       }
@@ -160,7 +146,54 @@
             color:            white;
           }
         }
-      }
+        &__box{
+          display: flex;
+          .box__like{
+            @include login();
+          }
+          .box__like:hover{
+            color: #3399FF;
+          }
+          .box__like a{
+            @include logina();
+          }
+          .box__notification{
+            @include login();
+          }
+          .box__notification:hover{
+            color: #3399FF;
+          }
+          .box__notification a{
+            @include logina();
+          }
+          .box__todo{
+            @include login();
+          }
+          .box__todo:hover{
+            color: #3399FF;
+          }
+          .box__todo a{
+            @include logina();
+          }
+          .box__mypage{
+            display: flex;
+            padding-left: 14px;
+          }
+          .box__mypage:hover{
+            color: #3399FF;
+          }
+          .box__mypage a{
+            color: inherit;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 0px 7px;
+            padding-top: 7px;
+          }
+          .login{
+            color: rgb(204, 204, 204);
+          }
+        }
+      } 
     }
   }
   .pull-dawn{

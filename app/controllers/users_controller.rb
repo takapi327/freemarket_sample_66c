@@ -28,4 +28,9 @@ class UsersController < ApplicationController
     @product = Product.new
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:id, :nickname, :email).merge(user_id: current_user.id)
+  end
+
 end

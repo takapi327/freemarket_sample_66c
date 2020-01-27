@@ -133,20 +133,18 @@ margin-right: 10px;
 }
 
 .main {
-  // height: 100%;
-  // width: 100%;
   overflow: scroll;
   background-color: rgb(238, 231, 231);
 
-  .main-advertising {
-    height: 550px;
-    width: 100%;
-    background-color: purple;
+  .main-advertising{
+    height: 380px;
+    .img-header {
+      height: 100%;
+      width: 100vw;
+      background-size: cover;
+    }
   }
-
   .main-firest {
-    // height: 100%;
-    // width: 100%;
     background-color: rgb(238, 231, 231);
     margin-bottom: 100px;
 

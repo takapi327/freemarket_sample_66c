@@ -1,0 +1,275 @@
+.product-page{
+  background-color: #EEEEEE;
+  &__main__wrapper{
+    width: 700px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0;
+    background-color: white;
+    .product-tittle{
+      padding: 32px 16px;
+      font-size: 22px;
+      font-weight:      600;
+      text-align: center;
+    }
+    .form{
+      border-top: 1px solid #eee;
+      .sell-content{
+        padding: 40px;
+        .sell-image__tittle{
+          font-size: 16px;
+          font-weight: bold;
+        }
+       @include require();
+        p{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          font-size: 14px;
+          font-weight: normal;
+        }
+
+        .sell-image_box{
+          margin: 16px auto 0;
+          line-height: 1.5;
+          font-size: 14px;
+        }
+        .input-area{
+          height: 160px;
+          min-height: 100%;
+          position: relative;
+          margin-top: 5px;
+          label{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            word-wrap: break-word;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            transform: translate(0, -50%);
+            height: 160px;
+            background: #EEEEEE;
+            border: dashed 1px #C0C0C0;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            pre{
+              padding-top: 50px;
+            }
+          }
+        }
+        #image-box-1{
+          display: flex;
+          flex-wrap: wrap;
+          .sell-image_box-0{
+            width: 100%;
+          }
+          .sell-image_box-1{
+            width: 491px;
+          }
+          .sell-image_box-2{
+            width: 363px;
+          }
+          .sell-image_box-3{
+            width: 234px;
+          }
+          .sell-image_box-4{
+            width: 106px;
+          }
+          .sell-image_box-5{
+            width: 100%;
+          }
+          .sell-image_box-6{
+            width: 491px;
+          }
+          .sell-image_box-7{
+            width: 363px;
+          }
+          .sell-image_box-8{
+            width: 234px;
+          }
+          .sell-image_box-9{
+            width: 106px;
+          }
+        }
+        .item-img{
+          background-color: #eee;
+          border: solid 1px #C0C0C0;
+          box-sizing: border-box;
+          margin-right: 5px;
+          margin-left: 5px;
+          margin-top: 10px;
+          .item-img_content_icon{
+            background-color: black;
+            box-sizing: border-box;
+            margin: 5px 5px 0;
+          }
+        }
+        .item-img_operetion{
+          box-sizing: border-box;
+          margin-top: 5px;
+          display: flex;
+          justify-content: space-between;
+          &_delete{
+            padding: 10px;
+            cursor: pointer;
+          }
+          &_delete:hover{
+            color: cornflowerblue;
+          }
+          &_edit{
+            padding: 10px;
+            cursor: pointer;
+          }
+          &_edit:hover{
+            color: cornflowerblue;
+          }
+        }
+       
+      }
+      .sell-content__product{
+        border-top: 1px solid #eee;
+        padding: 40px;
+        .product__name{
+          height: 100%;
+          @include require();
+          @include label();
+          @include product();
+        }
+        .product__content{
+          margin: 40px 0 0;
+          @include require();
+          @include label();
+          .form__product__name{
+            width: 100%;
+            min-width: 620px;
+            max-width: 620px;
+            min-height: 150px;
+            margin: 8px 0 0;
+            height: 150px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .sell-content__index{
+        border-top: 1px solid #eee;
+        padding: 40px;
+        box-sizing: border-box;
+        @include product-file();
+      }
+      .sell-content__derivery{
+        border-top: 1px solid #eee;
+        padding: 40px;
+        @include product-file();
+      }
+      .clearfix::after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .price{
+        padding: 0 0 24px;
+        &__box{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .price_textbox{
+            justify-content: flex-end;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            .price_text{
+              width: 75%;
+              text-align: right;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+              box-sizing: border-box;
+              padding: 10px 16px 8px;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      .price_tax{
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tax_tittle{
+          font-size: 14px;
+          float: left;
+        }
+        .tax_price{
+          
+        }
+      }
+      .price_tax_profit{
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .profit_tittle{
+          float: left;
+        }
+        .profit_price{
+          float: right;
+        }
+      }
+      .sell-content__form__btn{
+        border-top: 1px solid #eee;
+        padding: 40px;
+        .form-btn{
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .back-btn{
+          width: 45%;
+          margin: 24px auto 0;
+          background: #aaa;
+          border: 1px solid #aaa;
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          text-align: center;
+        }
+        .back-btn a{
+          color: white;
+          text-decoration: none;
+          display: block;
+          // width: 45%;
+          height: 48px;
+          text-align: center;
+          padding: 0 auto;
+        }
+        p{
+          font-size: 14px;
+        }
+        .back-btn:hover{
+          background-color: rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

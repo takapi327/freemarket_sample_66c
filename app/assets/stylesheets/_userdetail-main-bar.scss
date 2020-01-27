@@ -1,9 +1,8 @@
 .main-bar {
-  margin-left: 350px;
-
+  width: 48vw;
+  max-width: 670px;
   &__up-side {
     height: 600px;
-    width: 700px;
     
     &__tab-panel {
       height: 300px;
@@ -74,10 +73,11 @@
   font-size: 1.1rem;
   height: 70px;
   line-height: 70px;
+  background-color: rgba(29, 112, 236, 0.048);
 }
 .panel-group{
   height:400px;
-  border:solid 1px #CCC;
+  // border:solid 1px #CCC;
   border-top:none;
   background:#FFF;
 }
@@ -86,7 +86,7 @@
   display: flex;
   padding: 16px;
   height: 46px;
-  border: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 .panel__content__image {
   font-size: 2rem;
@@ -109,18 +109,18 @@
   background:#FFF;
   color:black;
   transition: all 0.2s ease-out;
-  border-top: 2px solid red;
+  border-top: 3px solid red;
   padding-top: 2px;
   height: 70px;
   line-height: 70px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .panel.is-show{
   display:block;
 }
 
 .main-bar__down-side {
-  width: 700px;
+  width: 48vw;
   margin-top: 300px;
 }
 .main-bar__down-side__title {
@@ -141,14 +141,14 @@
   list-style:none;
   text-align:center;
   cursor:pointer;
-  background-color: rgb(218, 214, 214);
+  background-color: rgba(29, 112, 236, 0.048);
   font-size: 1.1rem;
   height: 70px;
   line-height: 70px;
 }
 .panel1-group{
   height:200px;
-  border:solid 1px #CCC;
+  // border:solid 1px #CCC;
   border-top:none;
   background:#FFF;
 }
@@ -159,7 +159,7 @@
   background:#FFF;
   color:black;
   transition: all 0.2s ease-out;
-  border-top: 2px solid red;
+  border-top: 3px solid red;
   padding-top: 2px;
   height: 70px;
   line-height: 70px;

@@ -1,7 +1,12 @@
 .wrapper
   = render "/products/header.html.haml"
+  %ul.breadcrumb-list
+    - breadcrumb :mypage
+    - breadcrumb :profile
+    = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
   .my-page-background
-    = render "side-bar"
-    = render "profile-edit-bar"
+    .contents-wrapper
+      = render "side-bar"
+      = render "profile-edit-bar"
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"

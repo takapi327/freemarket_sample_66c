@@ -1,0 +1,82 @@
+.wrapper1{
+  background-color: #eee;
+  .search{
+    margin: 40px 210px 0;
+    display: block;
+    &-right{
+      box-sizing: border-box;
+      width: 700px;
+      &-container{
+        margin: 0 auto;
+        &-tittle{
+          font-size: 22px;
+          margin: 0 0 8px;
+          font-weight: bold;
+        }
+        &-text{
+          font-size: 18px;
+          font-weight: normal;
+        }
+        &-number{
+          margin: 16px 0;
+          font-size: 12px;
+          color: #888;
+        }
+        .product__boxs{
+          height: 600px;
+          width: 100%;
+          cursor: pointer;
+          &-parent{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            &-file{
+              margin-right: 20px;
+              margin-bottom: 20px;
+              height: 200px;
+              width: 150px;
+              margin-top: 0;
+              &-image{
+                height: 140px;
+                box-sizing: border-box;
+                .image{
+                  height: 150px;
+                  width: 150px;
+                  box-sizing: border-box;
+                }
+                
+              }
+              &-price{
+                height: 25px;
+                width: 70px;
+                background-color: black;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                margin-bottom: 5px;
+                background: rgba(17, 16, 16, 0.3);
+                font-size: 18px;
+                text-align: center;
+                line-height: 25px;
+                color: white;
+                position: relative;
+                bottom: 20px;
+              }
+              &-content{
+                word-break: break-word;
+                overflow: hidden;
+                height: 50px;
+                width: 150px;
+                padding: 5px;
+                box-sizing: border-box;
+                background-color: white;
+                position: relative;
+                bottom: 20px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
