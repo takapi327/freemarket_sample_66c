@@ -12,9 +12,6 @@ Rails.application.routes.draw do
     get 'complete_registrations', to: 'users/registrations#complete_registration'
   end
   root "products#index"
-
-  resources :products, only: [:index, :new, :create, :show]
-  resources :users, only: [:index, :show, :edit, :new]
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
 
