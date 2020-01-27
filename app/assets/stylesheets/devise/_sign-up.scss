@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+.signup-header {
+  @include progress-bar();
+}
+
+.signup-main {
+  background-color: #eeecec;
+
+  &__form {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    height: 100vh;
+
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: solid 1px #eeeeee;
+      text-align: center;
+      line-height: 100px;
+    }
+
+      .new_user {
+        padding: 24px 16px 40px;
+        height: calc(100vh - 101px);
+        overflow: scroll;
+
+        .field {
+          margin: 10px 0 0;
+          font-weight: bold;
+          text-align: left;
+          position: relative;
+          
+          .label-n {
+            display: block;
+            margin: 40px auto 0;
+            font-size: 14px;
+            width: 315px;
+          }
+          .required-signup {
+            background-color: red;
+            line-height: 15px;
+            font-size: 10px;
+            width: 30px;
+            color: white;
+            padding: 0 5px;
+            position: absolute;
+            top: 1px;
+            right: 350px;
+          }
+
+          .label {
+            display: block;
+            margin: 40px auto 0;
+            font-size: 14px;
+            width: 315px;
+          }
+        }
+
+        .form-content {
+          display: block;
+          margin: 0 auto;
+          padding-left: 11px;
+          font-size: 14px;
+          line-height: 40px;
+          width: 315px;
+        }
+        
+
+          .g-recaptcha {
+            height: 78px;
+            width: 304px;
+            margin: 50px auto;
+          }
+
+          .submit {
+            display: block;
+            margin: 40px auto 0;
+            background-color: red;
+            color: white;
+            line-height: 50px;
+            width: 315px;
+          }
+      }
+  }
+}

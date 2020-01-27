@@ -1,33 +1,61 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  - if @sns_id.present?
-    = hidden_field_tag :sns_auth, true
-  - else
-  -# nickname入力用フォームの追加
-  .field
-    = f.label :nickname
-    %em (20 characters maximum)
-    %br/
-    = f.text_field :nickname, autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (7 characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-    
-= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
-= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
+.signup-header
+  =render 'products/buy-sell_header'
+  %nav.progress-bar
+    %ul.progress-bar__status
+      %li.is-active
+        会員情報
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        電話番号認証
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        住所入力
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        支払い方法
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        完了
+        .progress-bar__status__circle
+
+.signup-main
+  .signup-main__form
+    %h2 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      - if @sns_id.present?
+        = hidden_field_tag :sns_auth, true
+      - else
+      .field
+        = f.label 'ニックネーム', class: "label-n"
+        .required-signup
+          必須
+      = f.text_field :nickname, autofocus: true, placeholder: '例) エフマ太郎', class: 'form-content'
+      .field
+        = f.label 'メールアドレス', class: "label"
+        .required-signup
+          必須
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC・携帯どちらでも可', class: 'form-content'
+      .field
+        = f.label 'パスワード', class: "label"
+        .required-signup
+          必須
+      - if @minimum_password_length
+        = f.password_field :password, autocomplete: "new-password", placeholder: '７文字以上', class: 'form-content'
+      .field
+        = f.label 'パスワード(確認)', class: "label"
+        .required-signup
+          必須
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '７文字以上', class: 'form-content'
+      .recaptcha
+        = flash[:recaptcha_error]
+        = recaptcha_tags #「私はロボットではありません」のチェックボックス
+      = f.submit "次へ進む", class: 'submit'
+
+.signup-footer
+  = render 'products/buy-sell_footer'
 = render "devise/shared/links"
