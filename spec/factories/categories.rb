@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name  {"メンズ"}
-    ancestry   {"1"}
+    # category          {Faker::Number.between(from: 1, to: 13)}
+    # association :product, factory: :product
   end
 end
