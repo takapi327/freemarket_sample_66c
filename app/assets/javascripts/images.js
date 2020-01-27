@@ -102,7 +102,6 @@ $(function(){
       dataBox.clearData();
     }else{
       $.each(file_box.files, function(i, input){
-        console.log(i + ':' + input.name + ':' + delete_name);
         if(input.name == delete_name){
           dataBox.items.remove(i)
         }

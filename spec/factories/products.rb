@@ -10,6 +10,5 @@ FactoryBot.define do
     category_id          {Faker::Number.between(from: 1, to: 13)}
     area_id              {Faker::Number.between(from: 1, to: 48)}
     user
-    # category
   end
 end
