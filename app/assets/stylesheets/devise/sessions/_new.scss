@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-main {
+  background-color: #eeecec;
+
+  &__form {
+    width: 460px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #eeeeee;
+    height: 100%;
+
+    &__upper {
+      border-bottom: solid 1px #eeeeee;
+      text-align: center;
+      background-color: white;
+      padding: 40px;
+
+      p.no-account {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+      }
+
+      a.new-registration {
+        line-height: 40px;
+        width: 315px;
+        background-color: #2199e9;
+        color: white;
+        margin: 0 auto;
+        font-size: 14px;
+      }
+    }
+    
+    &__lower {
+      padding: 24px 16px 40px;
+      height: calc(100% - 146px);
+      background-color: white;
+      overflow: scroll;
+
+      .facebook-login {
+        display: block;
+        background-color: #385185;
+        color: white;
+        width: 315px;
+        margin: 0 auto;
+        line-height: 50px;
+        position: relative;
+        font-size: 14px;
+
+        .fab.fa-facebook-square {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-size: 30px;
+        }
+      }
+
+      .google-login {
+        display: block;
+        background-color: white;
+        border: solid 1px black;
+        width: 315px;
+        margin: 20px auto 50px;
+        line-height: 50px;
+        position: relative;
+        font-size: 14px;
+
+        .fab.fa-google {
+          position: absolute;
+          top: 15px;
+          left: 10px;
+          font-size: 20px;
+        }
+      }
+
+        .account-input {
+          line-height: 50px;
+          width: 315px;
+          margin: 10px 0;
+        }
+
+        .recaptcha {
+          height: 78px;
+          width: 304px;
+          margin: 20px auto;
+        }
+
+          .login-btn {
+            display: block;
+            line-height: 50px;
+            width: 315px;
+            background-color: red;
+            color: white;
+            margin: 10px auto;
+
+            
+          }
+
+            a.forgot-password {
+              width: 315px;
+              font-size: 14px;
+              color: #2199e9;
+              text-align: left;
+              margin: 50px auto;
+              font-weight: bold;
+            }
+    }
+  }
+}
