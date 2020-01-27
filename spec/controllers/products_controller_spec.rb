@@ -128,7 +128,6 @@ RSpec.describe ProductsController, type: :controller do
     let(:category){ FactoryBot.create(:category) }
     let(:params) {{user_id: user, product: attributes_for(:product)}}
     context 'create product' do
-      # binding.pry
       before do
         user = FactoryBot.create(:user)
         login user
@@ -144,6 +143,20 @@ RSpec.describe ProductsController, type: :controller do
         product = create(:product)
         get :edit, params: { id: product }
         expect(response).to render_template :edit
+      end
+    end
+  end
+
+  describe "#update" do
+    before do
+      @product = create(:product)
+      user = @product.user
+      login user
+    end
+    context 'can updata' do
+      it 'change name' do
+        patch :update, params: { id: @product.id, product: attributes_for(:product, name: 'aki')}
+        expect(@product.reload.name).to eq("aki")
       end
     end
   end
