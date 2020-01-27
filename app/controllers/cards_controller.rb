@@ -4,13 +4,10 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    # path = Rails.application.routes.recognize_path(request.referer)
-    # @product = Product.find(params[:id])
   end
 
   def make #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
-    @product = Product.find(params[:product_id])
     if params['payjp-token'].blank?
        redirect_to action: "new"
     else
@@ -22,19 +19,18 @@ class CardsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       @card.save
-      # redirect_to @card
-      redirect_to buy_product_path(@product)
+      redirect_to @card
     end
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
     @card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
