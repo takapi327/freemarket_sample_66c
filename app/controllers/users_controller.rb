@@ -26,6 +26,10 @@ class UsersController < ApplicationController
 
   def cardregister
     @product = Product.new
+    @card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   private
