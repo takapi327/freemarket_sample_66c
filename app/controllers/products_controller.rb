@@ -29,10 +29,13 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @images = @product.images
   end
 
   def update
+    binding.pry
     @product = Product.find(params[:id])
+    # @images = Image.where(product_id: @product.id)
     @product.update(product_params)
     redirect_to root_path
   end

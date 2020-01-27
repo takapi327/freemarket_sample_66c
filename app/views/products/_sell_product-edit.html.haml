@@ -10,11 +10,20 @@
               出品画像
               %span.require 必須
               %p 最大10枚までアップロードできます
+            -# - binding.pry
             #image-box-1
+              -# - @images.each do |image|
+              -#   .item-img{"data-image" => "$(file.name)"}
+              -#     .item-img_content
+              -#       .item-img_content_icon
+              -#         %img{height: "100", src: "#{image.image}", width: "100"}/
+              -#     .item-img_operetion
+              -#       .item-img_operetion_delete 削除
+              -#       .item-img_operetion_edit 編集
               .sell-image_box-0#box
                 = f.fields_for :images do |i|
                   .input-area 
-                    = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
+                    = f.text_field :image, type: 'file', name: "product[images_attributes][0][image]", value: '', style: 'display:none', id: 'img-file'
                     %label{for: 'img-file'}
                       %pre 
                         :preserve
