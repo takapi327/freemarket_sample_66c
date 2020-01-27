@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました。 %{errors}"
+      models:
+        product:
+          attributes:
+            category:
+              required: 'を入力してください'
