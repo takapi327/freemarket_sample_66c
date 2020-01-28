@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .new-registration-main {
   background-color: #eeecec;
 
@@ -28,6 +24,7 @@
       flex-direction: column;
       justify-content: center;
       background-color: white;
+      box-sizing: border-box;
 
       .email-registration {
         display: block;
@@ -78,6 +75,7 @@
         font-size: 14px;
         text-decoration: none;
         color: black;
+        box-sizing: border-box;
 
         .fab.fa-google {
           position: absolute;
