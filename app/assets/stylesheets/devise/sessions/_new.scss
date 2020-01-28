@@ -1,9 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
 .login-main {
   background-color: #eeecec;
+  box-sizing: border-box;
 
   &__form {
     width: 460px;
@@ -72,6 +69,7 @@
         font-size: 14px;
         text-decoration: none;
         color: black;
+        box-sizing: border-box;
 
         .fab.fa-google {
           position: absolute;
@@ -86,6 +84,7 @@
           width: 315px;
           margin: 10px 0;
           padding-left: 10px;
+          box-sizing: border-box;
         }
 
         .recaptcha {
