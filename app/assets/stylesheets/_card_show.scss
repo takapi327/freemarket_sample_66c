@@ -1,0 +1,82 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.show-main-flame {
+  width: 500px;
+
+  &-all {
+
+    &-box {
+      width: 700px;
+
+      &-buy_text {
+        height: 80px;
+        text-align: center;
+        padding-top: 50px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border: solid;
+        border-bottom: none;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+      }
+      &-buy_content {
+        height: 150px;
+        background-color: white;
+        border: solid;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+
+        .destroy_button {
+          height: 30px;
+          width: 100px;
+          color: red;
+          font-size: large;
+          border: solid;
+          border-width: 1px;
+          border-color: rgb(255, 43, 43);
+          border-radius: 5px;
+          margin-top: 10px;
+          margin-right: 40px;
+        }
+
+        &-item {
+          height: 170px;
+          width: 200px;
+
+          &_box {
+            height: 100px;
+            display: flex;
+            padding-top: 45px;
+            margin-left: 50px;
+
+            &-detail {
+              height: 100px;
+              width: 300px;
+              margin-left: 20px;
+              font-size: x-large;
+            }
+          }
+        }
+        .main-flame-all-box-choice-payment {
+          height: 100px;
+          width: 400px;
+          border: solid;
+          border-width: 1px;
+          border-color: rgb(1, 165, 230);
+          border-bottom-color: $flame-border_coler;
+          margin-top: 100px;
+
+          &-text {
+            width: 400px;
+            padding-top: 50px;
+            margin-left: 35px;
+          }
+        }
+      }
+    }
+  }
+}

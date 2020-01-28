@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   
   resources :searches, only: [:index]
   
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new,:show] do
     collection do
       post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'

@@ -138,7 +138,7 @@
           .item-fee
             送料込み
         .product-show__buy-btn
-          = link_to "購入画面に進む", buy_product_path, class: "buy-btn"
+          = link_to "購入画面に進む", buy_product_path(@product.id), class: "buy-btn"
         
         .product-show__item__bottom
           .item-description
@@ -197,5 +197,3 @@
                 Tシャツ
               .bottom-product__box__price
                 ¥2,000
-
-
