@@ -44,9 +44,9 @@
           - if @product.buyer_id.blank?
             .main-flame-all-box-choice-buy
               .main-flame-all-box-choice-buy-button
-                = link_to '購入する', "", class: 'button_cannot_buy'
+                = link_to '購入する', purchase_path, class: 'button_can_buy'
           
           - else
             .main-flame-all-box-choice-buy
               .main-flame-all-box-choice-buy-button
-                = link_to '購入する', purchase_path, class: 'button_can_buy'
+                = link_to '購入する', "", class: 'button_cannot_buy'
