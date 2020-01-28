@@ -1,0 +1,44 @@
+.complete-registration-header
+  =render 'products/buy-sell_header'
+  %nav.progress-bar
+    %ul.progress-bar__status
+      %li.complete
+        会員情報
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        電話番号認証
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        住所入力
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        支払い方法
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.is-active
+        完了
+        .progress-bar__status__circle
+
+.complete-registration-main
+  .complete-registration-main__form
+    .complete-registration-main__form__upper
+      会員登録完了
+    .complete-registration-main__form__lower
+      %p ありがとうございます。
+      %br
+      %p 会員登録が完了しました。
+      .complete-registration-main__form__lower__btn
+        = link_to root_path, class: 'home-btn' do
+          Fmarketをはじめる
+
+.aside-complete
+  = image_tag 'bg.jpg', class: 'aside', id: 'img'
+  %p.Ftittle-complete
+    = "スマホでかんたんフリマアプリ"
+  %p.Ftittle1-complete
+    = "今すぐ無料ダウンロード!"
+.complete-registration-footer
+  = render 'products/buy-sell_footer'
