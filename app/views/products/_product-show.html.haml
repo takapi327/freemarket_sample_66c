@@ -50,7 +50,7 @@
                 = "#{@product.day.name}"
       .product-show__item__box
         .item-price
-          = "¥#{@product.price}"
+          = ('¥' + @product.price.to_s(:delimited))
         .item-tax
           (税込)
         .item-fee
