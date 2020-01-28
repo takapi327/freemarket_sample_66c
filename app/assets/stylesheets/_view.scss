@@ -121,6 +121,7 @@ margin-right: 10px;
   width: 180px;
   word-break: break-word;
   overflow: hidden;
+  color: black;
 }
 
 @mixin transparent() {
@@ -144,11 +145,13 @@ margin-right: 10px;
       background-size: cover;
     }
   }
-  .main-firest {
+
+  &-firest {
+
     background-color: rgb(238, 231, 231);
     margin-bottom: 100px;
 
-    .main-firest-top {
+    &-top {
       height: 250px;
 
       .main-firest-top-category {
@@ -177,282 +180,85 @@ margin-right: 10px;
       background-color: rgb(238, 231, 231);
       margin-top: 0px;
 
-      .main-firest-top-contents-new_arrival {
+      &-contents-new_arrival {
         @include link_new_arrival_right-left();
-
-        .main-firest-top-contents-new_arrival-left {
-          @include link_new_arrival_left();
-        }
-        .main-firest-top-contents-new_arrival-right {
-          @include link_new_arrival_right();
-        }
       }
+
       .main-firest-top-photos {
         @include photos();
 
-        .main-firest-top-photos-parent {
+        &-items {
+          display: flex;
+          justify-content: space-between;
+
+
+          &-new {
+            margin-left: 10px;
+            font-family: 'arial narrow';
+            font-size: x-large;
+          }
+
+          .main-firest-top-photos-items-look {
+            margin-right: 10px;
+            font-size: normal;
+            font-weight: 600;
+            a {
+              color: rgb(0, 154, 214);
+              text-decoration: none;
+            }
+          }
+        }
+
+        &-parent {
           @include ul();
 
-          .main-firest-top-photos-parent_list {
+          &_list {
             @include li_top();
 
-            .main-firest-top-photos-parent_list-body {
+            &-body {
               @include li_body();
 
-              .main-firest-top-photos-parent_list-body-image {
+              &-image {
                 @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price {
-                  @include li_price();
+                position: relative;
+                
+                .image-fot {
+                  height: 200px;
+                  width: 200px;
                 }
-              }
-              .main-firest-top-photos-parent_list-body-title {
-                @include li_title();
 
 
-                .main-firest-top-photos-parent_list-body-title-a {
-                  @include li_title_a();
+                .main-firest-top-photos-parent_list-body-image-sold {
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 100px 100px 0 0;
+                  border-color: red transparent transparent transparent;
+                  position: relative;
+                  z-index: 1;
+                  position: absolute;
+                  bottom: 100px;
 
-                  .transparent {
-                    @include transparent();
+                  .main-firest-top-photos-parent_list-body-image-sold_text {
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    bottom: 55px;
+                    left: 5px;
+                    font-weight: bold;
+                    color: white;
+                    font-size: x-large;
                   }
                 }
-              }
-            }
-          }
 
-          .main-firest-top-photos-parent_list2 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body2 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image2 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price2 {
+                &-price {
                   @include li_price();
                 }
               }
-              .main-firest-top-photos-parent_list-body-title2 {
+              &-title {
                 @include li_title();
 
-                .main-firest-top-photos-parent_list-body-title-b {
-                  @include li_title_a();
 
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list3 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body3 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image3 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price3 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title3 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-c {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list4 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body4 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image4 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price4 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title4 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-d {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list5 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body5 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image5 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price5 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title5 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-e {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list6 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body6 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image6 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price6 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title6 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-f {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list7 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body7 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image7 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price7 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title7 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-g {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list8 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body8 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image8 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price8 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title8 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-h {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-          .main-firest-top-photos-parent_list9 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body9 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image9 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price9 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title9 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-i {
-                  @include li_title_a();
-
-                  .transparent {
-                    @include transparent();
-                  }
-                }
-              }
-            }
-          }
-
-          .main-firest-top-photos-parent_list10 {
-            @include li_top();
-
-            .main-firest-top-photos-parent_list-body10 {
-              @include li_body();
-
-              .main-firest-top-photos-parent_list-body-image10 {
-                @include li_image();
-
-                .main-firest-top-photos-parent_list-body-image-price10 {
-                  @include li_price();
-                }
-              }
-              .main-firest-top-photos-parent_list-body-title10 {
-                @include li_title();
-
-                .main-firest-top-photos-parent_list-body-title-j {
+                &-a {
                   @include li_title_a();
 
                   .transparent {

@@ -14,13 +14,16 @@
 @import "./buy-sell_header";
 @import "./buy";
 @import "./buy-sell_footer";
-@import "./cards";
+@import "./card_new";
+@import "./card_show";
 @import "./payment.scss";
 @import "./logout";
 @import "./product-show";
 @import "./sell_product";
 @import "./search";
 @import "./breadcrumbs";
+@import "./purchase_index";
+@import "./done";
 @import "devise/mixin-for-login";
 @import "devise/sign-up";
 @import "devise/new_cellphone";
