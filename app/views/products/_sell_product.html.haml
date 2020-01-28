@@ -40,7 +40,7 @@
               %label
                 カテゴリー
                 %span.require 必須
-              %div.select-box.box{action: "", name: "form1"}
+              %div.select-box.box{action: "", name: "form1", id: "select1"}
 
                 = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},{required: "" }
 
