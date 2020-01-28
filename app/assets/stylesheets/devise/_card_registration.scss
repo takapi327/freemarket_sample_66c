@@ -1,12 +1,10 @@
-* {
+.card-header {
+  @include progress-bar();
   box-sizing: border-box;
 }
 
-.card-header {
-  @include progress-bar();
-}
-
 .card {
+  box-sizing: border-box;
 
   &-credit {
     width: 700px;
