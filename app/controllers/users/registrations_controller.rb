@@ -51,10 +51,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.save
     sign_in(:user, @user) #サインインした状態にする記述
-    redirect_to root_path
+    redirect_to card_registrations_path
   end
 
   def complete_registration
+  end
+
+  def card_registration
   end
   # GET /resource/edit
   # def edit

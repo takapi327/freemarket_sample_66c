@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'user_details', to: 'users/registrations#create_tel'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get 'card_registrations', to: 'users/registrations#card_registration'
     get 'complete_registrations', to: 'users/registrations#complete_registration'
   end
   root "products#index"
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :show, :edit, :new]
   
   resources :searches, only: [:index]
   
