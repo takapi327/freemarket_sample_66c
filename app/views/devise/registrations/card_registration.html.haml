@@ -1,0 +1,107 @@
+.card-header
+  =render 'products/buy-sell_header'
+  %nav.progress-bar
+    %ul.progress-bar__status
+      %li.complete
+        会員情報
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        電話番号認証
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.complete
+        住所入力
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.is-active
+        支払い方法
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        完了
+        .progress-bar__status__circle
+
+.card
+  .card-credit
+    .card-credit__label
+      支払い方法
+    .card-credit-card-form
+      .card-credit-card-form__main
+        .card-credit-card-form__main-box
+          = form_tag(make_cards_path, method: :post, id: 'charge-form', name: "inputForm") do |f|
+            .card-credit-card-form__main-box__number
+              %label{class:'box-group--label', for: 'card_number'} カード番号
+              %span.input-require
+                必須
+              .card-credit-card-form__main-box__number-text
+                = text_field_tag "number", "", class: 'card-number--input', type: "text", id: 'card_number', maxlength: "16", placeholder: "    半角数字のみ"
+              .registration-error{type: "hidden", value: "必須項目です"}
+              %ul.card-list
+                %li.card-list--item{ style: "margin-left: 0;"}
+                  = image_tag "visa.svg", width:"49", height:"20"
+                %li.card-list--item
+                  = image_tag "master-card.svg", width:"34", height:"20"
+                %li.card-list--item
+                  = image_tag "saison-card.svg", width:"30", height:"20"
+                %li.card-list--item
+                  = image_tag "jcb.svg", width:"32", height:"20"
+                %li.card-list--item
+                  = image_tag "american_express.svg", width:"21", height:"20"
+                %li.card-list--item
+                  = image_tag "dinersclub.svg", width:"32", height:"20"
+                %li.card-list--item
+                  = image_tag "discover.svg", width:"32", height:"20"
+            .card-credit-card-form__main-box_expire
+              %label.box-group--label 有効期限
+              %span.input-require
+                必須
+              .card-credit-card-form__main-box_expire-items
+                .card-credit-card-form__main-box_expire-items_select-month
+                  %select#exp_month{name: "exp_month", type: "text"}
+                    %option{value: "1"}01
+                    %option{value: "2"}02
+                    %option{value: "3"}03
+                    %option{value: "4"}04
+                    %option{value: "5"}05
+                    %option{value: "6"}06
+                    %option{value: "7"}07
+                    %option{value: "8"}08
+                    %option{value: "9"}09
+                    %option{value: "10"}10
+                    %option{value: "11"}11
+                    %option{value: "12"}12
+                  %span{class: "month"} 月
+                  .card-credit-card-form__main-box_expire-items_select-month_icon
+                    = icon('fas', 'chevron-down')
+                .card-credit-card-form__main-box_expire-items_select-year
+                  %select#exp_year{name: "exp_year", type: "text"}
+                    %option{value: "2019"}19
+                    %option{value: "2020"}20
+                    %option{value: "2021"}21
+                    %option{value: "2022"}22
+                    %option{value: "2023"}23
+                    %option{value: "2024"}24
+                    %option{value: "2025"}25
+                    %option{value: "2026"}26
+                    %option{value: "2027"}27
+                    %option{value: "2028"}28
+                    %option{value: "2029"}29
+                  %span{class:"year"} 年
+                  .card-credit-card-form__main-box_expire-items_select-year_icon
+                    = icon('fas', 'chevron-down')
+            .card-credit-card-form__main-box_security-code
+              %label.box-group--label{for: "cvc"} セキュリティーコード
+              %span.input-require
+                必須
+              .card-credit-card-form__main-box_security-code_text
+                = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "    カード背面４桁もしくは３桁の番号"
+              .question-form
+                %span.question-form__text
+                  カード裏面の番号とは？
+            #card_token
+              = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
+              = link_to complete_registrations_path, class: "card-form__box__add", id: "token_submit", type: 'button' do
+                次へ進む
+.card-footer
+  = render 'products/buy-sell_footer'
