@@ -7,7 +7,7 @@
         .main-flame-all-box-buy_content-item
           .main-flame-all-box-buy_content-item_box
             .main-flame-all-box-buy_content-item_box-image
-              -# = image_tag("#{product.images.first.image}", class: 'image-fot_buy')
+              = image_tag("#{@product.images.first.image}", class: 'image-fot_buy')
             .main-flame-all-box-buy_content-item_box-detail
               .main-flame-all-box-buy_content-item_box-detail_name
                 = @product.name
