@@ -10,6 +10,8 @@ class User < ApplicationRecord
   #sns_credentialsとのアソシエーション
   has_many :sns_credentials
   has_many :products
+  has_one :address
+  has_one :user_detail
   has_many :cards
 
   def self.from_omniauth(auth)

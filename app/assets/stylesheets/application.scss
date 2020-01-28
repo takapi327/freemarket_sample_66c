@@ -21,3 +21,11 @@
 @import "./sell_product";
 @import "./search";
 @import "./breadcrumbs";
+@import "devise/mixin-for-login";
+@import "devise/sign-up";
+@import "devise/new_cellphone";
+@import "devise/new_address";
+@import "users/new";
+@import "devise/sessions/new";
+@import "devise/complete-registration";
+@import "devise/card_registration"

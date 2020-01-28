@@ -1,20 +1,37 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
-= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
-= render "devise/shared/links"
+.login-header
+  =render 'products/buy-sell_header'
 
+.login-main
+  .login-main__form
+    .login-main__form__upper 
+      %p.no-account アカウントをお持ちでない方はこちら
+      = link_to new_user_registration_path, class: 'new-registration' do
+        新規会員登録
+
+    .login-main__form__lower
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'facebook-login' do
+        = icon('fab', 'facebook-square')
+        Facebookでログイン
+
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'google-login' do
+        = icon('fab', 'google')
+        Googleでログイン
+
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-main__form__lower__email
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'account-input'
+        .login-main__form__lower__password
+          = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class: 'account-input'
+
+        .recaptcha
+          = flash[:recaptcha_error]
+          = recaptcha_tags #「私はロボットではありません」のチェックボックス
+
+        .login-main__form__lower__loguin-btn
+          = f.submit "ログイン", class: 'login-btn'
+
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: 'forgot-password'
+
+.login-footer
+  = render 'products/buy-sell_footer'
