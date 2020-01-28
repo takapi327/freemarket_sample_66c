@@ -4,6 +4,14 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
+  devise_scope :user do
+    get 'user_details', to: 'users/registrations#new_cellphone'
+    post 'user_details', to: 'users/registrations#create_tel'
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+    get 'card_registrations', to: 'users/registrations#card_registration'
+    get 'complete_registrations', to: 'users/registrations#complete_registration'
+  end
   root "products#index"
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
@@ -14,11 +22,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :show, :edit, :new]
   
   resources :searches, only: [:index]
   
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new,:show] do
     collection do
       post 'make', to: 'cards#make'
       post 'delete', to: 'cards#delete'

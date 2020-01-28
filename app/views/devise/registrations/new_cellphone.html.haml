@@ -1,0 +1,42 @@
+.sms-header
+  =render 'products/buy-sell_header'
+  %nav.progress-bar
+    %ul.progress-bar__status
+      %li.complete
+        会員情報
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li.is-active
+        電話番号認証
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        住所入力
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        支払い方法
+        .progress-bar__status__circle
+        .progress-bar__status__line
+      %li
+        完了
+        .progress-bar__status__circle
+
+.sms-main
+  .sms-main__form
+    .sms-main__form__upper
+      電話番号の確認
+    .sms-main__form__lower
+      %p.tel 携帯電話の番号
+      .required-cellphone
+        必須
+      = form_with model: UserDetail.new, url: {controller: 'registrations', action: 'create_tel'}, local: true do |t|
+        =t.text_field :tel, placeholder: "携帯電話の番号を入力", class: "telnumber"
+        %p.text 本人確認のため、携帯電話のSMS(ショートメールサービス)を利用して認証を行います。
+        = t.submit "SMSを送信する", class: 'submit'
+        %p.text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザに公開されることはありません。
+        = link_to "#", class: "reason" do
+          電話番号の確認が必要な理由>
+
+.sms-footer
+  = render 'products/buy-sell_footer'

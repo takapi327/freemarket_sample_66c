@@ -1,0 +1,74 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.done-main-flame {
+  background-color: $flame-border_coler;
+
+  &-all {
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    &-box {
+      width: 900px;
+      margin: 0 auto;
+
+      &-buy_text {
+        height: 100px;
+        text-align: center;
+        padding-top: 100px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border: solid;
+        border-bottom: none;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+      }
+      &-buy_content {
+        height: 250px;
+        background-color: white;
+        border: solid;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+        padding-top: 70px;
+
+        &-item {
+          height: 170px;
+          width: 400px;
+          margin: 0 auto;
+
+          &_box {
+            height: 100px;
+            display: flex;
+            padding-top: 45px;
+            margin-left: 70px;
+
+            &-image {
+              height: 80px;
+              width: 70px;
+              background-color: darkseagreen;
+
+              .image-fot_done {
+                height: 80px;
+                width: 70px;
+              }
+            }
+            &-detail {
+              height: 80px;
+              width: 180px;
+              margin-left: 20px;
+
+              &_name {
+                height: 30px;
+                font-size: x-large;
+              }
+              &_price {
+                height: 30px;
+                font-size: x-large;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

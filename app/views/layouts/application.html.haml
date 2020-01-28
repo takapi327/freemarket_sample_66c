@@ -2,12 +2,13 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", http:{equiv: "Content-Type"}}/
+    %script{src: "https://www.google.com/recaptcha/api.js"}
     %title FreemarketSample66c
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
-    %script{type: "text/javascript"} Payjp.setPublicKey(ENV['PAYJP_PUBLIC_KEY']);
+    %script{type: "text/javascript"} Payjp.setPublicKey(Rails.application.credentials.payjp[:payjp_public_key]);
   %body
     = yield

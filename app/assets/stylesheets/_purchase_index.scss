@@ -1,0 +1,139 @@
+$flame-border_coler: rgb(238, 236, 236);
+
+.index-main-flame {
+  background-color: $flame-border_coler;
+
+  &-all {
+
+    &-box {
+      width: 900px;
+      margin: 0 auto;
+
+      &-buy_text {
+        height: 70px;
+        text-align: center;
+        padding-top: 30px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border: solid;
+        border-bottom: none;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+      }
+      &-buy_content {
+        height: 170px;
+        background-color: white;
+        border: solid;
+        border-width: 1px;
+        border-color: $flame-border_coler;
+
+        &-item {
+          height: 170px;
+          width: 400px;
+          margin: 0 auto;
+
+          &_box {
+            height: 100px;
+            display: flex;
+            padding-top: 45px;
+            margin-left: 70px;
+
+            &-image {
+              height: 80px;
+              width: 70px;
+              background-color: darkseagreen;
+
+              .image-fot_index {
+                height: 80px;
+              width: 70px;
+              }
+            }
+            &-detail {
+              height: 80px;
+              width: 180px;
+              margin-left: 20px;
+
+              &_name {
+                height: 30px;
+                font-size: x-large;
+              }
+              &_price {
+                height: 30px;
+                font-size: x-large;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-box-choice {
+      height: 300px;
+      background-color: white;
+      border-width: 1px;
+      border-color: $flame-border_coler;
+      padding-top: 50px;
+
+      &-flame {
+        width: 400px;
+        margin: 0 auto;
+
+        .index-main-flame-all-box-choice-payment {
+          height: 120px;
+          width: 400px;
+          border: solid;
+          border-width: 1px;
+          border-color: white;
+          border-bottom-color: $flame-border_coler;
+
+          &-text {
+            width: 400px;
+            padding-top: 30px;
+            margin-left: 35px;
+            font-size: large;
+            margin-left: 70px;
+          }
+          &-registration {
+            width: 400px;
+            margin-left: 35px;
+            font-size: large;
+            margin-left: 70px;
+
+            .registration_link {
+              color: rgb(1, 165, 230);
+              text-decoration: none;
+            }
+          }
+        }
+        .index-main-flame-all-box-choice-buy {
+          height: 200px;
+          width: 400px;
+          padding-top: 10px;
+
+          &-button {
+            height: 60px;
+            width: 400px;
+            display: flex;
+            text-align:center;
+
+            .button {
+              height: 60px;
+              width: 400px;
+              line-height:60px;
+              border: solid;
+              border-width: 1px;
+              border-color: rgb(255, 43, 43);
+              text-decoration: none;
+              padding: 0 164.5px;
+              margin-top: 40px;
+              background-color: rgb(255, 43, 43);
+              font-family: 'arial narrow';
+              color: white;
+              font-size: medium;
+            }
+          }
+        }
+      }
+    }
+  }
+}

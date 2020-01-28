@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeecec;
+}
+
+.complete-registration-header {
+  @include progress-bar();
+}
+
+.complete-registration-main {
+  background-color: #eeecec;
+  &__form {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    height: calc(100vh - 50vh);
+
+    &__upper {
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: solid 1px #eeeeee;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    &__lower {
+      padding: 24px 16px 40px;
+      height: calc(100vh - 101px);
+      margin-top: 50px;
+      
+      p {
+        font-size: 20px;
+      }
+
+    }
+        a.home-btn {
+          display: block;
+          background-color: red;
+          line-height: 60px;
+          width: 315px;
+          color: white;
+          margin: 50px auto;
+          text-decoration: none;
+        }
+  }
+}
+
+.aside-complete {
+  height: calc(100vh - 417.86px);
+  background-size: cover;
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+
+  img.aside {
+    width: 700px;
+  }
+
+  .Ftittle-complete {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    width: 500px;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    z-index: 3;
+  }
+  .Ftittle1-complete {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    width: 500px;
+    position: absolute;
+    left: 180px;
+    top: 150px;
+    z-index: 3;
+  }
+}

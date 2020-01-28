@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-header {
+  @include progress-bar();
+}
+
+.card {
+
+  &-credit {
+    width: 700px;
+    margin: 0 auto;
+
+    &__label {
+        line-height: 101px;
+        text-align: center;
+        padding-top: 5px;
+        font-size: x-large;
+        background-color: white;
+        font-family: 'arial narrow';
+        border-bottom: solid 1px #eeeeee;
+
+    }
+  }
+  &-credit-card-form {
+    height: calc(100vh - 101px);
+    width: 700px;
+    background-color: white;
+    padding: 24px 16px 40px;
+
+
+    &__main {
+      
+      &-box {
+        height: calc(100vh - 101px);
+        width: 450px;
+        margin: 0 auto;
+
+        &__number {
+          height: 120px;
+          width: 450px;
+          margin-top: 30px;
+
+          .input-require {
+            background-color: red;
+            height: 30px;
+            width: 35px;
+            color: white;
+            border-radius: 3px;
+            margin-left: 5px;
+            padding: 5px;
+          }
+
+          &-text {
+            height: 50px;
+            width: 450px;
+            border: none;
+            margin-top: 10px;
+
+            #card_number {
+              height: 50px;
+              width: 100%;
+            }
+          }
+
+          .registration-error {
+            margin-top: 10px;
+          }
+
+          .card-list {
+            display: flex;
+          }
+        }
+
+        &_expire {
+          height: 70px;
+          width: 450px;
+          margin-top: 50px;
+
+          .box-group--label {
+          }
+
+          .input-require {
+            background-color: red;
+            height: 20px;
+            width: 30px;
+            color: white;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius:  3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            margin-left: 5px;
+            padding: 5px;
+          }
+
+          &-items {
+            display: flex;
+            margin-top: 10px;
+
+            &_select-month {
+              position: relative;
+
+              #exp_month {
+                height: 50px;
+                width: 130px;
+                background-image: none;
+                box-shadow: none;
+                -webkit-appearance: none;
+                appearance: none;
+                border: none;
+                outline: none;
+                padding: 0 15px;
+                border-style: solid; border-width: 1px;
+                border-color: rgb(206, 204, 204);
+                background-color: white;
+              }
+
+              .month {
+                margin-left: 10px;
+              }
+
+              &_icon {
+                margin-left: 100px;
+                position: absolute;
+                top: 20px;
+              }
+
+            }
+
+            &_select-year {
+              position: relative;
+              margin-left: 10px;
+
+              #exp_year {
+                height: 50px;
+                width: 130px;
+                background-image: none;
+                box-shadow: none;
+                -webkit-appearance: none;
+                appearance: none;
+                border: none;
+                outline: none;
+                padding: 0 15px;
+                border-style: solid; border-width: 1px;
+                border-color: rgb(206, 204, 204);
+                background-color: white;
+              }
+
+              .year {
+                margin-left: 10px;
+              }
+
+              &_icon {
+                margin-left: 100px;
+                position: absolute;
+                top: 20px;
+              }
+            }
+          }
+        }
+
+        &_security-code {
+          height: 100px;
+          width: 450px;
+          margin-top: 70px;
+
+          .input-require{
+            background-color: red;
+            height: 30px;
+            width: 35px;
+            color: white;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius:  3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            margin-left: 5px;
+            padding: 5px;
+          }
+
+          &_text {
+            margin-top: 10px;
+            height: 50px;
+            font-family: 'arial narrow';
+            border-color: rgb(206, 204, 204);
+
+            #cvc {
+              height: 45px;
+              width: 100%;
+              border: none;
+              font-family: 'arial narrow';
+              border-style: solid; border-width: 1px;
+              border-color: rgb(206, 204, 204);
+            }
+          }
+
+          .question-form {
+            margin-top: 10px;
+            color: rgb(0, 183, 255);
+            margin-left: 270px;
+          }
+        }
+
+        #card_token {
+          height: 70px;
+          width: 450px;
+          margin-top: 70px;
+
+          a.card-form__box__add {
+            display: block;
+            line-height: 50px;
+            width: 100%;
+            background-color: red;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+          }
+
+          // 送信機能を外すとフォームのビューが崩れるため、一時的に隠すようにしています。
+          input#token_submit {
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            color: white;
+            border: none;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

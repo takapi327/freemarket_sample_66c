@@ -1,5 +1,6 @@
 .wrapper
   = render "/products/header.html.haml"
+- if @card.blank?
   %ul.breadcrumb-list
     - breadcrumb :mypage
     - breadcrumb :card
@@ -16,9 +17,21 @@
               .pay-lower-box-btn-icon
                 =icon('far', 'credit-card')
               .pay-lower-box-btn-text
-                = link_to "クレジットカードを追加する", make_cards_path
+
+                = link_to "クレジットカードを追加する", new_card_path
         .pay-lower-guide
           支払い方法について
           = icon('fas', 'chevron-right')
+
+- else
+  %ul.breadcrumb-list
+    - breadcrumb :mypage
+    - breadcrumb :logout
+    = breadcrumbs pretext: "", separator: " &rsaquo; ", class: "mypage-list"
+  .my-page-background
+    .contents-wrapper
+      = render "side-bar"
+      = render "cards/card_show"
+
   = render "/products/footer.html.haml"
   = render "/products/sell-btn.html.haml"
