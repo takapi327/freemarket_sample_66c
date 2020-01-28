@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_16_080104) do
+ActiveRecord::Schema.define(version: 2020_01_20_102842) do
 
-  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "name", default: 0, null: false
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "zip", null: false
+    t.integer "prefectures", null: false
+    t.string "city", null: false
+    t.string "number", null: false
+    t.string "bill"
+    t.string "landline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_areas_on_product_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -28,11 +43,13 @@ ActiveRecord::Schema.define(version: 2020_01_16_080104) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.bigint "product_id", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["product_id"], name: "index_categories_on_product_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,22 +62,17 @@ ActiveRecord::Schema.define(version: 2020_01_16_080104) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
-    t.integer "area_id", null: false
-    t.string "derivery"
+    t.string "derivery", null: false
     t.string "name", null: false
-    t.integer "status_id", null: false
+    t.integer "status", default: 0, null: false
     t.integer "price", null: false
-    t.integer "burden_id", null: false
+    t.integer "burden", default: 0, null: false
     t.text "content", null: false
-    t.string "day_id", null: false
+    t.date "day", null: false
     t.bigint "buyer_id"
-    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["seller_id"], name: "index_products_on_seller_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -71,6 +83,19 @@ ActiveRecord::Schema.define(version: 2020_01_16_080104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "user_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_kana_name", null: false
+    t.string "first_kana_name", null: false
+    t.text "profile"
+    t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_details_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,12 +111,11 @@ ActiveRecord::Schema.define(version: 2020_01_16_080104) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  
+  add_foreign_key "areas", "products"
   add_foreign_key "cards", "users"
+  add_foreign_key "categories", "products"
   add_foreign_key "images", "products"
-  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "products", "users", column: "buyer_id"
-  add_foreign_key "products", "users", column: "seller_id"
   add_foreign_key "sns_credentials", "users"
 end

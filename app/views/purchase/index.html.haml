@@ -1,20 +1,4 @@
-.purchase-index
-%h2 購入を確定しますか？
-= @product.name
-.purchase-index-price
-¥
-= @product.price
-(送料込み)
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
+.wrapper
+  = render "products/buy-sell_header.html.haml"
+  = render "index.html.haml"
+  = render "products/buy-sell_footer.html.haml"
