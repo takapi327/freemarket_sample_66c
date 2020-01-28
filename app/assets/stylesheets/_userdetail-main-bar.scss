@@ -1,9 +1,8 @@
 .main-bar {
-  margin-left: 350px;
-
+  width: 48vw;
+  max-width: 670px;
   &__up-side {
     height: 600px;
-    width: 48vw;
     
     &__tab-panel {
       height: 300px;
@@ -74,6 +73,7 @@
   font-size: 1.1rem;
   height: 70px;
   line-height: 70px;
+  background-color: rgba(29, 112, 236, 0.048);
 }
 .panel-group{
   height:400px;
@@ -141,7 +141,7 @@
   list-style:none;
   text-align:center;
   cursor:pointer;
-  background-color: rgb(218, 214, 214);
+  background-color: rgba(29, 112, 236, 0.048);
   font-size: 1.1rem;
   height: 70px;
   line-height: 70px;

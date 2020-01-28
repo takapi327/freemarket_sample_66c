@@ -15,9 +15,23 @@
         %ul.product__boxs-parent
           - @products.each do |products|
             %li.product__boxs-parent-file
-              .product__boxs-parent-file-image
-                = link_to image_tag("#{products.images.first.image}", class: 'image'),product_path(products.id)
-              .product__boxs-parent-file-price
-                = ('¥' + products.price.to_s(:delimited))
-              .product__boxs-parent-file-content
-                = products.content
+              - if products.seller_id.present?
+                .product__boxs-parent-file-label
+                  .sell
+                    = '出品中'
+                .product__boxs-parent-file-image
+                  = link_to image_tag("#{products.images.first.image}", class: 'image'),product_path(products.id)
+                .product__boxs-parent-file-price
+                  = ('¥' + products.price.to_s(:delimited))
+                .product__boxs-parent-file-content
+                  = products.content
+              - else products.buyer_id.present?
+                .product__boxs-parent-file-label
+                  .sell
+                    = 'SOLD'
+                .product__boxs-parent-file-image
+                  = link_to image_tag("#{products.images.first.image}", class: 'image'),product_path(products.id)
+                .product__boxs-parent-file-price
+                  = ('¥' + products.price.to_s(:delimited))
+                .product__boxs-parent-file-content
+                  = products.content

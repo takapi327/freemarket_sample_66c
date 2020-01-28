@@ -1,7 +1,7 @@
 .main_bar {
   width: 48vw;
+  max-width: 670px;
   background-color: white;
-  float: right;
   &__title {
     border-bottom: solid 1px;
     border-color: lightgray;
@@ -59,7 +59,7 @@ p {
     }
     &__input {
       height: 30px;
-      width: 42vw;
+      width: 95%;
       // border-radius: 2px;
       // box-shadow: none;
       padding: 10px;
@@ -89,7 +89,7 @@ p {
   margin-top: 40px; 
   color: white;
   height: 50px;
-  width: 44vw;
+  width: 100%;
   border: none;
 }
 

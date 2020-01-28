@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'users/logout', to: 'users#logout'
   get 'users/cardregister', to: 'users#cardregister'
 
-  resources :products, only: [:index, :new, :create, :show, :destroy, :edit] do
+  resources :products, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     member do
       get 'buy', to: 'products#buy'
     end
@@ -32,4 +32,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
+
 end

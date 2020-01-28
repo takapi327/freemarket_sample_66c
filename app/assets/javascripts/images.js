@@ -26,7 +26,7 @@ $(function(){
       // 画像をテキストボックスに入れた際に追加するビュー
       file_img.onload = function(){
         var src = file_img.result
-        var html = `<div class = 'item-img' data-image = '$(file.name)}'>
+        var html = `<div class = 'item-img' data-image = '${(file.name)}'>
                       <div class = 'item-img_content'>
                         <div class = 'item-img_content_icon'>
                           <img src="${src}" width="100" height="100">
@@ -74,7 +74,7 @@ $(function(){
         // 画像をテキストボックスに入れた際に追加するビュー
         file_img.onload = function(){
           var src = file_img.result
-          var html = `<div class = 'item-img' data-image = '$(file.name)}'>
+          var html = `<div class = 'item-img' data-image = '${(file.name)}'>
                         <div class = 'item-img_content'>
                           <div class = 'item-img_content_icon'>
                             <img src="${src}" width="100" height="100">
@@ -96,7 +96,7 @@ $(function(){
   // 画像を削除するアクション
   $(document).on('click', '.item-img_operetion_delete', function(){
     var delete_img = $(this).parents('.item-img')
-    var delete_name = $('delete_img').data('image')
+    var delete_name = $(delete_img).data('image')
     if(file_box.files.length == 1){
       $('input[type=file]').val(null)
       dataBox.clearData();

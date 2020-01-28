@@ -25,13 +25,14 @@
                 商品名
                 %span.require 必須
               %div
-                = f.text_field :name, class: 'form__product__name', placeholder: '商品名(必須 40文字まで)'
+                = f.text_field :name, class: 'form__product__name', required: "" , placeholder: '商品名(必須 40文字まで)'
             .product__content
               %label
                 商品の説明
                 %span.require 必須
               %div
-                = f.text_area :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+                = f.text_area :content, class: 'form__product__name', required: "" , placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+
           .sell-content__index.clearfix
             %h3.index__tittle
               商品の詳細
@@ -42,7 +43,7 @@
                 %span.require 必須
               %div.select-box.box{action: "", name: "form1"}
 
-                = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"}
+                = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},{required: "" }
 
               %div#add
               .product__category__group
@@ -51,7 +52,7 @@
                 %span.require 必須
               %div.select-box.box
 
-                = f.collection_select :status_id, Status.all, :id, :name, {prompt: "---"}
+                = f.collection_select :status_id, Status.all, :id, :name, {prompt: "---"},{required: "" }
 
           .sell-content__derivery.clearfix
             %h3.index__tittle
@@ -63,7 +64,7 @@
                 %span.require 必須
               %div.select-box.box
 
-                = f.collection_select :burden_id, Burden.all, :id, :name, {prompt: "---"}
+                = f.collection_select :burden_id, Burden.all, :id, :name, {prompt: "---"},{required: "" }
 
               .product__category__group
               %label
@@ -71,7 +72,7 @@
                 %span.require 必須
               %div.select-box.box
 
-                = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"}
+                = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"},{required: "" }
 
               .product__category__group
               %label
@@ -79,7 +80,7 @@
                 %span.require 必須
               %div.select-box.box
 
-                = f.collection_select :day_id, Day.all, :id, :name, {prompt: "---"}
+                = f.collection_select :day_id, Day.all, :id, :name, {prompt: "---"},{required: "" }
 
           .sell-content__index.clearfix
             %h3.index__tittle
@@ -93,7 +94,7 @@
                       %span.require 必須
                     %div.price_textbox
                       ¥
-                      = f.text_field :price, class: 'price_text', id: 'id',placeholder: '例)300'
+                      = f.text_field :price, class: 'price_text', id: 'id',placeholder: '例)300', required: ""
                 %li.price_tax
                   .tax_tittle
                     販売手数料(10%)
