@@ -4,7 +4,7 @@ $(function() {
   var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1"+"$2");
   
   // 画像入れ替え
-  $('img.main-image').stop().fadeOut(50,
+  $('img.main-image').stop().fadeOut(100,
   function(){
   $('img.main-image').attr('src', selectedSrc);
   $('img.main-image').stop().fadeIn(200);
