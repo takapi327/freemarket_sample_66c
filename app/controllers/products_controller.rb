@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
     if @product.images.present? && @product.save
       Product.update(seller_id: current_user.id)
@@ -36,9 +35,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-    binding.pry
     @product = Product.find(params[:id])
-    # @images = Image.where(product_id: @product.id)
+    @images = Image.where(product_id: @product.id)
+    @images.delete_all
     @product.update(product_params)
     redirect_to root_path
   end

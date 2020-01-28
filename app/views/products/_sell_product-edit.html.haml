@@ -10,20 +10,19 @@
               出品画像
               %span.require 必須
               %p 最大10枚までアップロードできます
-            -# - binding.pry
             #image-box-1
-              -# - @images.each do |image|
-              -#   .item-img{"data-image" => "$(file.name)"}
-              -#     .item-img_content
-              -#       .item-img_content_icon
-              -#         %img{height: "100", src: "#{image.image}", width: "100"}/
-              -#     .item-img_operetion
-              -#       .item-img_operetion_delete 削除
-              -#       .item-img_operetion_edit 編集
+              - @images.each do |image|
+                .item-img
+                  .item-img_content
+                    .item-img_content_icon
+                      %img{height: "100", src: "#{image.image}", width: "100"}
+                    .item-img_operetion
+                      .item-img_operetion_delete 削除
+                      .item-img_operetion_edit 編集
               .sell-image_box-0#box
-                = f.fields_for :images do |i|
-                  .input-area 
-                    = f.text_field :image, type: 'file', name: "product[images_attributes][0][image]", value: '', style: 'display:none', id: 'img-file'
+                .input-area
+                  = f.fields_for @images, local: true do |i|
+                    = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
                     %label{for: 'img-file'}
                       %pre 
                         :preserve
@@ -41,7 +40,7 @@
                 商品の説明
                 %span.require 必須
               %div
-                = f.text_field :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+                = f.text_area :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
           .sell-content__index.clearfix
             %h3.index__tittle
               商品の詳細
@@ -119,6 +118,6 @@
               %p 禁止されている出品、行為を必ずご確認ください。
               %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
               %p また、出品をもちまして加盟店規約に同意したことになります。
-              = f.submit '出品する', class: 'form-btn'
+              = f.submit '変更する', class: 'form-btn'
               .back-btn
                 = link_to 'もどる', root_path
