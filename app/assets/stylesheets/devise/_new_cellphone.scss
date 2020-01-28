@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+.sms-header {
+  @include progress-bar();
+}
+
+.sms-main {
+  background-color: #eeecec;
+  &__form {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    height: 100vh;
+
+    &__upper {
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: solid 1px #eeeeee;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    &__lower {
+      padding: 24px 16px 40px;
+      height: calc(100vh - 101px);
+      position: relative;
+      
+      .tel {
+        font-size: 16px;
+        font-weight: bold;
+        width: 315px;
+        margin: 60px auto 5px;
+        text-align: left;
+      }
+      .required-cellphone {
+        @include required-signup();
+        position: absolute;
+        top: 88px;
+      }
+        .telnumber {
+          display: block;
+          margin: 0 auto;
+          line-height: 60px;
+          width: 315px;
+          padding-left: 10px;
+        }
+
+        p.text {
+          width: 315px;
+          margin: 10px auto 0;
+          text-align: left;
+        }
+
+        .submit {
+          display: block;
+          margin: 50px auto 0;
+          background-color: red;
+          color: white;
+          width: 315px;
+          line-height: 60px;
+        }
+
+        .reason {
+          display: block;
+          width: 315px;
+          color: skyblue;
+          line-height: 30px;
+          font-size: 14px;
+          margin: 30px auto 0;
+          text-align: right;
+          font-weight: bold;
+        }
+    }
+  }
+
+}

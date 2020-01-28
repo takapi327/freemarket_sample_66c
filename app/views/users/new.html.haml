@@ -1,4 +1,22 @@
-= link_to 'メールアドレスで登録', new_user_registration_path
--# SNS認証でのリンクを設置
-= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
-= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
+.new-registration-header
+  =render 'products/buy-sell_header'
+
+.new-registration-main
+  .new-registration-main__signup-link
+    .new-registration-main__signup-link__upper
+      新規会員登録
+    .new-registration-main__signup-link__lower
+      = link_to new_user_registration_path, class: 'email-registration' do
+        = icon('far', 'envelope')
+        メールアドレスで登録する
+
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'facebook-registration' do
+        = icon('fab', 'facebook-square')
+        Facebookで登録する
+
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'google-registration' do
+        = icon('fab', 'google')
+        Googleで登録する
+
+.new-registration-footer
+  = render 'products/buy-sell_footer'

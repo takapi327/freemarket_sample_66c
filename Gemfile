@@ -93,5 +93,6 @@ gem "omniauth-rails_csrf_protection" #セキュリティ対策のgem,ここま�
 gem 'payjp'
 gem 'jquery-rails'
 gem 'ancestry'
+gem 'recaptcha', require: "recaptcha/rails" #reCAPTCHA(私はロボットではありません)を使うために必要となるgem
 gem 'active_hash'
 gem "gretel"
