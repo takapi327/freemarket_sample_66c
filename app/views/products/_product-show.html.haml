@@ -25,10 +25,10 @@
                   =icon('fas', 'frown')
             %tr
               %th カテゴリー
-              %td その他
+              %td
             %tr
               %th ブランド
-              %td その他
+              %td
             %tr
               %th 商品の状態
               %td 
@@ -55,7 +55,7 @@
           (税込)
         .item-fee
           送料込み
-    - if @product.user_id == @product.seller_id
+    - if user_signed_in? && @product.seller_id == current_user.id
       .blunk
       .product-show__swittch
         .product-show__swittch__edit
