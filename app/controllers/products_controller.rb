@@ -12,9 +12,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    Product.update(seller_id: current_user.id)
-    redirect_to root_path
+    if @product.images.present? && @product.save
+      Product.update(seller_id: current_user.id)
+      redirect_to root_path
+    else
+      redirect_to new_product_path
+    end
   end
   
   def show
@@ -35,6 +38,7 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     redirect_to root_path
   end
+
   def destroy
     @product = Product.find(params[:id])
     if @product.user_id == current_user.id && @product.destroy
