@@ -101,31 +101,18 @@
 
         .bottom-product
           .bottom-product__title
-            ユーザーさんのその他の出品
+            = "#{@product.user.nickname}さんのその他の出品"
           .bottom-product__boxs
-            .bottom-product__box
-              .bottom-product__box__image
-                No image
-              .bottom-product__box__text
-                .bottom-product__box__name
-                  Tシャツ
-                .bottom-product__box__price
-                  ¥2,000
-            .bottom-product__box
-              .bottom-product__box__image
-                No image
-              .bottom-product__box__text
-                .bottom-product__box__name
-                  Tシャツ
-                .bottom-product__box__price
-                  ¥2,000
-            .bottom-product__box
-              .bottom-product__box__image
-                No image
-              .bottom-product__box__text
-                .bottom-product__box__name
-                  Tシャツ
-                .bottom-product__box__price
-                  ¥2,000
+            - @products.each do |product|
+              = link_to product_path(product.id) do
+                .bottom-product__box
+                  .bottom-product__box__image
+                    = image_tag("#{product.images[0].image}", class: "box-image")
+                  .bottom-product__box__text
+                    .bottom-product__box__name
+                      = product.name
+                    .bottom-product__box__price
+                      = ('¥' + product.price.to_s(:delimited))
+ 
 
 

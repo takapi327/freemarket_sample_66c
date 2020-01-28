@@ -138,8 +138,9 @@
 }
 
 .form__submit__text {
-  width: 44.3vw;
+  width: 43.7vw;
   height: 100px;
+  padding: 5px;
 }
 .form__submit__comment{
   width: 44.5vw;
@@ -190,23 +191,27 @@
   }
   &__boxs {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__boxs a{
+    text-decoration: none;
+    color: black;
   }
   &__box {
-    height: 300px;
-    width: 17vw;
-    margin-right: 10px;
+    margin-bottom: 20px;
     &__image {
       box-sizing: border-box;
-      height: 200px;
-      text-align: center;
-      background-color: rgb(57, 57, 160);
-      padding-top: 100px;
     }
     &__text {
       padding: 10px;
       background-color: white;
       font-size: 12px;
     }
+  }
+  .box-image {
+    height: 200px;
+    width: 15vw;
   }
 }
 .product-show {
