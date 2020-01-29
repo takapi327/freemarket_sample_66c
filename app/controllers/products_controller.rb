@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @images = @product.images
   end
 
   def update
@@ -53,7 +54,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 end

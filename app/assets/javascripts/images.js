@@ -114,4 +114,9 @@ $(function(){
     $('#box').show()
     $('#box').attr('class', `sell-image_box-${num}`)
   })
+
+  $('.item-img_operetion_delete').on('click', function(){
+    var btn = document.getElementById('check_box');
+    btn.checked = true;
+  });
 });

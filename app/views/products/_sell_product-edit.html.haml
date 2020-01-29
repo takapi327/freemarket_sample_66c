@@ -10,16 +10,30 @@
               出品画像
               %span.require 必須
               %p 最大10枚までアップロードできます
+              = f.fields_for :images, local: true do |i|
+                %div.z-index
+                  = i.file_field :image
+                  = i.check_box :_destroy, id: 'check_box'
+                  = i.hidden_field :id
             #image-box-1
+              - @images.each do |image|
+                .item-img
+                  .item-img_content
+                    .item-img_content_icon
+                      %img{height: "100", src: "#{image.image}", width: "100", name: "product[images_attributes][#{@product.images.count}][src]"}
+                    .item-img_operetion
+                      .item-img_operetion_delete 削除
+                      .item-img_operetion_edit 編集
               .sell-image_box-0#box
-                -# = f.fields_for :images do |i|
-                -#   .input-area 
-                -#     = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
-                -#     %label{for: 'img-file'}
-                -#       %pre 
-                -#         :preserve
-                -#           ドラッグアンドドロップ
-                -#           またはクリックしてファイルをアップロード
+                .input-area
+                  = f.fields_for @images, local: true do |i|
+                    = i.file_field :image, type: 'file', value: '', id: 'img-file'
+                    %label{for: 'img-file', style: 'z-index: 1;'}
+                      %pre 
+                        :preserve
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード
+
           .sell-content__product
             .product__name
               %label
@@ -32,7 +46,7 @@
                 商品の説明
                 %span.require 必須
               %div
-                = f.text_field :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
+                = f.text_area :content, class: 'form__product__name', placeholder: '商品の説明(必須1,000文字)(色,素材,重さ,定価,注意点など)例 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。)'
           .sell-content__index.clearfix
             %h3.index__tittle
               商品の詳細
@@ -42,29 +56,18 @@
                 カテゴリー
                 %span.require 必須
               %div.select-box.box{action: "", name: "form1"}
-                = f.fields_for :categories do |c|
-                  = c.select :name, name: "product[categories_attributes][][name]" do
-                    %option{value: ""} ---
-                    %option{value: "1"} レディース
-                    %option{value: "2"} メンズ
-                    %option{value: "3"} ベビー・キッズ
-                    %option{value: "4"} インテリア・住まい・小物
-                    %option{value: "5"} 本・音楽・ゲーム
-                    %option{value: "6"} おもちゃ・ホビー・グッズ
-                    %option{value: "7"} コスメ・香水・美容
-                    %option{value: "8"} 家電・スマホ・カメラ
-                    %option{value: "9"} スポーツ・レジャー
-                    %option{value: "10"} ハンドメイド
-                    %option{value: "11"} チケット
-                    %option{value: "12"} 自転車・オートバイ
-                    %option{value: "13"} その他
+
+                = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"}
+
               %div#add
               .product__category__group
               %label
                 商品の状態
                 %span.require 必須
               %div.select-box.box
-                = f.select :status, Product.statuses_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :status_id, Status.all, :id, :name, {prompt: "---"}
+
           .sell-content__derivery.clearfix
             %h3.index__tittle
               配送について
@@ -74,20 +77,25 @@
                 配送料の負担
                 %span.require 必須
               %div.select-box.box
-                = f.select :burden, Product.burdens_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :burden_id, Burden.all, :id, :name, {prompt: "---"}
+
               .product__category__group
               %label
                 発送元の地域
                 %span.require 必須
               %div.select-box.box
-                = f.fields_for :areas do |d|
-                  = d.select :name, Area.names.keys,{}, name: "product[areas_attributes][][name]"
+
+                = f.collection_select :area_id, Area.all, :id, :name, {prompt: "---"}
+
               .product__category__group
               %label
                 発送までの日数
                 %span.require 必須
               %div.select-box.box
-                = f.select :day, Product.days_i18n.invert, {prompt: "---"}
+
+                = f.collection_select :day_id, Day.all, :id, :name, {prompt: "---"}
+
           .sell-content__index.clearfix
             %h3.index__tittle
               販売価格(300~9,999,999)
@@ -118,4 +126,4 @@
               %p また、出品をもちまして加盟店規約に同意したことになります。
               = f.submit '変更する', class: 'form-btn'
               .back-btn
-                = link_to 'もどる', product_path
+                = link_to 'もどる', root_path
