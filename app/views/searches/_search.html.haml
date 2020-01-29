@@ -25,7 +25,7 @@
                   = ('¥' + products.price.to_s(:delimited))
                 .product__boxs-parent-file-content
                   = products.content
-              - else products.buyer_id.present?
+              - else
                 .product__boxs-parent-file-label
                   .sell
                     = 'SOLD'
