@@ -47,13 +47,13 @@
                 position: absolute;
                 top: 0px;
                 .sell{
-                  transform: rotate(45deg);
+                  transform: rotate(-45deg);
                   position: absolute;
-                  bottom: 20px;
-                  left: 20px;
+                  bottom: 40px;
+                  left: 5px;
                   font-weight: bold;
                   color: #eee;
-                  font-size: 14px;
+                  font-size: 18px;
                 }
               }
               &-image{
