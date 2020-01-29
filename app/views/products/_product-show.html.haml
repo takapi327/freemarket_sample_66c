@@ -68,7 +68,15 @@
     - else
       .product-show__buy
         .product-show__buy-btn
-          = link_to "購入画面に進む", buy_product_path(@product.id), class: "buy-btn"
+          - if @product.buyer_id.blank?
+            .main-flame-all-box-choice-buy
+              .main-flame-all-box-choice-buy-button
+                = link_to '購入が画面に進む', purchase_path, class: 'button_can_buy'
+          
+          - else
+            .main-flame-all-box-choice-buy
+              .main-flame-all-box-choice-buy-button
+                = link_to '購入が画面に進む', "", class: 'button_cannot_buy'
         
         .product-show__item__bottom
           .item-description
