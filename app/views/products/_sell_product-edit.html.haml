@@ -5,29 +5,35 @@
         = "商品の情報を入力"
       .form
         .form__block
-          .sell-content
+          .sell-content{style: 'z-index: -2;'}
             %h3.sell-image__tittle
               出品画像
               %span.require 必須
               %p 最大10枚までアップロードできます
+              = f.fields_for :images, local: true do |i|
+                %div.z-index
+                  = i.file_field :image
+                  = i.check_box :_destroy, id: 'check_box'
+                  = i.hidden_field :id
             #image-box-1
               - @images.each do |image|
                 .item-img
                   .item-img_content
                     .item-img_content_icon
-                      %img{height: "100", src: "#{image.image}", width: "100"}
+                      %img{height: "100", src: "#{image.image}", width: "100", name: "product[images_attributes][#{@product.images.count}][src]"}
                     .item-img_operetion
                       .item-img_operetion_delete 削除
                       .item-img_operetion_edit 編集
               .sell-image_box-0#box
                 .input-area
                   = f.fields_for @images, local: true do |i|
-                    = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value: '', style: 'display:none', id: 'img-file'
-                    %label{for: 'img-file'}
+                    = i.file_field :image, type: 'file', value: '', id: 'img-file'
+                    %label{for: 'img-file', style: 'z-index: 1;'}
                       %pre 
                         :preserve
                           ドラッグアンドドロップ
                           またはクリックしてファイルをアップロード
+
           .sell-content__product
             .product__name
               %label
