@@ -15,7 +15,7 @@
         %ul.product__boxs-parent
           - @products.each do |products|
             %li.product__boxs-parent-file
-              - if products.seller_id.present?
+              - if products.buyer_id.blank?
                 .product__boxs-parent-file-label
                   .sell
                     = '出品中'
