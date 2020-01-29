@@ -32,7 +32,7 @@
                 %li.main-firest-top-photos-parent_list
                   .main-firest-top-photos-parent_list-body
                     .main-firest-top-photos-parent_list-body-image
-                      -# = image_tag("#{product.images.first.image}", class: 'image-fot')
+                      = image_tag("#{product.images.first.image}", class: 'image-fot')
                       .main-firest-top-photos-parent_list-body-image-price
                         = ('¥' + product.price.to_s(:delimited))
                     .main-firest-top-photos-parent_list-body-title
