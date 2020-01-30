@@ -36,10 +36,7 @@ Things you may want to cover:
 ### Association
 - has_one :user_detail
 - has_many :products
-- has_many :snss
-- has_many :comments
-- has_many :likes
-- has_many :product_buys
+- has_many :sns_credentials
 - has_one :address
 
 ## user_detailsテーブル
@@ -48,7 +45,12 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|references|null:false|
 |name|string|null:false|
-|tell|integer|unique:true, null:false|
+|tel|string|null:false|
+|last_name|string|null:false|
+|first_name|string|null:false|
+|last_kana_name|string|null:false|
+|first_kana_name|string|null:false|
+|profile|text||
 
 ### Association
 - belongs_to :user
@@ -59,20 +61,22 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|references|null:false|
 |zip|string|null:false|
-|address|string|null:false|
+|prefectures|string|null:false|
 |city|string|null:false|
 |number|string|null:false|
 |bill|string||
+|randline|string||
 
 ### Association
 - belongs_to :user
 
-## snssテーブル
+## sns_credentialsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
-|name|string|null:false|
+|uid|string|unique:true,null:false|
+|provider|string|unique:true,null:false|
 
 ### Association
 - belongs_to :user
@@ -82,25 +86,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false|
-|number|string|unique:true,null:false|
-|cord|string|unique:true,null:false|
-|limit|string|null:false|
-|name|string|null:false|
+|card_id|string|unique:true,null:false|
+|customer_id|string|null:false|
 
 ### Association
 - belongs_to :user
-
-## commentsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null:false|
-|product_id|references|null:false|
-|comment|text|null:false|
-
-### Association
-- belongs_to :user
-- belongs_to :product
 
 ## productsテーブル
 
@@ -110,84 +100,35 @@ Things you may want to cover:
 |name|string|null:false|
 |price|integer|null:false|
 |content|text|null:false|
-|status|integer|null:false|
-|derivery|integer|null:false|
-|burden|integer|null:false|
-|day|data|null:false|
+|status_id|integer|null:false|
+|derivery_id|integer|null:false|
+|burden_id|integer|null:false|
+|day_id|integer|null:false|
+|buyer_id|references|foreign_key:true|
+|seller_id|references|foreign_key:true|
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-- has_many :categorys
-- has_many :brands
-- has_many :areas
-- has_many :likes
-- has_many :comments
+- has_many :categories
 - has_many :images
 
 ## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null:false|
+|product_id|references|foreign_key:true|
 |image|text|null:false|
 
 ### Association
 - belongs_to :product
 
-## areasテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |product_id|references|null:false|
-|name|string|null:false|
-
-### Association
-- belongs_to :product
-
-## categorysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|references|null:false|
-|brnads_id|references|null:false|
 |name|string|null:false|
 
 ### Association
 - has_many :products
-- has_many :brands, through: brand_categorys
 - has_ancestry
-
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|references|null:false|
-|categorys_id|references|null:false|
-|name|string|null:false|
-
-### Association
-- belongs_to :product
-- has_many :categorys,through: brand_categorys
-
-## brand_categorysテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|brand_id|references|null:false|
-|categorys_id|references|null:false|
-
-### Association
-- belongs_to :brand
-- belongs_to :category
-
-## likesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null:false|
-|product_id|references|null:false|
-
-### Association
-- belongs_to :user
-- belongs_to :product
