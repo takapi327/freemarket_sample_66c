@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
   end
   
   def show
-    # binding.pry
     @product = Product.find(params[:id])
     @products = Product.where(user_id: @product.user.id)
     @images = Image.where(product_id: @product.id)

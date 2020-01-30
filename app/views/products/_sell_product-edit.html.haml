@@ -11,7 +11,7 @@
               %span.require 必須
               %p 最大10枚までアップロードできます
               = f.fields_for :images, local: true do |i|
-                %div.z-index
+                %div
                   = i.file_field :image
                   = i.check_box :_destroy, id: 'check_box'
                   = i.hidden_field :id
