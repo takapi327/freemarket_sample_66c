@@ -29,7 +29,7 @@ class PurchaseController < ApplicationController
         :customer => card.customer_id, #顧客ID
         :currency => 'jpy', #日本円
       )
-        Product.update(buyer_id: current_user.id)
+        @product.update(buyer_id: current_user.id)
         redirect_to action: 'done' #完了画面に移動
       else
         redirect_to root_path
