@@ -3,17 +3,13 @@ class PurchaseController < ApplicationController
 
   def index
     @product = Product.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
-    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
-    if card.blank?
-      #登録された情報がない場合にカード登録画面に移動
+    card = Card.where(user_id: current_user.id).first #テーブルからpayjpの顧客ID(アクセスキー)を検索
+    if card.blank? #登録された情報がない場合にカード登録画面に移動
       redirect_to "/cards/new"
     else
       Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(card.customer_id) #保管した顧客ID（アクセスキー）でpayjpから情報取得
+      @default_card_information = customer.cards.retrieve(card.card_id) #保管したカードIDでpayjpからカード情報取得、カード情報表示のためインスタンス変数に代入
     end
   end
 
@@ -22,7 +18,7 @@ class PurchaseController < ApplicationController
     if user_signed_in?
       if @product.buyer_id.blank?
         product = Product.find(params[:id])
-        card = Card.where(user_id: current_user.id).first
+        card = Card.where(user_id: current_user.id).first #テーブルからpayjpの顧客ID(アクセスキー)を検索
         Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
         Payjp::Charge.create(
         :amount => product.price, #支払金額を入力(productテーブルから引っ張ってくる)
