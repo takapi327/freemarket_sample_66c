@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
     else
       redirect_to new_product_path
     end
-
   end
   
   def show
@@ -56,6 +55,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :content, :status_id, :burden_id, :day_id, :price, :derivery, :area_id, :category_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
-
 end
 
