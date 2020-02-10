@@ -27,7 +27,7 @@
             = link_to "もっと見る ＞", class:"link"
         %ul.main-firest-top-photos-parent
           - @products.each do |product|
-            = link_to (product_path(product.id)) 
+            = link_to (product_path(product.id)) do
               - if product.buyer_id.blank?
                 %li.main-firest-top-photos-parent_list
                   .main-firest-top-photos-parent_list-body
@@ -53,4 +53,4 @@
                       %figcaption.main-firest-top-photos-parent_list-body-title-a
                         .transparent
                           = product.name
-                    
+              
